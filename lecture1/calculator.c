@@ -4,9 +4,9 @@
 int main(void){
 
     //Prompt user for x
-    int x = get_int("x: ");
+    long x = get_int("x: ");
     //Prompt user for y
-    int y = get_int("y: ");
+    long y = get_int("y: ");
     // Perform addition
-    printf("x+y = %i\n",x+y);
+    printf("x+y = %li\n",x+y);
 }
