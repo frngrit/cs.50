@@ -9,4 +9,5 @@ int main(void){
     long y = get_int("y: ");
     // Perform addition
     printf("x+y = %li\n",x+y);
+
 }
