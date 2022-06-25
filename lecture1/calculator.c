@@ -8,7 +8,7 @@ int main(void){
     //Prompt user for y
     int y = get_int("y: ");
     //Divide x by y
-    float z = x / y;
+    float z = (float) x / y;
     // Perform addition
     printf("x divided by y = %.50f\n",z);
 
