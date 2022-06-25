@@ -3,9 +3,11 @@
 int main(void)
 {
     const int LIMIT = 3;
+    int i = 0;
 
-    for (int i = 1; i <= LIMIT; i++)
+    while (i < LIMIT)
     {
-        printf("meow\n");
+        printf("meow~\n");
+        i += 1;
     }
 }
