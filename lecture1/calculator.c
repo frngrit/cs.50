@@ -8,6 +8,6 @@ int main(void){
     //Prompt user for y
     float y = get_float("y: ");
     // Perform addition
-    printf("x divided by y = %.2f\n",x/y);
+    printf("x divided by y = %.50f\n",x/y);
 
 }
