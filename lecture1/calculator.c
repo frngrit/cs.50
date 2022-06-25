@@ -4,10 +4,10 @@
 int main(void){
 
     //Prompt user for x
-    long x = get_int("x: ");
+    float x = get_float("x: ");
     //Prompt user for y
-    long y = get_int("y: ");
+    float y = get_float("y: ");
     // Perform addition
-    printf("x+y = %li\n",x+y);
+    printf("x divided by y = %.2f\n",x/y);
 
 }
