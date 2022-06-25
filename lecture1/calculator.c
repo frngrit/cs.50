@@ -4,9 +4,9 @@
 int main(void){
 
     //Prompt user for x
-    float x = get_float("x: ");
+    int x = get_int("x: ");
     //Prompt user for y
-    float y = get_float("y: ");
+    int y = get_int("y: ");
     // Perform addition
     printf("x divided by y = %.50f\n",x/y);
 
