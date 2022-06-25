@@ -12,7 +12,7 @@ int main(void)
     }
 
 
-    for (i = 0 ; i < LIMIT; i++)
+    for (int j = i; i > 0; i--)
     {
         printf("meow!!\n");
     }
