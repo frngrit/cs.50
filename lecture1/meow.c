@@ -10,4 +10,9 @@ int main(void)
         printf("meow~\n");
         i += 1;
     }
+
+    for (i = 0; i < LIMIT; i++)
+    {
+        printf("meow!!\n");
+    }
 }
