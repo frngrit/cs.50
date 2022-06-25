@@ -1,9 +1,8 @@
 #include <stdio.h>
 
-void meow(void)
-{
-    printf("meow~\n");
-}
+//declare meow first
+void meow(int n);
+
 
 
 int main(void)
@@ -17,9 +16,17 @@ int main(void)
         i += 1;
     }
 
-
+    /*
     for (int j = i; i > 0; i--)
     {
         printf("meow!!\n");
     }
+    */
+}
+
+
+//If you define your function after execute it, there will be error
+void meow(void)
+{
+    printf("meow~\n");
 }
