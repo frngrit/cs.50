@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+meow(void)
+
+
 int main(void)
 {
     const int LIMIT = 3;
