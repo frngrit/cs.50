@@ -16,5 +16,5 @@ int main(void)
 
 float discount(float reg_price, int pct_off)
 {
-    return (1- (pct_off/100)) ;
+    return reg_price * (100 - pct_off)/100;
 }
