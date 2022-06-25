@@ -11,7 +11,8 @@ int main(void)
         i += 1;
     }
 
-    for (i = 0; i < LIMIT; i++)
+
+    for (i = 0 ; i < LIMIT; i++)
     {
         printf("meow!!\n");
     }
