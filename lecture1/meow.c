@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-meow(void)
+void meow(void)
+{
+    printf("meow\n");
+}
 
 
 int main(void)
@@ -10,7 +13,7 @@ int main(void)
 
     while (i < LIMIT)
     {
-        printf("meow~\n");
+        meow();
         i += 1;
     }
 
