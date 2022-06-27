@@ -28,5 +28,5 @@ int main(void)
         sum += scores[i];
     }
 
-    printf("average score is %f\n", (scores[0] + scores[1] + scores[2]) / (float) n);
+    printf("average score is %f\n", sum / (float) n);
 }
