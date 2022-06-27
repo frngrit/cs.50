@@ -20,11 +20,12 @@ int main(void)
     scores[1] = 73;
     scores[2] = 33;
     */
-
+    int sum = 0;
     // use this
     for (int i = 0; i < n; i++)
     {
         scores[i] = get_int("Enter grade: ");
+        sum += scores[i];
     }
 
     printf("average score is %f\n", (scores[0] + scores[1] + scores[2]) / (float) n);
