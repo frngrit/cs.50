@@ -1,3 +1,4 @@
+#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
@@ -8,13 +9,23 @@ int main(void)
     int score3 = 33;
     */
 
-   //use array instead
-   int scores[3];
+    int n = get_int("Enter number of grades: ");
 
-   scores[0] = 72;
-   scores[1] = 73;
-   scores[2] = 33;
+    // use array instead
+    int scores[n];
 
+    /*
+    This is redundant
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 33;
+    */
 
-    printf("average score is %f\n",(scores[0] + scores[1] + scores[2])/3.0);
+    // use this
+    for (int i = 0; i < n; i++)
+    {
+        scores[i] = get_int("Enter grade: ");
+    }
+
+    printf("average score is %f\n", (scores[0] + scores[1] + scores[2]) / (float) n);
 }
