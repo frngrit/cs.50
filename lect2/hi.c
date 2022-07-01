@@ -9,10 +9,10 @@ int main(void)
 
     // string c = "HI!";
 
-    int c[3];
-    c[0] = 1;
-    c[1] = 2;
-    c[2] = 3;
+    char c[3];
+    c[0] = 'H';
+    c[1] = 'I';
+    c[2] = '!';
 
-    printf("%i %i %i %i\n",c[0],c[1],c[2],c[3]);
+    printf("%i %i %i %i \n",c[0],c[1],c[2], c[3]);
 }
