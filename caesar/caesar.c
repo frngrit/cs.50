@@ -27,9 +27,25 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
     int i = 0;
+    char c;
     while (plain[i] != '\0')
     {
-
+        c = plain[i];
+        if (isupper(c))
+        {
+            c = c - 65 + key;
+            c = c % 26;
+            c = c + 65;
+            //printf("%i\n", c);
+        }
+        else
+        {
+            c = c - 97 + key;
+            c = c % 26;
+            c = c + 97;
+            //printf("%i\n", c);
+        }
+        printf("%c", c);
         i++;
     }
     printf("\n");
