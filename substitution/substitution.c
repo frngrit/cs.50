@@ -30,7 +30,14 @@ int main(int argc, string argv[])
             return 1;
         }
     }
-    
+    int sum = 0, i = 0;
+    while (KEY[i] != '\0')
+    {
+        sum += toupper(KEY[i])
+        i++
+    }
+    if (sum
+
 
     string s = get_string("plaintext:  "); //prompt user for plain text
 
