@@ -7,25 +7,31 @@ char encrypt(char c, string key);
 
 int main(int argc, string argv[])
 {
-    char s[26] = "ABCDEFGHIJKLMNOP";
+    string alpha = "ABCDEFGHIJKLMNOP";
+    const string KEY = argv[1];
     if (argc != 2)
     {
         //hadle when user input incorrectly
         printf("Usage: ./substitution key\n");
         return 1;
     }
-    if (strlen(argv[1]) != 26)
+    if (strlen(KEY) != 26)
     {
         //handle when user input string length not 26 chars
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-    if (isalpha)
+    for (int i = 0, n = strlen(KEY); i < n; i++)
     {
-        printf("Invalid characters in key.\n");
-        return 1;
+        int n 
+        //check if there is any non-alphabet
+        if (isalpha(KEY[i]))
+        {
+            printf("Invalid characters in key.\n");
+            return 1;
+        }
+        if (
     }
-
 
     string s = get_string("plaintext:  "); //prompt user for plain text
 
@@ -34,7 +40,7 @@ int main(int argc, string argv[])
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         //encrypt each character
-        char c = encrypt(s[i], argv[1]);
+        char c = encrypt(s[i], KEY);
         //print each charater
         printf("%c",c);
     }
