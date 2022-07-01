@@ -20,14 +20,14 @@ int main(void)
         {
             words += 1;
         }
-        if (s[i] == ',' || s[i] == '.' || s[i] == '?' || s[i] == '!')
+        if (s[i] == '.' || s[i] == '?' || s[i] == '!')
         {
             sentences += 1;
         }
         i++;
     }
     float index = 0.0588 * letters / words * 100 - 0.296 * sentences / words * 100 - 15.8;
-    printf("%i %i %i %f", letters, sentences, words, index);
+    //printf("%i %i %i %f", letters, sentences, words, index);
     if (index >= 16)
     {
         printf("Grade 16+\n");
