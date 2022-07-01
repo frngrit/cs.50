@@ -8,13 +8,13 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    if (argv[1] < 0)
+    if (argv[1] < '0' && argv[1] > '9')
     {
         printf("Input must be non-negative integer\n");
         return 1;
     }
     int increment = (long) argv[1] % 26;
-    printf("%li", (long) argv[1]);
+    //printf("%li", (long) argv[1]);
     string plain = get_string("plaintext:  ");
 
     printf("ciphertext: ");
