@@ -11,7 +11,7 @@ int main(void)
     for (int i = 0; s[i] != '\0'; i++)
     {
         b = (int) s[i];
-        if (b > 60)
+        if (b > 96)
         {
             b -= 32;
         }
