@@ -13,5 +13,15 @@ int main(int argc, string argv[])
         printf("Input must be non-negative integer\n");
         return 1;
     }
-    
+    int increment = (long) argv[1] % 26;
+    string plain = get_string("plaintext:  ");
+
+    printf("ciphertext: ");
+    int i = 0;
+    while (plain[i] != '\0')
+    {
+        printf("%c",plain[i] + increment);
+        i++;
+    }
+    printf("\n");
 }
