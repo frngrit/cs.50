@@ -8,10 +8,10 @@ int main(void)
     //prompt for user's string
     string s = get_string("Text: ");
     //count for letter
-    int i = 0, letters = 0, sentences = 0, words = 0;
+    int i = 0, letters = 0, sentences = 0, words = 1;
     while (s[i] != '\0')
     {
-        words += 1;
+
         if (isalpha(s[i]))
         {
             letters += 1;
