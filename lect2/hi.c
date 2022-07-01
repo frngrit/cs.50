@@ -18,5 +18,5 @@ int main(void)
 
     printf("%i %i %i \n",c[0],c[1],c[2]);
     printf("%i %i %i %i\n",s[0], s[1], s[2], s[3]);
-
+    printf("%s %s \n", c, s);
 }
