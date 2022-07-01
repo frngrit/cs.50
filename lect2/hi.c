@@ -14,5 +14,9 @@ int main(void)
     c[1] = 'I';
     c[2] = '!';
 
-    printf("%i %i %i %i \n",c[0],c[1],c[2], c[3]);
+    string s = "HI!";
+
+    printf("%i %i %i \n",c[0],c[1],c[2]);
+    printf("%i %i %i %i\n",s[0], s[1], s[2], s[3]);
+
 }
