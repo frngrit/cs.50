@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -31,6 +32,14 @@ int main(int argc, string argv[])
     {
         c = plain[i];
         c = (c + key) % 26;
+        if (isupper(c))
+        {
+            c = c + 65;
+        }
+        else
+        {
+            c = c + 97;
+        }
         printf("%c", c);
         i++;
     }
