@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int main(int argc, string argv[])
 {
@@ -9,6 +10,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+    long key = 0;
     for (int i = 0, n = strlen(argv[1]); i < n; i++)
     {
         if (argv[1][i] < '0' || argv[1][i] > '9')
@@ -16,9 +18,11 @@ int main(int argc, string argv[])
             printf("Input must be non-negative integer\n");
             return 1;
         }
+        int str_to_number = (int) argv[1][i] - 48;
+        key += str_to_number * pow(10,n-i-1);
     }
-    int increment = (long) argv[1] % 26;
-    //printf("%li", (long) argv[1]);
+    int increment = key % 26;
+    //printf("%li", key);
     string plain = get_string("plaintext:  ");
 
     printf("ciphertext: ");
