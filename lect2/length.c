@@ -8,7 +8,7 @@ int main(void)
 {
     string name = get_string("Name: ");
 
-    int length = strlen(name);
+    int length = string_length(name);
 
     printf("%i\n", length);
 
@@ -23,7 +23,7 @@ int main(void)
     // printf("%i\n",i);
 }
 
-int string_length(name)
+int string_length(string name)
 {
     int i = 0;
 
