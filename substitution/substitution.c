@@ -24,20 +24,23 @@ int main(int argc, string argv[])
     for (int i = 0, n = strlen(KEY); i < n; i++)
     {
         //check if there is any non-alphabet
-        if (isalpha(KEY[i]))
+        if (!isalpha(KEY[i]))
         {
             printf("Invalid characters in key.\n");
             return 1;
         }
     }
-    int sum = 0, i = 0;
-    while (KEY[i] != '\0')
+    int sum = 0, j = 0;
+    while (KEY[j] != '\0')
     {
-        sum += toupper(KEY[i])
-        i++
+        sum += toupper(KEY[j]);
+        j++;
     }
-    if (sum
-
+    if ((int) sum != 2015)
+    {
+        printf("Duplicated characters in key.\n");
+        return 1;
+    }
 
     string s = get_string("plaintext:  "); //prompt user for plain text
 
