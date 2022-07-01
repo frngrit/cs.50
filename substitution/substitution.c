@@ -29,8 +29,14 @@ int main(int argc, string argv[])
             printf("Invalid characters in key.\n");
             return 1;
         }
-
-        for (j = i + 1; j < n - i - 1; j++
+        for (int j = i + 1; j < n; j++)
+        {
+            if (KEY[i] == KEY[j])
+            {
+                printf("Duplicate character in key.\n");
+                return 1;
+            }
+        }
     }
 
 
