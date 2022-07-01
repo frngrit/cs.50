@@ -35,12 +35,12 @@ int main(int argc, string argv[])
         if (isupper(c))
         {
             c = c + 65;
-            printf("%i\n", c);
+            //printf("%i\n", c);
         }
         else
         {
             c = c + 97;
-            printf("%i\n", c);
+            //printf("%i\n", c);
         }
         printf("%c", c);
         i++;
