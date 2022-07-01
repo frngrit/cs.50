@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 char encrypt(char c, string key);
 
@@ -28,8 +29,9 @@ int main(int argc, string argv[])
         //encrypt each character
         char c = encrypt(s[i], argv[1]);
         //print each charater
-
+        printf("%c",c);
     }
+    printf("\n");
 
 
 }
