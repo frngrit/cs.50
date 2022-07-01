@@ -21,15 +21,17 @@ int main(int argc, string argv[])
         int str_to_number = (int) argv[1][i] - 48;
         key += str_to_number * pow(10,n-i-1);
     }
-    int increment = key % 26;
     //printf("%li", key);
     string plain = get_string("plaintext:  ");
 
     printf("ciphertext: ");
     int i = 0;
+    char c;
     while (plain[i] != '\0')
     {
-        printf("%c",plain[i] + increment);
+        c = plain[i];
+        c = (c + key) % 26;
+        printf("%c", c);
         i++;
     }
     printf("\n");
