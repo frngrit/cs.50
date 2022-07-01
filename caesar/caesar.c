@@ -31,14 +31,14 @@ int main(int argc, string argv[])
     while (plain[i] != '\0')
     {
         c = plain[i];
-        if (isupper(c))
+        if (isupper(c) && isalpha(c))
         {
             c = c - 65 + key;
             c = c % 26;
             c = c + 65;
             //printf("%i\n", c);
         }
-        else
+        if (islower(c) && isalpha(c))
         {
             c = c - 97 + key;
             c = c % 26;
