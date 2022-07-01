@@ -31,14 +31,15 @@ int main(int argc, string argv[])
     while (plain[i] != '\0')
     {
         c = plain[i];
-        c = (c + key) % 26;
         if (isupper(c))
         {
+            c = (c + key) % 26;
             c = c + 65;
             //printf("%i\n", c);
         }
         else
         {
+            c = (c + key) % 26;
             c = c + 97;
             //printf("%i\n", c);
         }
