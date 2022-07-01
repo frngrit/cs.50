@@ -14,6 +14,7 @@ int main(int argc, string argv[])
         return 1;
     }
     int increment = (long) argv[1] % 26;
+    printf("%li", (long) argv[1]);
     string plain = get_string("plaintext:  ");
 
     printf("ciphertext: ");
