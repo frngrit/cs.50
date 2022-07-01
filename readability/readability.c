@@ -27,6 +27,6 @@ int main(void)
 
         float index = 0.0588 * letters / words * 100 - 0.296 * sentences / words * 100 - 15.8;
 
-        printf("Grade %i", (int) round(index));
+        printf("Grade %i\n", (int) round(index));
     }
 }
