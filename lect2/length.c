@@ -1,7 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
-int string_length(name);
+int string_length(string name);
 
 int main(void)
 {
