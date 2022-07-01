@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    //prompt for 
-    string s = "Congratulations! Today is your day. You're off to Great Places! You're off and away!";
+    //prompt for user's string
+    string s = get_string("Text: ");
     printf("%i\n",(int) floor(2.53));
 }
