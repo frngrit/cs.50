@@ -7,6 +7,7 @@ char encrypt(char c, string key);
 
 int main(int argc, string argv[])
 {
+    char s[26] = "ABCDEFGHIJKLMNOP";
     if (argc != 2)
     {
         //hadle when user input incorrectly
