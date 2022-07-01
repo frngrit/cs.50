@@ -11,7 +11,10 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key");
         return 1;
     }
-    
+
+    int i = 0;
+    while (s[i] != '
+
 
 
 }
