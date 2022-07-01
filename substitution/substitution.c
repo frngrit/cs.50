@@ -11,13 +11,13 @@ int main(int argc, string argv[])
     {
         //hadle when user input incorrectly
         printf("Usage: ./substitution key\n");
-        return 1;
+        return 2;
     }
     if (strlen(argv[1]) != 26)
     {
         //handle when user input string length not 26 chars
         printf("Key must contain 26 characters.\n");
-        return 2;
+        return 1;
     }
 
     string s = get_string("plaintext:  "); //prompt user for plain text
