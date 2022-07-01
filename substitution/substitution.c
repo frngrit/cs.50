@@ -13,9 +13,16 @@ int main(int argc, string argv[])
     }
 
     int i = 0;
+    string 
     while (s[i] != '\0')
     {
-        
+        i++
+    }
+    if (i != 26)
+    {
+        //handle when user input string length not 26 chars
+        printf("Key must contain 26 characters.");
+        return 2;
     }
 
 
