@@ -29,8 +29,10 @@ int main(int argc, string argv[])
             printf("Invalid characters in key.\n");
             return 1;
         }
+        //check the character next to 
         for (int j = i + 1; j < n; j++)
         {
+            //check if character duplicate
             if (KEY[i] == KEY[j])
             {
                 printf("Duplicate character in key.\n");
@@ -49,7 +51,7 @@ int main(int argc, string argv[])
         //encrypt each character
         char c = encrypt(s[i], KEY);
         //print each charater
-        printf("%c",c);
+        printf("%c", c);
     }
     printf("\n");
 
