@@ -29,18 +29,10 @@ int main(int argc, string argv[])
             printf("Invalid characters in key.\n");
             return 1;
         }
+
+        for (j = i + 1; j < n - i - 1; j++
     }
-    int sum = 0, j = 0;
-    while (KEY[j] != '\0')
-    {
-        sum += toupper(KEY[j]);
-        j++;
-    }
-    if ((int) sum != 2015)
-    {
-        printf("Duplicated characters in key.\n");
-        return 1;
-    }
+
 
     string s = get_string("plaintext:  "); //prompt user for plain text
 
