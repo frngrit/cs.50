@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// string encrypt(char c, string key);
+string encrypt(char c, string key);
 
 int main(int argc, string argv[])
 {
