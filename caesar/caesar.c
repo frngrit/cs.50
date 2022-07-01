@@ -11,8 +11,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0, n = strlen(argv[1]); i < n; i++)
     {
-        printf("%c\n",argv[1][i]);
-        if (argv[1][i] < '0' && argv[1][i] > '9')
+        if (argv[1][i] < '0' || argv[1][i] > '9')
         {
             printf("Input must be non-negative integer\n");
             return 1;
