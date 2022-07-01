@@ -43,7 +43,7 @@ int compute_score(string word)
         //point for the each character
         if (toupper(word[i]) >= 'A' && toupper(word[i]) <= 'Z')
         {
-            int point = POINTS[toupper(word[i])-65];
+            int point = POINTS[toupper(word[i]) - 65];
             score += point;//add to sum
         }
 
