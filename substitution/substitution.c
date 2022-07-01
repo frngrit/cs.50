@@ -23,14 +23,22 @@ int main(int argc, string argv[])
     }
     for (int i = 0, n = strlen(KEY); i < n; i++)
     {
-        int n 
+        int n
         //check if there is any non-alphabet
         if (isalpha(KEY[i]))
         {
             printf("Invalid characters in key.\n");
             return 1;
         }
-        if (
+        for (int j = 0; j < 26; j++)
+        {
+            int non_duplicate = 0
+            //check if character in key in ABC
+            if (KEY[i] == alpha[j])
+            {
+                
+            }
+        }
     }
 
     string s = get_string("plaintext:  "); //prompt user for plain text
