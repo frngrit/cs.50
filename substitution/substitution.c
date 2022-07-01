@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-string encrpt(char c, string key);
+string encrypt(char c, string key);
 
 int main(int argc, string argv[])
 {
@@ -19,28 +19,32 @@ int main(int argc, string argv[])
         return 2;
     }
 
-    s = get_string("plaintext:  "); //prompt user for plain text
+    string s = get_string("plaintext:  "); //prompt user for plain text
 
-    for (int i = 0, n = strlen(s); i < n; i++)
-    {
+    // char c;
+    // for (int i = 0, n = strlen(s); i < n; i++)
+    // {
+    //     //encrypt each character
+    //     c = encrypt(s[i], argv[1]);
+    //     //print each charater
 
-    }
+    // }
 
 
 }
 
 
-string encrpt(char c, string key)
+string encrypt(char c, string key)
 {
     int index;
-    if (c >= "a" && c <= "z")
+    if (c >= 'a' && c <= 'z')
     {
-        return key[c - 97]
+        return tolower(key[c - 97]);
     }
-    if (c >= "A" && c <= "Z")
+    if (c >= 'A' && c <= 'Z')
     {
-        return key[c - 65]
+        return toupper(key[c - 65]);
     }
-    return c
+    return c;
 
 }
