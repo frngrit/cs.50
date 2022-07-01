@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     {
         if (argv[1][i] < '0' || argv[1][i] > '9')
         {
-            printf("Input must be non-negative integer\n");
+            printf("Usage: ./caesar key\n");
             return 1;
         }
         int str_to_number = (int) argv[1][i] - 48;
