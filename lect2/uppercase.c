@@ -34,14 +34,16 @@ int main(void)
 
     for (int i =0; s[i] != '\0'; i++)
     {
-        if (islower(s[i]))
-        {
-            printf("%c", toupper(s[i]));
-        }
-        else
-        {
-            printf("%c", s[i]);
-        }
+        // if (islower(s[i]))
+        // {
+        //     printf("%c", toupper(s[i]));
+        // }
+        // else
+        // {
+        //     printf("%c", s[i]);
+        // }
+
+        printf("%c", toupper(s[i]));
     }
 
     printf("\n");
