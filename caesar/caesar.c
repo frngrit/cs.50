@@ -32,6 +32,16 @@ int main(int argc, string argv[])
     {
         c = plain[i];
         c = (c + key) % 26;
+        if (isupper(c))
+        {
+            c = c + 65;
+            printf("%i\n", c);
+        }
+        else
+        {
+            c = c + 97;
+            printf("%i\n", c);
+        }
         printf("%c", c);
         i++;
     }
