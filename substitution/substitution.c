@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     {
         //hadle when user input incorrectly
         printf("Usage: ./substitution key\n");
-        return 2;
+        return 1;
     }
     if (strlen(argv[1]) != 26)
     {
@@ -21,7 +21,8 @@ int main(int argc, string argv[])
     }
     if (isalpha)
     {
-        printf();
+        printf("Invalid characters in key.\n");
+        return 1;
     }
 
     string s = get_string("plaintext:  "); //prompt user for plain text
