@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
@@ -8,10 +9,14 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    if (argv[1] < '0' && argv[1] > '9')
+    for (int i = 0, n = strlen(argv[1]); i < n; i++)
     {
-        printf("Input must be non-negative integer\n");
-        return 1;
+        printf("%c\n",argv[1][i]);
+        if (argv[1][i] < '0' && argv[1][i] > '9')
+        {
+            printf("Input must be non-negative integer\n");
+            return 1;
+        }
     }
     int increment = (long) argv[1] % 26;
     //printf("%li", (long) argv[1]);
