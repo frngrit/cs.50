@@ -7,15 +7,29 @@ int main(void)
     string s = get_string("Before: ");
     printf("Output: ");
 
-    int b;
-    for (int i = 0; s[i] != '\0'; i++)
+    // int b;
+    // for (int i = 0; s[i] != '\0'; i++)
+    // {
+    //     b = (int) s[i];
+    //     if (b > 96 && b < 123)
+    //     {
+    //         b -= 32;
+    //     }
+    //     printf("%c",(char) b);
+    // }
+    // printf("\n");
+
+    for (int i =0; s[i] != '\0'; i++)
     {
-        b = (int) s[i];
-        if (b > 96 && b < 123)
+        if (s[i] >= 'a' && s[i] <= 'z')
         {
-            b -= 32;
+            printf("%c", s[i] - 32);
         }
-        printf("%c",(char) b);
+        else
+        {
+            printf("%c", s[i]);
+        }
     }
     printf("\n");
+
 }
