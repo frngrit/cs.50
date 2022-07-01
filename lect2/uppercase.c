@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -19,17 +20,30 @@ int main(void)
     // }
     // printf("\n");
 
+    // for (int i =0; s[i] != '\0'; i++)
+    // {
+    //     if (s[i] >= 'a' && s[i] <= 'z')
+    //     {
+    //         printf("%c", s[i] - 32);
+    //     }
+    //     else
+    //     {
+    //         printf("%c", s[i]);
+    //     }
+    // }
+
     for (int i =0; s[i] != '\0'; i++)
     {
-        if (s[i] >= 'a' && s[i] <= 'z')
+        if (islower(s[i]))
         {
-            printf("%c", s[i] - 32);
+            printf("%c", toupper(s[i]));
         }
         else
         {
             printf("%c", s[i]);
         }
     }
+
     printf("\n");
 
 }
