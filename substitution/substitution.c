@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
+string encrpt(char c, string key);
 
 int main(int argc, string argv[])
 {
@@ -22,8 +23,24 @@ int main(int argc, string argv[])
 
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        
+
     }
 
+
+}
+
+
+string encrpt(char c, string key)
+{
+    int index;
+    if (c >= "a" && c <= "z")
+    {
+        return key[c - 97]
+    }
+    if (c >= "A" && c <= "Z")
+    {
+        return key[c - 65]
+    }
+    return c
 
 }
