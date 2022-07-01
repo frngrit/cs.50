@@ -4,14 +4,14 @@
 
 int main(void)
 {
-    string s = get_string("Before:  ");
+    string s = get_string("Before: ");
     printf("Output: ");
 
     int b;
     for (int i = 0; s[i] != '\0'; i++)
     {
         b = (int) s[i];
-        if (b > 96)
+        if (b > 96 && b < 123)
         {
             b -= 32;
         }
