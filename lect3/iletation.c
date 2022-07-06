@@ -13,11 +13,13 @@ int main(void)
 
 void draw(int n)
 {
-    for (int i = 0; i < n; i++)
-    {
-        printf("*");
-    }
-    printf("\n");
-
-    draw(n - 1);
+    printf("%i\n", n);
+   if (n == 1)
+   {
+    printf("end\n");
+   }
+   else
+   {
+    draw(n-1);
+   }
 }
