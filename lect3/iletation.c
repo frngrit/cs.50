@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-void draw(int n);
+void draw(int n, int level);
 
 int main(void)
 {
@@ -11,9 +11,9 @@ int main(void)
 }
 
 
-void draw(int n)
+void draw(int n, int level)
 {
-    if (n == 1)
+    if (n == level)
     {
         printf("*");
     }
