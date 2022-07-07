@@ -11,34 +11,12 @@ sort3 uses: TODO
 How do you know?: TODO
 
 
-sorted5000 and sorted50000
-
-//sort1
-real    0m0.104s
-user    0m0.000s
-sys     0m0.024s
-
-real    0m1.527s
-user    0m0.034s
-sys     0m0.183s
-//
-
-//sort2
-real    0m0.047s
-user    0m0.006s
-sys     0m0.018s
-
-real    0m1.079s
-user    0m0.053s
-sys     0m0.141s
-//
-
-//sort3
-real    0m0.047s
-user    0m0.027s
+//sort1 reversed5000
+real    0m0.089s
+user    0m0.052s
 sys     0m0.019s
 
-real    0m3.909s
-user    0m2.763s
-sys     0m0.185s
-//
+//sort3 reversed5000
+real    0m0.050s
+user    0m0.031s
+sys     0m0.016s
