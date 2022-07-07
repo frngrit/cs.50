@@ -9,3 +9,24 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+
+sorted5000
+
+//sort1
+real    0m0.104s
+user    0m0.000s
+sys     0m0.024s
+//
+
+//sort2
+real    0m0.047s
+user    0m0.006s
+sys     0m0.018s
+//
+
+//sort3
+real    0m0.047s
+user    0m0.027s
+sys     0m0.019s
+//
