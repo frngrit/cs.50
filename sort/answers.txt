@@ -2,9 +2,9 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: It's fatest for the best case, and when n increases it increases linearly/
 
 sort3 uses: TODO
 
