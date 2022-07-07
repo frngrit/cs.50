@@ -9,3 +9,13 @@ How do you know?: It's fatest for the sorted data, and when n increases it incre
 sort3 uses: Merge
 
 How do you know?: Because it's faster than sort1, which is selection sort
+
+
+sort1
+random50,000    0m10.153s
+
+sort2
+random50,000    0m1.672s
+
+sort3
+random50,000    0m3.902s
