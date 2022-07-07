@@ -16,7 +16,15 @@ real    0m0.089s
 user    0m0.052s
 sys     0m0.019s
 
+real    0m5.674s
+user    0m4.997s
+sys     0m0.172s
+
 //sort3 reversed5000
 real    0m0.050s
 user    0m0.031s
 sys     0m0.016s
+
+real    0m3.744s
+user    0m2.694s
+sys     0m0.177s
