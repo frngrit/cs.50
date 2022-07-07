@@ -1,18 +1,18 @@
-sort1 uses: TODO
+sort1 uses: Selection sort
 
-How do you know?: TODO
+How do you know?: Because it's slower than sort3, which is merge sort
 
 sort2 uses: Bubble sort
 
 How do you know?: It's fatest for the sorted data, and when n increases it increases linearly/
 
-sort3 uses: TODO
+sort3 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: Because it's faster than sort1, which is selection sort
 
 
-//sort1 reversed5000
-real    0m0.089s
+//sort1
+real    0m0.089s //reversed5000
 user    0m0.052s
 sys     0m0.019s
 
@@ -24,8 +24,8 @@ real    0m8.214s //random50000
 user    0m6.860s
 sys     0m0.190s
 
-//sort3 reversed5000
-real    0m0.050s
+//sort3
+real    0m0.050s //reversed5000
 user    0m0.031s
 sys     0m0.016s
 
