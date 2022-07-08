@@ -207,6 +207,10 @@ void lock_pairs(void)
     {
         loser[counter] = pairs[i].loser;
         counter++;
+    }
+
+    for (int i = 0; i < pair_count; i++)
+    {
         //check if loser is in winner array
         for (int j = 0; j < counter; j++)
         {
@@ -216,6 +220,8 @@ void lock_pairs(void)
             }
         }
     }
+
+    if (
     // TODO
     return;
 }
