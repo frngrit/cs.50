@@ -190,8 +190,8 @@ void sort_pairs(void)
                 max_index = i;
             }
         }
-        first = pairs[0];
-        pairs[0] = pairs[max_index];
+        first = pairs[j];
+        pairs[j] = pairs[max_index];
         pairs[max_index] = first;
     }
     // TODO

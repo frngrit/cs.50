@@ -2,17 +2,26 @@
 
 int main(void)
 {
-    int candidate_count = 4;
-    int round = (candidate_count - 1) * candidate_count / 2;
-    //printf("%i\n", round);
-    int count = 1;
-    for (int i = 0; i < candidate_count; i++)
+    int array[] = {1,2,3,4,5,6};
+
+    int max, max_index;
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = i + 1; j < candidate_count; j++)
+        max = 0;
+        for (int j = i; j <= 6 - i; j++)
         {
-            printf("count: %i\n%i and %i\n", count, i, j);
-            count++;
+            if (array[j] > max)
+            {
+                max = array[j];
+                max_index = j;
+            }
         }
+        array[max_index] = array[i];
+        array[i] = max;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%i\n",array[i]);
     }
 
 }
