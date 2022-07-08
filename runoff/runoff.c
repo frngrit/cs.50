@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -148,10 +149,12 @@ void tabulate(void)
     {
 
         int rank = 0; //start with first rank
+        int candidate;
+        bool eliminated;
         do
         {
-            int candidate = preferences[i][rank]; //get candidate that voter i vote for in rank
-            bool eliminated = candidates[candidate].eliminated; //get eliminated status
+            candidate = preferences[i][rank]; //get candidate that voter i vote for in rank
+            eliminated = candidates[candidate].eliminated; //get eliminated status
             rank += 1; //plus one rank if he gets eliminated it will check next rank in next loop
             if (rank > candidate_count)
             {
@@ -161,7 +164,7 @@ void tabulate(void)
         }
         while(eliminated);
 
-        candidates[candidate].vote += 1; //Upvote for candidate that doesn't get eliminated
+        candidates[candidate].votes += 1; //Upvote for candidate that doesn't get eliminated
     }
     return;
 }
@@ -173,7 +176,7 @@ bool print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         //check if candidate's vote more than 50%
-        if (candidates[i].vote * 2 >= candidate_count)
+        if (candidates[i].votes * 2 >= candidate_count)
         {
             printf("%s\n", candidates[i].name); //print candidate's name
             return true;
@@ -185,14 +188,14 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    int min = candidates[0].vote;
+    int min = candidates[0].votes;
     //loop for every candidate
     for (int i = 1; i < candidate_count; i++)
     {
         //check if candidate's vote is less than current minimum
-        if (candidates[i].vote < min)
+        if (candidates[i].votes < min)
         {
-            min = candidates[i].vote
+            min = candidates[i].votes;
         }
     }
     // return minimum vote
@@ -207,15 +210,15 @@ bool is_tie(int min)
     int same_vote = 1;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].vote == other_vote)
+        if (candidates[i].votes == other_vote)
         {
             same_vote += 1;
         }
 
         //check if candidate's vote is less than current minimum
-        if (candidates[i].vote != min)
+        if (candidates[i].votes != min)
         {
-            other_vote = candidates[i].vote;
+            other_vote = candidates[i].votes;
         }
         else
         {
@@ -236,7 +239,7 @@ void eliminate(int min)
     for (int i = 0; i < candidate_count; i++)
     {
         //check if candidate's vote is less than current minimum
-        if (candidates[i].vote == min)
+        if (candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
         }
