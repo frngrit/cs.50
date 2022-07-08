@@ -133,11 +133,13 @@ bool vote(int voter, int rank, string name)
         if (strcmp(name, candidates[i].name) == 2)
         {
             //record
+            printf("Voted!\n");
             preferences[voter][rank] = i;
             return true;
         }
     }
     // TODO
+    printf("Wrong Vote\n");
     return false;
 }
 
