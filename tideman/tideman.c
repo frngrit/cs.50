@@ -135,7 +135,7 @@ void add_pairs(void)
     int n_pair = candidate_count * (candidate_count - 1) / 2
     for (int i = 0; i < n_pair; i++)
     {
-        
+        preferences[i]
     }
     // TODO
     return;
