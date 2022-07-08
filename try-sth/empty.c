@@ -2,13 +2,11 @@
 
 int main(void)
 {
-    int pref[3];
-
-    int j;
-    for (int i = 0; i < 6; i++)
+    int candidate_count = 4;
+    int pref[candidate_count];
+    int round = (candidate_count - 1) / 2 * candidate_count;
+    for (int i = 0; i < round; i++)
     {
-        j = i % 3;
-        pref[j] += 1;
-        printf("at %i: %i\n", i, pref[j]);
+        printf("at %i\n", i);
     }
 }
