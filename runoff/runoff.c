@@ -182,7 +182,7 @@ bool print_winner(void)
         //check if candidate's vote more than 50%
         if (votes > candidate_count)
         {
-            printf("%s", candidates[i].name); //print candidate's name
+            printf("%s\n", candidates[i].name); //print candidate's name
             return true;
         }
     }
