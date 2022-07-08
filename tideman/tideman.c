@@ -203,12 +203,16 @@ void lock_pairs(void)
 {
     int locked[candidate_count][candidate_count];
 
-    int winners[], losers[];
+    int winners[], count = 0;
+    int duplic = 0;
+
     int winner, loser;
     for (int i = 0; i < pair_count; i++)
     {
         winner = pairs[i].winner;
         loser = pairs[i].loser;
+
+        for (int j = 0; j 
 
         locked[winner][loser] = 1;
     }
