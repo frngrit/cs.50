@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int array[] = {1,2,3,5,4,8};
+    int array[] = {1,2,8,4,6,5};
 
     int max, max_index;
     for (int i = 0; i < 5; i++)
@@ -19,7 +19,7 @@ int main(void)
         array[max_index] = array[i];
         array[i] = max;
     }
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
         printf("%i\n",array[i]);
     }
