@@ -221,7 +221,7 @@ bool is_tie(int min)
             {
                 return false;
             }
-            other_vote = candidates[i].votes
+            other_vote = candidates[i].votes;
         }
 
     }
