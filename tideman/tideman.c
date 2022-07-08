@@ -133,10 +133,10 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     //loop over left-corner half of matrix
-    int  = candidate_count * (candidate_count - 1) / 2;
+    int n_pair = candidate_count * (candidate_count - 1) / 2;
     //inital matrix index
     int i = 0, j = 0;
-    for (int n = 0; n < n_pair; i++)
+    for (int n = 0; n < n_pair; n++)
     {
         if (i > candidate_count)
         {
