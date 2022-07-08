@@ -222,7 +222,8 @@ void lock_pairs(void)
                     {
                         if(locked[j][k])
                         {
-                            
+                            row += j
+                            col += k
                         }
                     }
                 }
