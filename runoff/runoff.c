@@ -143,21 +143,26 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    for (int i = 0; i < candidate_count; i++)
+    //check every ballot
+    for (int i = 0; i < voter_count; i++)
     {
-        int rank = 0;
-        if (!candidates[i].eliminated)
+
+        int rank = 0; //start with first rank
+        do
         {
-            for (int j = 0; j < voter_count; j++)
+            int candidate = preferences[i][rank]; //get candidate that voter i vote for in rank
+            bool eliminated = candidates[candidate].eliminated; //get eliminated status
+            rank += 1; //plus one rank if he gets eliminated it will check next rank in next loop
+            if (rank > candidate_count)
             {
-                if (preferences[voter][rank] == i)
-                {
-                    candidates[i].vote += 1;
-                }
+                printf("tabulate error\n");
+                return;
             }
         }
+        while(eliminated);
+
+        candidates[candidate].vote += 1; //Upvote for candidate that doesn't get eliminated
     }
-    // TODO
     return;
 }
 
