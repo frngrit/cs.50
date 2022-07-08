@@ -211,7 +211,7 @@ void lock_pairs(void)
         winner = pairs[i].winner;
         loser = pairs[i].loser;
 
-        row
+        row[winner] = 1;
 
         locked[winner][loser] = true;
     }
