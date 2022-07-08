@@ -100,12 +100,14 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
+
     for (int i = 0; i < candidate_count; i++)
     {
         //check if name is valid
         if (strcmp(candidates[i], name) == 0)
         {
             ranks[rank] = i;
+            printf("Vote done\n");
             return true;
         }
     }
@@ -115,6 +117,7 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
+
     // TODO
     int winner, loser;
     for (int i = 0; i < candidate_count; i++)
@@ -126,6 +129,7 @@ void record_preferences(int ranks[])
             preferences[winner][loser] += 1;
         }
     }
+    printf("Record done!\n");
     return;
 }
 
