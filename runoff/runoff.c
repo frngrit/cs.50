@@ -145,9 +145,16 @@ void tabulate(void)
 {
     for (int i = 0; i < voter_count; i++)
     {
+        int rank = 0;
         for (int j = 0; i < candidate_count; j++)
         {
-            
+            if (strcmp(preferences[i][rank], candidates[i].name))
+            {
+                if (candidates[i].eliminated)
+                {
+                    rank += 1;
+                }
+            }
         }
     }
     // TODO
