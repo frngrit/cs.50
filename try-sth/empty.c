@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int array[] = {1,2,3,4,5,6};
+    int array[] = {1,2,3,5,4,8};
 
     int max, max_index;
     for (int i = 0; i < 5; i++)
