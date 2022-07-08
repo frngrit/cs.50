@@ -208,12 +208,11 @@ void lock_pairs(void)
     int winner, loser;
     for (int i = 0; i < pair_count; i++)
     {
-        winner = pairs[i].winner;
-        loser = pairs[i].loser;
-
-        row[winner] = true;
-
-        locked[winner][loser] = true;
+        //check matrix's rows
+        for (int j = 0; i < candidate_count; j++)
+        {
+            
+        }
     }
     return;
 }
