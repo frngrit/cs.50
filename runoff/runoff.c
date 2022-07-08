@@ -162,7 +162,7 @@ void tabulate(void)
                 return;
             }
         }
-        while(eliminated);
+        while (eliminated);
 
         candidates[candidate].votes += 1; //Upvote for candidate that doesn't get eliminated
     }
