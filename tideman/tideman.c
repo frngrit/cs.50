@@ -168,7 +168,8 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int max = 0, loser, winner, votes;
-    int first, max_index;
+    pair first;
+    int max_index;
     for (int j = 0; j < pair_count - 1; j++)
     {
         for (int i = j; i < pair_count; i++)
@@ -202,7 +203,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 
-    int row, col;
+    int row = 0, col = 0;
     int duplic = 0;
 
     int winner, loser;
@@ -213,7 +214,7 @@ void lock_pairs(void)
         //check matrix's rows
         for (int j = 0; j < candidate_count; j++)
         {
-            if (winnner != j)
+            if (winner != j)
             {
                 //check matrix's cols
                 for (int k = 0; k < candidate_count; k++)
