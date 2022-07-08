@@ -5,8 +5,14 @@ int main(void)
     int candidate_count = 4;
     int round = (candidate_count - 1) * candidate_count / 2;
     printf("%i\n", round);
-    for (int i = 0; i < round; i++)
+    int count = 0;
+    for (int i = 0; i < 3; i++)
     {
-        printf("at %i\n", i);
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%i and %i\n", i,j);
+            count++;
+        }
     }
+
 }
