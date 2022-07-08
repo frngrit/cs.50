@@ -222,12 +222,17 @@ void lock_pairs(void)
                     {
                         if(locked[j][k])
                         {
-                            row += j
-                            col += k
+                            row += j;
+                            col += k;
                         }
                     }
                 }
             }
+        }
+
+        if (!(row + winner == candidate_count || col + loser == candidate_count))
+        {
+            locked[winner][loser] = true;
         }
     }
     return;
