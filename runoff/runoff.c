@@ -178,7 +178,7 @@ bool print_winner(void)
     {
         votes = candidates[i].votes * 2;
         //check if candidate's vote more than 50%
-        if (votes > candidate_count)
+        if (votes >= candidate_count)
         {
             printf("%s\n", candidates[i].name); //print candidate's name
             return true;
