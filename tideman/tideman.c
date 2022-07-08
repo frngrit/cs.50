@@ -107,7 +107,6 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(candidates[i], name) == 0)
         {
             ranks[rank] = i;
-            printf("Vote done\n");
             return true;
         }
     }
@@ -122,14 +121,13 @@ void record_preferences(int ranks[])
     int winner, loser;
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = i + 1; i < candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
             winner = ranks[i];
             loser = ranks[j];
             preferences[winner][loser] += 1;
         }
     }
-    printf("Record done!\n");
     return;
 }
 
@@ -253,9 +251,10 @@ void print_winner(void)
             if (locked[i][j])
             {
                 printf("%s\n",candidates[i]);
+                return;
             }
         }
     }
     // TODO
-    return;
+
 }
