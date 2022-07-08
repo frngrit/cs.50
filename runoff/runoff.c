@@ -176,13 +176,13 @@ bool print_winner(void)
     //loop for every candidate
     for (int i = 0; i < candidate_count; i++)
     {
-        
+
         votes = candidates[i].votes * 2;
         //printf("voted: %i\nall: %i\n", votes, candidate_count);
         //check if candidate's vote more than 50%
         if (votes > candidate_count)
         {
-            printf("%s\n", candidates[i].name); //print candidate's name
+            printf("%s", candidates[i].name); //print candidate's name
             return true;
         }
     }
