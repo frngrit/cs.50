@@ -14,8 +14,7 @@ typedef struct
     string name;
     int votes;
     bool eliminated;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX_CANDIDATES];
@@ -131,8 +130,8 @@ bool vote(int voter, int rank, string name)
     {
         if (strcmp(name, candidates[i].name))
         {
-            //record
-            preferences[voter][rank] = name;
+            // record
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -143,17 +142,18 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         int rank = 0;
-        for (int j = 0; i < candidate_count; j++)
+        if (candidates[i].eliminated)
         {
-            if (strcmp(preferences[i][rank], candidates[i].name))
+            rank += 1;
+        }
+        for (int j = 0; j < voter_count; j++)
+        {
+            if (preferences[j][rank] == i)
             {
-                if (candidates[i].eliminated)
-                {
-                    rank += 1;
-                }
+                candidates[i].vote += 1;
             }
         }
     }
