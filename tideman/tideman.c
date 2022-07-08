@@ -124,7 +124,7 @@ void record_preferences(int ranks[])
     {
         for (int j = i + 1; i < candidate_count; j++)
         {
-            winner = ranks[i]; //winner's on above one rank
+            winner = ranks[i];
             loser = ranks[j];
             preferences[winner][loser] += 1;
         }
