@@ -195,7 +195,10 @@ int find_min(void)
         //check if candidate's vote is less than current minimum
         if (candidates[i].votes < min)
         {
-            min = candidates[i].votes;
+            if (!candidates[i].eliminated)
+            {
+                min = candidates[i].votes;
+            }
         }
     }
     // return minimum vote
