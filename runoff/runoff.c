@@ -220,7 +220,7 @@ bool is_tie(int min)
         }
         else
         {
-            min_vote 
+            same_vote += 1;
         }
     }
     // TODO
