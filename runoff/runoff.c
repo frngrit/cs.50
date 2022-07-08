@@ -219,15 +219,13 @@ bool is_tie(int min)
         {
             if (candidates[i].votes != other_vote)
             {
-                tie = true;
+                return false;
             }
-            else
+            other_vote = candidates[i].votes
         }
 
     }
-
-    // TODO
-    return false;
+    return true;
 }
 
 // Eliminate the candidate (or candidates) in last place
