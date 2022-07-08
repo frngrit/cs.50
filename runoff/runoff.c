@@ -130,16 +130,14 @@ bool vote(int voter, int rank, string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name, candidates[i].name))
+        if (strcmp(name, candidates[i].name) == 0)
         {
             //record
-            printf("Input: %s\nOutput: %s\n", name, candidates[i].name);
             preferences[voter][rank] = i;
             return true;
         }
     }
     // TODO
-    printf("Wrong Vote\n");
     return false;
 }
 
@@ -178,7 +176,7 @@ bool print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         //check if candidate's vote more than 50%
-        if (candidates[i].votes * 2 >= candidate_count)
+        if (candidates[i].votes * 2 > candidate_count)
         {
             printf("%s\n", candidates[i].name); //print candidate's name
             return true;
