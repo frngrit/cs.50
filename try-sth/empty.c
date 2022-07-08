@@ -8,7 +8,7 @@ int main(void)
     for (int i = 0; i < 5; i++)
     {
         max = 0;
-        for (int j = i; j <= 6 - i; j++)
+        for (int j = i; j < 6; j++)
         {
             if (array[j] > max)
             {

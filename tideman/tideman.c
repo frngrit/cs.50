@@ -171,7 +171,7 @@ void sort_pairs(void)
     int first, max_index;
     for (int j = 0; j < pair_count - 1; j++)
     {
-        for (int i = j; i < pair_count - j; i++)
+        for (int i = j; i < pair_count; i++)
         {
             //selection sort
             //find maximum
