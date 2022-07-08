@@ -150,7 +150,33 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for (int i = 0; i < pair_count; 
+    int min = voter_count + 1, loser, winner, votes;
+    int first, min_index;
+    for (int j = 0; j < pair_count - 1; j++)
+    {
+        for (int i = j; i < pair_count; i++)
+        {
+            //selection sort
+            //find minimum
+
+            //get loser and winner pair to check at pref
+            loser = pairs[i].loser;
+            winner = pairs[i].winner;
+
+            //check at pref and get number of votes
+            votes = preferences[winner][loser];
+
+            //check if votes is minimum
+            if (votes < min)
+            {
+                min = votes;
+                min_index = i;
+            }
+        }
+        first = pairs[0];
+        pairs[0] = pairs[min_index];
+        pairs[min_index] = first;
+    }
     // TODO
     return;
 }
