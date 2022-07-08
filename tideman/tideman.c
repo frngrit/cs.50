@@ -117,7 +117,7 @@ void record_preferences(int ranks[])
 {
     // TODO
     int winner, loser;
-    int round = (candidate_count - 1) / (int) 2 * candidate_count
+    int round = (candidate_count - 1) * candidate_count / 2;
     for (int i = 0; i < candidate_count - 1; i++)
     {
         winner = ranks[i]; //winner's on above one rank
