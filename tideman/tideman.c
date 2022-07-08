@@ -167,7 +167,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int min = voter_count + 1, loser, winner, votes;
+    int min = 10, loser, winner, votes;
     int first, min_index;
     for (int j = 0; j < pair_count - 1; j++)
     {
