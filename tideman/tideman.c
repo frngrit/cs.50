@@ -105,7 +105,7 @@ bool vote(int rank, string name, int ranks[])
         //check if name is valid
         if (strcmp(candidates[i], name) == 0)
         {
-            ranks[rank] = i
+            ranks[rank] = i;
             return true;
         }
     }
@@ -123,7 +123,7 @@ void record_preferences(int ranks[])
         {
             winner = ranks[i]; //winner's on above one rank
             loser = ranks[j];
-            preferences[winner][loser] += 1
+            preferences[winner][loser] += 1;
         }
     }
     return;
@@ -133,7 +133,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     //loop over left-corner half of matrix
-    int n_pair = candidate_count * (candidate_count - 1) / 2
+    int  = candidate_count * (candidate_count - 1) / 2;
     //inital matrix index
     int i = 0, j = 0;
     for (int n = 0; n < n_pair; i++)
@@ -247,7 +247,7 @@ void print_winner(void)
         {
             if (locked[i][j])
             {
-                printf("");
+                printf("%s\n",candidates[i]);
             }
         }
     }
