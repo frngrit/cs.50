@@ -117,16 +117,14 @@ void record_preferences(int ranks[])
 {
     // TODO
     int winner, loser;
-    int round = (candidate_count - 1) * candidate_count / 2;
-    for (int i = 0; i < candidate_count - 1; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; i < candidate_count -2; j++)
+        for (int j = i + 1; i < candidate_count; j++)
         {
+            winner = ranks[i]; //winner's on above one rank
+            loser = ranks[j];
+            preferences[winner][loser] += 1
         }
-        winner = ranks[i]; //winner's on above one rank
-        loser = ranks[i + 1];
-
-        preferences[winner][loser] += 1
     }
     return;
 }
