@@ -202,7 +202,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 
-    int row[candidate_count], col[candidate_count];
+    bool row[candidate_count], col[candidate_count];
     int duplic = 0;
 
     int winner, loser;
@@ -211,7 +211,7 @@ void lock_pairs(void)
         winner = pairs[i].winner;
         loser = pairs[i].loser;
 
-        row[winner] = 1;
+        row[winner] = true;
 
         locked[winner][loser] = true;
     }
