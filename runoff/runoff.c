@@ -133,7 +133,7 @@ bool vote(int voter, int rank, string name)
         if (strcmp(name, candidates[i].name) == 2)
         {
             //record
-            printf("Voted!\n");
+            printf("Input: %s\nOutput: %s\n", name, candidates[i].name);
             preferences[voter][rank] = i;
             return true;
         }
