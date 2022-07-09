@@ -208,11 +208,10 @@ void lock_pairs(void)
         row += winner;
         col += loser;
 
-
+        printf("row: %i\ncol: %i\nHLC: %i\n",winner,loser,HLC);
         if (row != HLC || col != HLC)
         {
             locked[winner][loser] = true;
-
         }
         else
         {
