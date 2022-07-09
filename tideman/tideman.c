@@ -208,6 +208,8 @@ void lock_pairs(void)
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
 
+        //check if other row and col that's not in the same winner and loser (i, j)
+        //already taken or not
         //control for row
         for (int j = 0; j < candidate_count; j++)
         {
