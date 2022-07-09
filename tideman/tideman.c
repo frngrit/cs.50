@@ -180,7 +180,7 @@ void sort_pairs(void)
             votes = preferences[winner][loser] - preferences[loser][winner];
 
             //check if votes is maximum
-            if (votes >= max)
+            if (votes > max)
             {
                 max = votes;
                 max_index = i;
