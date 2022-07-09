@@ -207,7 +207,7 @@ void lock_pairs(void)
         row += winner;
         col += loser;
 
-        if (row != candidate_count && col == candidate_count)
+        if (row != candidate_count && col != candidate_count)
         {
             locked[winner][loser] = true;
         }
