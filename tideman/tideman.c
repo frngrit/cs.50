@@ -134,25 +134,8 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    //loop pref matrix
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for(int j = 0; j < candidate_count; j++)
-        {
-            if (preferences[i][j] > preferences[j][i])
-            {
-                pairs[pair_count].winner = i;
-                pairs[pair_count].loser = j;
-                pair_count++;
-            }
-            else if (preferences[j][i] > preferences[i][j])
-            {
-                pairs[pair_count].winner = j;
-                pairs[pair_count].loser = i;
-                pair_count++;
-            }
-        }
-    }
+    //loop for left triangle of pref matrix
+    int left_corner = 
     return;
 }
 
