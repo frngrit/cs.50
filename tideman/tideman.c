@@ -135,7 +135,13 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     //loop for left triangle of pref matrix
-    int left_corner = 
+    int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
+
+    //loop over HLC
+    for (int i = 0; i < left_corner; i++)
+    {
+        
+    }
     return;
 }
 
