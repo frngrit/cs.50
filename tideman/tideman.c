@@ -134,7 +134,35 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    
+    //loop over left-corner half of matrix
+    int n_pair = candidate_count * (candidate_count - 1) / 2;
+    //inital matrix index
+    int i = 0, j = 0;
+    for (int n = 0; n < n_pair; n++)
+    {
+        if (i > candidate_count)
+        {
+            j++;
+            i--;
+        }
+        if (preferences[i][j] > preferences[j][i])
+        {
+            pairs[n].winner = i;
+            pairs[n].loser = j;
+        }
+        else if (preferences[i][j] < preferences[j][i])
+        {
+            pairs[n].winner = j;
+            pairs[n].loser = i;
+        }
+        pair_count++;
+        i++;
+        if (j > candidate_count)
+        {
+            printf("Error! at adding pairs\n");
+        }
+    }
+    // TODO
     return;
 }
 
