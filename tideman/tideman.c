@@ -212,6 +212,7 @@ void lock_pairs(void)
         if (row != HLC || col != HLC)
         {
             locked[winner][loser] = true;
+
         }
         else
         {
