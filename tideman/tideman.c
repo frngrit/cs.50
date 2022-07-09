@@ -202,16 +202,18 @@ void lock_pairs(void)
     int row = 0, col = 0;
     int duplic = 0;
 
+    //loop over all pairs
     for (int i = 0; i < pair_count; i++)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
-        //check matrix's rows
+
+        //control for row
         for (int j = 0; j < candidate_count; j++)
         {
             if (winner != j)
             {
-                //check matrix's cols
+                //each col in r
                 for (int k = 0; k < candidate_count; k++)
                 {
                     if (loser != k)
