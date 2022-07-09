@@ -198,42 +198,23 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 
-    //row and col should not be filled full
+    //loop all pairs
     int row = 0, col = 0;
-    int duplic = 0;
-
-    //loop over all pairs
     for (int i = 0; i < pair_count; i++)
     {
-        int winner = pairs[i].winner;
-        int loser = pairs[i].loser;
+        row += pairs[i].winner;
+        col += pairs[i].loser;
 
-        //check if other row and col that's not in the same winner and loser (i, j)
-        //already taken or not
-        //control for row
-        for (int j = 0; j < candidate_count; j++)
+        if (row != candidate_count && col == candidate_count)
         {
-            if (winner != j)
-            {
-                //each col in r
-                for (int k = 0; k < candidate_count; k++)
-                {
-                    if (loser != k)
-                    {
-                        if(locked[j][k])
-                        {
-                            row += j;
-                            col += k;
-                        }
-                    }
-                }
-            }
+            locked[row][col] = true;
+        }
+        else
+        {
+            row -= pairs[i].winner;
+            col -= pairs[i].loser;
         }
 
-        if (!(row + winner == candidate_count && col + loser == candidate_count))
-        {
-            locked[winner][loser] = true;
-        }
     }
     return;
 }
