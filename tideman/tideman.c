@@ -238,8 +238,18 @@ void print_winner(void)
         {
             if (locked[i][j])
             {
-                printf("%s\n",candidates[i]);
-                return;
+                bool flag = false;
+                for (int k = 0; k < candidate_count; k++)
+                {
+                    if (locked[k][i])
+                    {
+                        flag = true;
+                    }
+                }
+                if(flag)
+                {
+                    printf("%s\n", candidates[i]);
+                }
             }
         }
     }
