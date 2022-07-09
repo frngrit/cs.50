@@ -197,6 +197,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    int HLC = candidate_count * (candidate_count - 1) / 2; //HLC = half left corners
 
     //loop all pairs
     int row = 0, col = 0;
@@ -207,7 +208,8 @@ void lock_pairs(void)
         row += winner;
         col += loser;
 
-        if (row != candidate_count || col != candidate_count)
+
+        if (row != HLC || col != HLC)
         {
             locked[winner][loser] = true;
         }
@@ -226,6 +228,7 @@ void lock_pairs(void)
         }
         printf("\n");
     }
+
     return;
 }
 
