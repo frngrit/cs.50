@@ -198,14 +198,14 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 
+    //row and col should not be filled full
     int row = 0, col = 0;
     int duplic = 0;
 
-    int winner, loser;
     for (int i = 0; i < pair_count; i++)
     {
-        winner = pairs[i].winner;
-        loser = pairs[i].loser;
+        int winner = pairs[i].winner;
+        int loser = pairs[i].loser;
         //check matrix's rows
         for (int j = 0; j < candidate_count; j++)
         {
@@ -226,7 +226,7 @@ void lock_pairs(void)
             }
         }
 
-        if (!(row + winner == candidate_count || col + loser == candidate_count))
+        if (!(row + winner == candidate_count && col + loser == candidate_count))
         {
             locked[winner][loser] = true;
         }
