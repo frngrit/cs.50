@@ -177,7 +177,7 @@ void sort_pairs(void)
             winner = pairs[i].winner;
 
             //check at pref and get number of votes
-            votes = preferences[winner][loser];
+            votes = preferences[winner][loser] - preferences[loser][winner];
 
             //check if votes is maximum
             if (votes > max)
