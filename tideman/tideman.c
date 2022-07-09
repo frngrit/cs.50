@@ -155,6 +155,13 @@ void add_pairs(void)
             pairs[n].winner = j;
             pairs[n].loser = i;
         }
+        else
+        {
+            pairs[n].winner = i;
+            pairs[n].loser = j;
+            pairs[n].winner = i;
+            pairs[n].winner = j;
+        }
         pair_count++;
         i++;
         if (j > candidate_count)
