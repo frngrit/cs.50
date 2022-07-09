@@ -135,12 +135,26 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     //loop for left triangle of pref matrix
-    int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
+    //int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
 
     //loop over HLC
-    for (int i = 0; i < left_corner; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        
+        for (int j = i + 1; (candidate_count - 1 - i) > j; j++)
+        {
+            if (preferences[i][j] > preferences[j][i])
+            {
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
+                pair_count++;
+            }
+            else if (preferences[i][j] < preferences[j][i])
+            {
+                pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
+                pair_count++;
+            }
+        }
     }
     return;
 }
