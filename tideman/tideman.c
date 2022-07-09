@@ -140,7 +140,7 @@ void add_pairs(void)
     //loop over HLC
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = i + 1; (candidate_count - 1 - i) > j; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
             if (preferences[i][j] > preferences[j][i])
             {
