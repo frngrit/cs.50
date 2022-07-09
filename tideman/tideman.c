@@ -246,7 +246,7 @@ void print_winner(void)
                         flag = true;
                     }
                 }
-                if(flag)
+                if(!flag)
                 {
                     printf("%s\n", candidates[i]);
                 }
