@@ -101,11 +101,13 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
 
+    //loop over all candidate
     for (int i = 0; i < candidate_count; i++)
     {
         //check if name is valid
         if (strcmp(candidates[i], name) == 0)
         {
+            //if name is valid put the candidate's index in ranks array by rank
             ranks[rank] = i;
             return true;
         }
@@ -271,7 +273,7 @@ void print_winner(void)
                         flag = true;
                     }
                 }
-                if(!flag)
+                if (!flag)
                 {
                     printf("%s\n", candidates[i]);
                     return;
@@ -291,7 +293,7 @@ bool circle(int winner, int loser)
     {
         if (locked[loser][i])
         {
-            if(circle(winner, i))
+            if (circle(winner, i))
             {
                 return true;
             }
