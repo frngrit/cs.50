@@ -283,7 +283,7 @@ bool circle(int winner, int loser)
     {
         if (locked[loser][i])
         {
-            circle(i, winner);
+            circle(winner, i);
         }
     }
     return false;
