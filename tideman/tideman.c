@@ -33,7 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-
+bool circle(int winner, int loser);
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -233,37 +233,14 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int HLC = candidate_count * (candidate_count - 1) / 2; //HLC = half left corners
-
-    //loop all pairs
-    int row = 0, col = 0;
     for (int i = 0; i < pair_count; i++)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
-
-        row += winner;
-        col += loser;
-
-        printf("[%i,%i]\n",winner,loser);
-        if (row < HLC && col < HLC)
+        if (!circle(winner, loser))
         {
             locked[winner][loser] = true;
         }
-        else
-        {
-            row -= winner;
-            col -= loser;
-        }
-
-    }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            printf("%i ", (int) locked[i][j]);
-        }
-        printf("\n");
     }
 
     return;
@@ -294,4 +271,20 @@ void print_winner(void)
             }
         }
     }
+}
+
+bool circle(int winner, int loser)
+{
+    if (loser == winner)
+    {
+        return true;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i])
+        {
+            circle(i, winner);
+        }
+    }
+    return false;
 }
