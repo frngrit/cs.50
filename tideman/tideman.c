@@ -135,27 +135,54 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     //loop for left triangle of pref matrix
-    //int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
+    int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
 
     //loop over HLC
-    for (int i = 0; i < candidate_count; i++)
+    int i = 0, j = 1, k = 1;
+    for (int n = 0; n < left_corner; n++)
     {
-        for (int j = i + 1; j < candidate_count; j++)
+
+        if (j == candidate_count)
         {
-            if (preferences[i][j] > preferences[j][i])
-            {
-                pairs[pair_count].winner = i;
-                pairs[pair_count].loser = j;
-                pair_count++;
-            }
-            else if (preferences[i][j] < preferences[j][i])
-            {
-                pairs[pair_count].winner = j;
-                pairs[pair_count].loser = i;
-                pair_count++;
-            }
+            i = 0;
+            j = k + 1;
+            k++;
         }
+        //printf("[%i,%i]\n", i ,j);
+        if (preferences[i][j] > preferences[j][i])
+        {
+
+            pairs[pair_count].winner = i;
+            pairs[pair_count].loser = j;
+            pair_count++;
+        }
+        else if (preferences[i][j] < preferences[j][i])
+        {
+            pairs[pair_count].loser = i;
+            pairs[pair_count].winner = j;
+            pair_count++;
+        }
+        i++;
+        j++;
     }
+    // for (int i = 0; i < candidate_count; i++)
+    // {
+    //     for (int j = i + 1; j < candidate_count; j++)
+    //     {
+    //         if (preferences[i][j] > preferences[j][i])
+    //         {
+    //             pairs[pair_count].winner = i;
+    //             pairs[pair_count].loser = j;
+    //             pair_count++;
+    //         }
+    //         else if (preferences[i][j] < preferences[j][i])
+    //         {
+    //             pairs[pair_count].winner = j;
+    //             pairs[pair_count].loser = i;
+    //             pair_count++;
+    //         }
+    //     }
+    // }
     return;
 }
 
@@ -165,8 +192,10 @@ void sort_pairs(void)
     int max = 0, loser, winner, votes;
     pair first;
     int max_index;
+
     for (int j = 0; j < pair_count - 1; j++)
     {
+        bool found = false;
         for (int i = j; i < pair_count; i++)
         {
             //selection sort
@@ -176,19 +205,26 @@ void sort_pairs(void)
             loser = pairs[i].loser;
             winner = pairs[i].winner;
 
+
             //check at pref and get number of votes
             votes = preferences[winner][loser] - preferences[loser][winner];
+
+            //printf("[%i,%i] margin:%i\n", winner, loser, votes);
 
             //check if votes is maximum
             if (votes > max)
             {
                 max = votes;
                 max_index = i;
+                found = true;
             }
         }
-        first = pairs[j];
-        pairs[j] = pairs[max_index];
-        pairs[max_index] = first;
+        if (found)
+        {
+            first = pairs[j];
+            pairs[j] = pairs[max_index];
+            pairs[max_index] = first;
+        }
     }
     // TODO
     return;
@@ -205,18 +241,19 @@ void lock_pairs(void)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
+
         row += winner;
         col += loser;
 
-        printf("row: %i\ncol: %i\nHLC: %i\n",winner,loser,HLC);
-        if (row != HLC || col != HLC)
+        printf("[%i,%i]\n",winner,loser);
+        if (row < HLC && col < HLC)
         {
             locked[winner][loser] = true;
         }
         else
         {
-            row -= pairs[i].winner;
-            col -= pairs[i].loser;
+            row -= winner;
+            col -= loser;
         }
 
     }
@@ -252,10 +289,9 @@ void print_winner(void)
                 if(!flag)
                 {
                     printf("%s\n", candidates[i]);
+                    return;
                 }
             }
         }
     }
-    // TODO
-
 }
