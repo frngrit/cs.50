@@ -121,10 +121,15 @@ void record_preferences(int ranks[])
 
     // TODO
     int winner, loser;
+    //loop over ranks array
     for (int i = 0; i < candidate_count; i++)
     {
+        //check with the following index i
+        //ex. at index 0 check with 1, 2, 3, ..., N
         for (int j = i + 1; j < candidate_count; j++)
         {
+            //the one with more rank (i) is the winner
+            //the lower is a loser
             winner = ranks[i];
             loser = ranks[j];
             preferences[winner][loser] += 1;
@@ -140,6 +145,7 @@ void add_pairs(void)
     int left_corner = candidate_count * (candidate_count - 1) / 2; //calculate number of member in half left corner (HLC)
 
     //loop over HLC
+    //inital index start from prefernces[0][1]
     int i = 0, j = 1, k = 1;
     for (int n = 0; n < left_corner; n++)
     {
@@ -150,7 +156,6 @@ void add_pairs(void)
             j = k + 1;
             k++;
         }
-        //printf("[%i,%i]\n", i ,j);
         if (preferences[i][j] > preferences[j][i])
         {
 
