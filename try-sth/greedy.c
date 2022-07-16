@@ -40,8 +40,6 @@ int string_to_int(string input)
 
 void greedy_recur(int remain)
 {
-    int current = remain - 1;
-    remain = remain - current;
     if (remain <= 0)
     {
         return;
