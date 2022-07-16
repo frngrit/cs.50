@@ -41,11 +41,12 @@ int string_to_int(string input)
 void greedy_recur(int remain)
 {
     remain = remain - 1;
-    greedy_recur(remain);
     if (remain <= 0)
     {
         return;
     }
+
+    greedy_recur(remain);
     printf("%i ", remain);
     return;
 }
