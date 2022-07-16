@@ -4,7 +4,7 @@
 #include <math.h>
 
 int string_to_int(string input);
-int greedy_recur(int remain, int current);
+void greedy_recur(int remain);
 
 int main(int argc, string argv[])
 {
@@ -16,6 +16,7 @@ int main(int argc, string argv[])
 
     string input = argv[1];
     int numb = string_to_int(input);
+    greedy_recur(numb);
 
 
 }
@@ -37,7 +38,14 @@ int string_to_int(string input)
     return output;
 }
 
-int greedy_recur(int remain, int current)
+void greedy_recur(int remain)
 {
-    greedy_recur(int remain - 
+    int current = remain - 1;
+    greedy_recur(remain - current);
+    if (remain <= 0)
+    {
+        return;
+    }
+    printf("%i ", current);
+    return;
 }
