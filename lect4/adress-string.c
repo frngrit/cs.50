@@ -9,7 +9,7 @@ int main(void)
     //printf("%c\n", *s);
 
     char c = '0';
-    for (int i = 0; c != '\n'; i++)
+    for (int i = 0; c != '\0'; i++)
     {
         c = *(s + i);
         printf("%c\n", c);
