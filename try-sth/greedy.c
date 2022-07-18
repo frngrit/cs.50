@@ -45,7 +45,5 @@ void greedy_recur(int remain)
         return;
     }
 
-    greedy_recur(remain);
-    printf("%i ", remain);
-    return;
+     
 }
