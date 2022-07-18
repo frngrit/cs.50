@@ -4,8 +4,10 @@ int main(void)
 {
     int n = 50;
     int *p = &n;
+    int **pp = &p;
 
     printf("%p\n",p);
     printf("%i\n",n);
     printf("%i\n",*p);
+    printf("%p\n",pp);
 }
