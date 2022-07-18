@@ -6,7 +6,7 @@ int main(void)
     string s = "Hi!";
     string *p = &s;
 
-    printf("%s\n", s);
+    printf("%p\n", s);
 
 
     for (int i = 0; s[i] != '\0'; i++)
