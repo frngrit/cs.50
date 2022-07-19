@@ -2,5 +2,7 @@
 
 int main(void)
 {
-    char 
+    int numbers[] = {4,6,8,2,7,5,0};
+
+    printf("%i\n", *number);
 }
