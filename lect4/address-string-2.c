@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <cs50.h>
 
 int main(void)
 {
-    string s = "Hi!";
-    printf("%c\n", s[0]);
-    printf("%c\n", s[1]);
-    printf("%c\n", s[2]);
-    printf("%c\n", s[3]);
+    char *s = "Hi!";
+    int i = 0;
+    while (*(s+i) != '\0')
+    {
+        printf("%c\n", *(s+i));
+        i++;
+    }
 }
