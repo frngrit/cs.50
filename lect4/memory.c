@@ -9,10 +9,10 @@ int main(void)
     x[0] = 72;
     x[1] = 73;
     x[2] = 33;
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     printf("%i\n", x[i]);
-    // }
+    for (int i = 0; i < 3; i++)
+    {
+        printf("%i\n", x[i]);
+    }
 
     free(x);
 }
