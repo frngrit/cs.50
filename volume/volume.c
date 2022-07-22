@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     FILE *output = fopen(argv[2], "w");
     if (output == NULL)
     {
-        printf("Could not write file.\n");
+        printf("Could not open file.\n");
         return 1;
     }
 
@@ -57,5 +57,11 @@ void copy_header(FILE *input, FILE *output)
 
 void multiplier(FILE *input, FILE *output, float factor)
 {
-    
+    //initial buffer to store a sample
+    int16_t buffer;
+    //read sample from input file
+    fread(buffer, sizeof(int16_t), 1, input);
+    //write a modified sample into output file
+    fwrite(buffer * 2, sizeof(int16_t), 1, input);
+
 }
