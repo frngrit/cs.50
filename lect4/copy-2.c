@@ -25,5 +25,4 @@ int main(void)
     printf("s: %s @%p\n", s, s);
     printf("t: %s @%p\n", t, t);
 
-    printf("%c\n", t[strlen(s)]);
 }
