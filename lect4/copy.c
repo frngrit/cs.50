@@ -14,6 +14,11 @@ int main(void)
 
     char *t = malloc(strlen(s) + 1);
 
+    if (t == NULL) //if memory is not left
+    {
+        return 1;
+    }
+
     for (int i = 0, n = strlen(s) + 1; i < n; i++)
     {
         // t[i] = s[i];
