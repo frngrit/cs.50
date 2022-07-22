@@ -2,12 +2,8 @@
 
 int main(void)
 {
-    int x;
-    printf("x: ");
-    do
-    {
-        scanf("%i", &x);
-    }
-    while (
-    printf("x: %i\n", x);
+    char *s;
+    printf("s: ");
+    scanf("%s", s);
+    printf("s: %s\n", s);
 }
