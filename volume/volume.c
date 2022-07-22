@@ -57,16 +57,12 @@ void copy_header(FILE *input, FILE *output)
 
 void multiplier(FILE *input, FILE *output, float factor)
 {
-    int check;
-    do
+    //initial buffer to store a sample
+    int16_t buffer;
+    while (fread(&buffer, sizeof(int16_t), 1, input)) //read sample from input file
     {
-        //initial buffer to store a sample
-        int16_t buffer;
-        //read sample from input file
-        fread(&buffer, sizeof(int16_t), 1, input);
         buffer *= factor;
         //write a modified sample into output file
-        check = fwrite(&buffer, sizeof(int16_t), 1, input);
+        fwrite(&buffer, sizeof(int16_t), 1, input);
     }
-    while (check != 0);
 }
