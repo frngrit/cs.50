@@ -8,14 +8,16 @@ int main(void)
     string s = get_string("s: ");
     printf("\n");
 
-    char t[strlen(s)];
+    char t[strlen(s) + 1];
 
-    // t[strlen(s)] = '\0';
+
 
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         t[i] = s[i];
     }
+
+    t[strlen(s)] = '\0';
 
     if (strlen(t) > 0)
     {
