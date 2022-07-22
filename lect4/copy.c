@@ -12,7 +12,7 @@ int main(void)
 
     // char *t = s; //it's like you assign pointer to be address of address that stored in s
 
-    char *t = malloc(strlen(s) + 1);
+    char *t = malloc(strlen(s) + 1); // + 1 because reserving for NULL character at the end of the s string
 
     if (t == NULL) //if memory is not left
     {
@@ -26,7 +26,10 @@ int main(void)
     }
     //or use this ------> strcpy(t, s);
 
-    t[0] = toupper(t[0]);
+    if (strlen(t) > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
 
     printf("s: %s @%p\n", s, s);
     printf("t: %s @%p\n", t, t);
