@@ -50,9 +50,9 @@ void copy_header(FILE *input, FILE *output)
     //initial array of header
     uint8_t header[HEADER_SIZE];
     //read and put header in header array
-    fread(header, sizeof(uint8_t), HEADER_SIZE, input);
+    fread(header, HEADER_SIZE, 1, input);
     //wirte header in output file
-    fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
+    fwrite(header, HEADER_SIZE, 1, output);
 }
 
 void multiplier(FILE *input, FILE *output, float factor)
