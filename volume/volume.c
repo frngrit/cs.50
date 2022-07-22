@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     {
         buffer *= factor;
         //write a modified sample into output file
-        fwrite(&buffer, sizeof(int16_t), 1, input);
+        fwrite(&buffer, sizeof(int16_t), 1, output);
     }
     // Close files
     fclose(input);
