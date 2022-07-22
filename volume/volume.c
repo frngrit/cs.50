@@ -49,5 +49,5 @@ copy_header(FILE *input, FILE *output)
 {
     uint8_t header[HEADER_SIZE];
     fred(header, sizeof(uint8_t), input)
-    
+    fwrtie(output, 
 }
