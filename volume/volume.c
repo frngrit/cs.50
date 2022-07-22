@@ -8,7 +8,7 @@
 const int HEADER_SIZE = 44;
 
 void copy_header(FILE *input, FILE *output);
-
+void multiplier(FILE *input, FILE *output, float factor);
 
 int main(int argc, char *argv[])
 {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     FILE *output = fopen(argv[2], "w");
     if (output == NULL)
     {
-        printf("Could not open file.\n");
+        printf("Could not write file.\n");
         return 1;
     }
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     copy_header(input, output);
     // TODO: Read samples from input file and write updated data to output file
-
+    multiplier(input, output, factor);
     // Close files
     fclose(input);
     fclose(output);
@@ -47,7 +47,15 @@ int main(int argc, char *argv[])
 
 void copy_header(FILE *input, FILE *output)
 {
+    //initial array of header
     uint8_t header[HEADER_SIZE];
-    size_t header_input = fread(header, sizeof(uint8_t), input)
-    fwrite(header_input, sizeof(uint8_t), output)
+    //read and put header in header array
+    fread(header, sizeof(uint8_t), HEADER_SIZE, input);
+    //wirte header in output file
+    fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
+}
+
+void multiplier(FILE *input, FILE *output, float factor)
+{
+    
 }
