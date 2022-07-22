@@ -7,6 +7,9 @@
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
+copy_header(FILE *input, FILE *output);
+
+
 int main(int argc, char *argv[])
 {
     // Check command-line arguments
@@ -34,10 +37,15 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
-
+    copy_header(input, output);
     // TODO: Read samples from input file and write updated data to output file
 
     // Close files
     fclose(input);
     fclose(output);
+}
+
+copy_header(FILE *input, FILE *output)
+{
+    
 }
