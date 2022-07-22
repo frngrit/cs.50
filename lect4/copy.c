@@ -14,6 +14,12 @@ int main(void)
 
     char *t = malloc(strlen(s) + 1); // + 1 because reserving for NULL character at the end of the s string
 
+    if (t[0] == '\0')
+    {
+        printf("hit\n");
+    } //when OS just allocated memory for us, there's NULL character in those memnories.
+
+
     if (t == NULL) //if memory is not left
     {
         return 1;
@@ -24,7 +30,7 @@ int main(void)
         // t[i] = s[i];
         t[i] = *(s+i);
     }
-    //or use this ------> strcpy(t, s);
+    //or use this ------> strcpy(t, s); instead of for loop
 
     if (strlen(t) > 0)
     {
