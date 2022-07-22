@@ -47,5 +47,6 @@ int main(int argc, char *argv[])
 
 copy_header(FILE *input, FILE *output)
 {
+    uint8_t header[HEADER_SIZE];
     
 }
