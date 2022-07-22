@@ -11,6 +11,7 @@ int main(void)
 
     t[0] = toupper(t[0]);
 
-    printf("s: %s\n", s);
-    printf("t: %s\n", t);
+    printf("s: %s @%p\n", s, s);
+    printf("t: %s @%p\n", t, t);
+
 }
