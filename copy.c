@@ -7,7 +7,7 @@
 int main(void)
 {
     char *s = get_string("s: ");
-    char *t = s;
+    char *t = s; //it's like you assign pointer to be address of address that stored in s
 
     t[0] = toupper(t[0]);
 
