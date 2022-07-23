@@ -53,12 +53,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //control width (column)
         {
-
-            int top = i == 0? 0: i - 1;
+            int numb = 0;
+            if (top != 0)
+            {
+                int top = 0;
+            }
+            else
+            {
+                int top = i - 1;
+                numb += 1;
+            }
             int buttom = i == (height - 1)? height - 1: i + 1;
             int left = j == 0? 0: j - 1;
             int right = j == (width - 1)? width - 1: j + 1;
-            int average = 
+            int average =
             copy[i][j] = image[i][j]; //make a copy byte
         }
     }
