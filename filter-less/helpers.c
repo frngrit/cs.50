@@ -98,10 +98,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //bottom-right avereage
     average_red += copy[height - 1][width - 1].rgbtRed + copy[height - 1][width - 2].rgbtRed \
     + copy[height - 2][width - 1].rgbtRed + copy[height - 2][width - 2].rgbtRed;
-    average_red += copy[height - 1][width - 1].rgbtRed + copy[height - 1][width - 2].rgbtRed \
-    + copy[height - 2][width - 1].rgbtRed + copy[height - 2][width - 2].rgbtRed;
-
-    image[height - 1][width - 1] = average / 4;
+    average_green += copy[height - 1][width - 1].rgbtGreen + copy[height - 1][width - 2].rgbtGreen \
+    + copy[height - 2][width - 1].rgbtGreen + copy[height - 2][width - 2].rgbtGreen;
+    average_blue += copy[height - 1][width - 1].rgbtBlue + copy[height - 1][width - 2].rgbtBlue \
+    + copy[height - 2][width - 1].rgbtBlue + copy[height - 2][width - 2].rgbtBlue;
+    image[height - 1][width - 1].rgbtRed = average_red / 4;
+    image[height - 1][width - 1].rgbtGreen = average_green / 4;
+    image[height - 1][width - 1].rgbtBlue = average_blue / 4;
 
     for (int i = 1; i < height - 1; i++) //control height (row)
     {
