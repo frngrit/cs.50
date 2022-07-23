@@ -53,7 +53,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 1; j < width - 1; j++) //control width (column)
         {
-            int average = (copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1]\
+            int average = 0, numbs = 9;
+            if (i == 0)
+            {
+                numbs -= 3;
+            }
+            else
+            {
+                if 
+            }
+            if (i == (height - 1))
+            {
+                numbs -= 3;
+            }
+            (copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1]\
                             + copy[i][j - 1] + copy[i][j] + copy[i][j + 1]\
                             + copy[i - 1][j - 1] + copy[i - 1][j] + copy[i - 1][j + 1]\
         }
