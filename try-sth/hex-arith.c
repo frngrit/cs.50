@@ -7,5 +7,5 @@ int main(void)
 
     int answer = x + y;
 
-    printf("%i\n", answer);
+    printf("%x\n", answer);
 }
