@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    int x = 0xF;
-    int y = 0xF;
+    int x = 0xa;
+    int y = 0xb;
 
     int answer = x + y;
 
