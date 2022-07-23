@@ -49,11 +49,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    for (int i = 0; i < height; i++) //control height (row)
+    //top-left avereage
+    int average = 0;
+    average += copy[0][0] + copy[0][1] + copy[1][0] + copy[1][1];
+    image[0][0] = average;
+    average = 0;
+
+    //top-right avereage
+    int average = 0;
+    average += copy[0][width - 1] + copy[0][width - 2] + copy[1][width - 1] + copy[1][width - 2];
+    image[0][0] = average;
+    average = 0;
+
+    for (int i = 1; i < height - 1; i++) //control height (row)
     {
-        for (int j = 0; j < width; j++) //control width (column)
+        for (int j = 1; j < width - 1; j++) //control width (column)
         {
-            average(i, j, width, height);
+            int average = 0;
+            average += copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1];
+            average += copy[i][j - 1] + copy[i][j] + copy[i][j + 1];
+            average += copy[i - 1][j - 1] + copy[i - 1][j] + copy[i - 1][j + 1];
+            image[i][j] = average;
         }
     }
     return;
