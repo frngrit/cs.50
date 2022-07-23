@@ -110,11 +110,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 1; j < width - 1; j++) //control width (column)
         {
-            int average = 0;
-            average += copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1];
-            average += copy[i][j - 1] + copy[i][j] + copy[i][j + 1];
-            average += copy[i - 1][j - 1] + copy[i - 1][j] + copy[i - 1][j + 1];
-            image[i][j] = average;
+            int average_red = 0, average_green = 0, average_blue = 0;
+
+            average_red += copy[i + 1][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i + 1][j + 1].rgbtRed \
+            + copy[i][j - 1].rgbtRed + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed \
+            + copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed;//Red
+            average_green += copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i + 1][j + 1].rgbtGreen \
+            + copy[i][j - 1].rgbtGreen + copy[i][j].rgbtGreen + copy[i][j + 1].rgbtGreen \
+            + copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen ;//Green
+            average_blue += copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i + 1][j + 1].rgbtBlue
+            + copy[i][j - 1].rgbtBlue + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue \
+            + copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue ;//Bule
+
+            image[i][j].rgbtRed = average_red / 9;
+            image[i][j].rgbtGreen = average_green / 9;
+            image[i][j].rgbtBlue = average_blue / 9;
         }
     }
 
