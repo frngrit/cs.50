@@ -60,7 +60,7 @@ void copy_header(FILE *input, FILE *output)
 void modifier(FILE *input, FILE *output, float factor)
 {
     int16_t buffer;
-    while(fread(&buffer, sizeof(int16_t), 1, input) != 0)
+    while (fread(&buffer, sizeof(int16_t), 1, input) != 0)
     {
         buffer *= factor;
         fwrite(&buffer, sizeof(int16_t), 1, output);
