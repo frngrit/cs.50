@@ -68,23 +68,39 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     //top-left avereage
-    int average = 0;
-    average += copy[0][0] + copy[0][1] + copy[1][0] + copy[1][1];
-    image[0][0] = average / 4;
-    average = 0;
+    int average_red = 0, average_green = 0, average_blue = 0;
+    average_red += copy[0][0].rgbtRed + copy[0][1].rgbtRed + copy[1][0].rgbtRed + copy[1][1].rgbtRed;
+    average_green += copy[0][0].rgbtGreen + copy[0][1].rgbtGreen + copy[1][0].rgbtGreen + copy[1][1].rgbtGreen;
+    average_blue += copy[0][0].rgbtBlue + copy[0][1].rgbtBlue + copy[1][0].rgbtBlue + copy[1][1].rgbtBlue;
+    image[0][0].rgbtRed = average_red / 4;
+    image[0][0].rgbtGreen = average_green / 4;
+    image[0][0].rgbtBlue = average_blue / 4;
+    average_red = 0, average_green = 0, average_blue = 0;
 
     //top-right avereage
-    average += copy[0][width - 1] + copy[0][width - 2] + copy[1][width - 1] + copy[1][width - 2];
-    image[0][width - 1] = average / 4;
-    average = 0;
+    average_red += copy[0][width - 1].rgbtRed + copy[0][width - 2].rgbtRed + copy[1][width - 1].rgbtRed + copy[1][width - 2].rgbtRed;
+    average_green += copy[0][width - 1].rgbtGreen + copy[0][width - 2].rgbtGreen + copy[1][width - 1].rgbtGreen + copy[1][width - 2].rgbtGreen;
+    average_blue += copy[0][width - 1].rgbtBlue + copy[0][width - 2].rgbtBlue + copy[1][width - 1].rgbtBlue + copy[1][width - 2].rgbtRed;
+    image[0][width - 1].rgbtRed = average_red / 4;
+    image[0][width - 1].rgbtGreen = average_green / 4;
+    image[0][width - 1].rgbtBlue = average_blue / 4;
+    average_red = 0, average_green = 0, average_blue = 0;
 
     //bottom-left avereage
-    average += copy[height - 1][0] + copy[height - 2][0] + copy[height - 1][1] + copy[height - 2][1];
-    image[height - 1][0] = average / 4;
-    average = 0;
+    average_red += copy[height - 1][0].rgbtRed + copy[height - 2][0].rgbtRed + copy[height - 1][1].rgbtRed + copy[height - 2][1].rgbtRed;
+    average_green += copy[height - 1][0].rgbtGreen + copy[height - 2][0].rgbtGreen + copy[height - 1][1].rgbtGreen + copy[height - 2][1].rgbtGreen;
+    average_blue += copy[height - 1][0].rgbtBlue + copy[height - 2][0].rgbtBlue + copy[height - 1][1].rgbtBlue + copy[height - 2][1].rgbtBlue;
+    image[height - 1][0].rgbtRed = average_red / 4;
+    image[height - 1][0].rgbtGreen = average_green / 4;
+    image[height - 1][0].rgbtBlue = average_blue / 4;
+    average_red = 0, average_green = 0, average_blue = 0;
 
     //bottom-right avereage
-    average += copy[height - 1][width - 1] + copy[height - 1][width - 2] + copy[height - 2][width - 1] + copy[height - 2][width - 2];
+    average_red += copy[height - 1][width - 1].rgbtRed + copy[height - 1][width - 2].rgbtRed \
+    + copy[height - 2][width - 1].rgbtRed + copy[height - 2][width - 2].rgbtRed;
+    average_red += copy[height - 1][width - 1].rgbtRed + copy[height - 1][width - 2].rgbtRed \
+    + copy[height - 2][width - 1].rgbtRed + copy[height - 2][width - 2].rgbtRed;
+
     image[height - 1][width - 1] = average / 4;
 
     for (int i = 1; i < height - 1; i++) //control height (row)
