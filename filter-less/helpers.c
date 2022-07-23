@@ -48,5 +48,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j]; //make a copy byte
         }
     }
+
+    for (int i = 0; i < height; i++) //control height (row)
+    {
+        for (int j = 0; j < width; j++) //control width (column)
+        {
+            
+            copy[i][j] = image[i][j]; //make a copy byte
+        }
+    }
+
     return;
 }
