@@ -4,6 +4,9 @@
         "typeinfo": "c",
         "random": "c",
         "limits": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "cstdlib": "c",
+        "memory": "c",
+        "new": "c"
     }
 }
