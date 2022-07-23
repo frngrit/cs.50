@@ -57,12 +57,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     //top-right avereage
     average += copy[0][width - 1] + copy[0][width - 2] + copy[1][width - 1] + copy[1][width - 2];
-    image[0][0] = average;
+    image[0][width - 1] = average;
     average = 0;
 
     //bottom-left avereage
     average += copy[height - 1][0] + copy[height - 2][0] + copy[height - 1][1] + copy[height - 2][1];
-    image[0][0] = average;
+    image[height - 1][0] = average;
     average = 0;
 
     //bottom-right avereage
