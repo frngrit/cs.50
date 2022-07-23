@@ -52,23 +52,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //top-left avereage
     int average = 0;
     average += copy[0][0] + copy[0][1] + copy[1][0] + copy[1][1];
-    image[0][0] = average;
+    image[0][0] = average / 4;
     average = 0;
 
     //top-right avereage
     average += copy[0][width - 1] + copy[0][width - 2] + copy[1][width - 1] + copy[1][width - 2];
-    image[0][width - 1] = average;
+    image[0][width - 1] = average / 4;
     average = 0;
 
     //bottom-left avereage
     average += copy[height - 1][0] + copy[height - 2][0] + copy[height - 1][1] + copy[height - 2][1];
-    image[height - 1][0] = average;
+    image[height - 1][0] = average / 4;
     average = 0;
 
     //bottom-right avereage
-    average += copy[height - 1][0] + copy[height - 2][0] + copy[height - 1][1] + copy[height - 2][1];
-    image[0][0] = average;
-    average = 0;
+    average += copy[height - 1][width - 1] + copy[height - 1][width - 2] + copy[height - 2][width - 1] + copy[height - 2][width - 2];
+    image[height - 1][width - 1] = average / 4;
 
     for (int i = 1; i < height - 1; i++) //control height (row)
     {
@@ -81,5 +80,28 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j] = average;
         }
     }
+
+    //first-row inner
+    for (int j = 1; j < width - 1; j++)
+    {
+        int average = copy[0][j] + copy[0][j - 1] + copy[0][j + 1] + copy[1][j - 1] + copy[1][j] + copy[1][j + 1];
+        image[0][j] = average / 6;
+    }
+
+    //last-row inner
+    for (int j = 1; j < width - 1; j++)
+    {
+        int average = copy[height - 1][j] + copy[height - 1][j - 1] + copy[height - 1][j + 1]\
+        + copy[height - 2][j - 1] + copy[height - 2][j] + copy[height - 2][j + 1];
+        image[height - 1][j] = average / 6;
+    }
+
+    //left-col inner
+    for (int i = 1; i < height - 1; i++)
+    {
+        int average = copy[i][0] + copy[i - 1][0] + copy[i - 1][1] + copy[i][1] + copy[i + 1][0] + copy[i + 1][1];
+        image[i][0] = average / 6;
+    }
+
     return;
 }
