@@ -103,5 +103,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image[i][0] = average / 6;
     }
 
+    //right-col inner
+    for (int i = 1; i < height - 1; i++)
+    {
+        int average = copy[i][width - 1] + copy[i - 1][width - 1] + copy[i - 1][width - 2] \
+         + copy[i][width - 2] + copy[i + 1][width - 1] + copy[i + 1][width - 2];
+        image[i][width - 1] = average / 6;
+    }
+
     return;
 }
