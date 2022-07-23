@@ -66,7 +66,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 else
                 {
-                    average += 
+                    average += (copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1] + copy[i][j - 1] + copy[i][j] + copy[i][j + 1]);
                 }
             }
             if (i == (height - 1))
