@@ -49,11 +49,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    for (int i = 0; i < height; i++) //control height (row)
+    for (int i = 1; i < height - 1; i++) //control height (row)
     {
-        for (int j = 0; j < width; j++) //control width (column)
+        for (int j = 1; j < width - 1; j++) //control width (column)
         {
-            
+            int average = (copy[i + 1][j - 1] + copy[i + 1][j] + copy[i + 1][j + 1]\
+                            + copy[i][j - 1] + copy[i][j] + copy[i][j + 1]\
+                            + copy[i - 1][j - 1] + copy[i - 1][j] + copy[i - 1][j + 1]\
         }
     }
 
