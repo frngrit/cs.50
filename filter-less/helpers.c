@@ -49,9 +49,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    for (int i = 1; i < height - 1; i++) //control height (row)
+    for (int i = 0; i < height; i++) //control height (row)
     {
-        for (int j = 1; j < width - 1; j++) //control width (column)
+        for (int j = 0; j < width; j++) //control width (column)
         {
             int average = 0, numbs = 9;
             if (i == 0)
@@ -60,7 +60,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                if 
+                if (j == 0)
+                {
+                    numbs -= 3;
+                }
+                else
+                {
+
+                }
             }
             if (i == (height - 1))
             {
