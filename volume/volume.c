@@ -6,6 +6,7 @@
 
 //function prototypes
 void copy_header(FILE *input, FILE *output);
+void modifier(FILE *input, FILE *output, float factor);
 
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
@@ -42,6 +43,8 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
 
+    modifier(input, output, factor);
+
     // Close files
     fclose(input);
     fclose(output);
@@ -52,4 +55,14 @@ void copy_header(FILE *input, FILE *output)
     uint8_t header[HEADER_SIZE];
     fread(header, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(header, sizeof(uint8_t), HEADER_SIZE, output);
+}
+
+void modifier(FILE *input, FILE *output, float factor)
+{
+    int16_t buffer;
+    while(fread(&buffer, sizeof(int16_t), 1, input) != 0)
+    {
+        buffer *= factor;
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
 }
