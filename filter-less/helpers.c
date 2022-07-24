@@ -67,96 +67,36 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    //top-left avereage
-    int average_red = 0, average_green = 0, average_blue = 0;
-    average_red += copy[0][0].rgbtRed + copy[0][1].rgbtRed + copy[1][0].rgbtRed + copy[1][1].rgbtRed;
-    average_green += copy[0][0].rgbtGreen + copy[0][1].rgbtGreen + copy[1][0].rgbtGreen + copy[1][1].rgbtGreen;
-    average_blue += copy[0][0].rgbtBlue + copy[0][1].rgbtBlue + copy[1][0].rgbtBlue + copy[1][1].rgbtBlue;
-    image[0][0].rgbtRed = average_red / 4;
-    image[0][0].rgbtGreen = average_green / 4;
-    image[0][0].rgbtBlue = average_blue / 4;
-    average_red = 0, average_green = 0, average_blue = 0;
-
-    //top-right avereage
-    average_red += copy[0][width - 1].rgbtRed + copy[0][width - 2].rgbtRed + copy[1][width - 1].rgbtRed + copy[1][width - 2].rgbtRed;
-    average_green += copy[0][width - 1].rgbtGreen + copy[0][width - 2].rgbtGreen + copy[1][width - 1].rgbtGreen + copy[1][width - 2].rgbtGreen;
-    average_blue += copy[0][width - 1].rgbtBlue + copy[0][width - 2].rgbtBlue + copy[1][width - 1].rgbtBlue + copy[1][width - 2].rgbtRed;
-    image[0][width - 1].rgbtRed = average_red / 4;
-    image[0][width - 1].rgbtGreen = average_green / 4;
-    image[0][width - 1].rgbtBlue = average_blue / 4;
-    average_red = 0, average_green = 0, average_blue = 0;
-
-    //bottom-left avereage
-    average_red += copy[height - 1][0].rgbtRed + copy[height - 2][0].rgbtRed + copy[height - 1][1].rgbtRed + copy[height - 2][1].rgbtRed;
-    average_green += copy[height - 1][0].rgbtGreen + copy[height - 2][0].rgbtGreen + copy[height - 1][1].rgbtGreen + copy[height - 2][1].rgbtGreen;
-    average_blue += copy[height - 1][0].rgbtBlue + copy[height - 2][0].rgbtBlue + copy[height - 1][1].rgbtBlue + copy[height - 2][1].rgbtBlue;
-    image[height - 1][0].rgbtRed = average_red / 4;
-    image[height - 1][0].rgbtGreen = average_green / 4;
-    image[height - 1][0].rgbtBlue = average_blue / 4;
-    average_red = 0, average_green = 0, average_blue = 0;
-
-    //bottom-right avereage
-    average_red += copy[height - 1][width - 1].rgbtRed + copy[height - 1][width - 2].rgbtRed \
-    + copy[height - 2][width - 1].rgbtRed + copy[height - 2][width - 2].rgbtRed;
-    average_green += copy[height - 1][width - 1].rgbtGreen + copy[height - 1][width - 2].rgbtGreen \
-    + copy[height - 2][width - 1].rgbtGreen + copy[height - 2][width - 2].rgbtGreen;
-    average_blue += copy[height - 1][width - 1].rgbtBlue + copy[height - 1][width - 2].rgbtBlue \
-    + copy[height - 2][width - 1].rgbtBlue + copy[height - 2][width - 2].rgbtBlue;
-    image[height - 1][width - 1].rgbtRed = average_red / 4;
-    image[height - 1][width - 1].rgbtGreen = average_green / 4;
-    image[height - 1][width - 1].rgbtBlue = average_blue / 4;
-
-    for (int i = 1; i < height - 1; i++) //control height (row)
+    //inner-square (has 9 around them) the star
+    // -----
+    // -***-
+    // -***-
+    // -***-
+    // -----
+    for (int i = 1; i < height - 1; i++)
     {
-        for (int j = 1; j < width - 1; j++) //control width (column)
+        for (int j = 1; j < width - 1; j++)
         {
             int average_red = 0, average_green = 0, average_blue = 0;
+            for (int m = 1; m > -2; m--)
+            {
+                //row of around
+                for (int n = 1; n > -2; n--)
+                {
+                    //col of around
+                    average_red += copy[i + m][j + n].rgbtRed;
+                    average_green += copy[i + m][j + n].rgbtGreen;
+                    average_blue += copy[i + m][j + n].rgbtBlue;
 
-            average_red += copy[i + 1][j - 1].rgbtRed + copy[i + 1][j].rgbtRed + copy[i + 1][j + 1].rgbtRed \
-            + copy[i][j - 1].rgbtRed + copy[i][j].rgbtRed + copy[i][j + 1].rgbtRed \
-            + copy[i - 1][j - 1].rgbtRed + copy[i - 1][j].rgbtRed + copy[i - 1][j + 1].rgbtRed;//Red
-            average_green += copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i + 1][j + 1].rgbtGreen \
-            + copy[i][j - 1].rgbtGreen + copy[i][j].rgbtGreen + copy[i][j + 1].rgbtGreen \
-            + copy[i - 1][j - 1].rgbtGreen + copy[i - 1][j].rgbtGreen + copy[i - 1][j + 1].rgbtGreen ;//Green
-            average_blue += copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i + 1][j + 1].rgbtBlue
-            + copy[i][j - 1].rgbtBlue + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue \
-            + copy[i - 1][j - 1].rgbtBlue + copy[i - 1][j].rgbtBlue + copy[i - 1][j + 1].rgbtBlue ;//Bule
-
+                }
+            }
             image[i][j].rgbtRed = average_red / 9;
             image[i][j].rgbtGreen = average_green / 9;
             image[i][j].rgbtBlue = average_blue / 9;
         }
     }
 
-    //first-row inner
-    for (int j = 1; j < width - 1; j++)
-    {
-        int average = copy[0][j] + copy[0][j - 1] + copy[0][j + 1] + copy[1][j - 1] + copy[1][j] + copy[1][j + 1];
-        image[0][j] = average / 6;
-    }
-
-    //last-row inner
-    for (int j = 1; j < width - 1; j++)
-    {
-        int average = copy[height - 1][j] + copy[height - 1][j - 1] + copy[height - 1][j + 1]\
-        + copy[height - 2][j - 1] + copy[height - 2][j] + copy[height - 2][j + 1];
-        image[height - 1][j] = average / 6;
-    }
-
-    //left-col inner
-    for (int i = 1; i < height - 1; i++)
-    {
-        int average = copy[i][0] + copy[i - 1][0] + copy[i - 1][1] + copy[i][1] + copy[i + 1][0] + copy[i + 1][1];
-        image[i][0] = average / 6;
-    }
-
-    //right-col inner
-    for (int i = 1; i < height - 1; i++)
-    {
-        int average = copy[i][width - 1] + copy[i - 1][width - 1] + copy[i - 1][width - 2] \
-         + copy[i][width - 2] + copy[i + 1][width - 1] + copy[i + 1][width - 2];
-        image[i][width - 1] = average / 6;
-    }
+    
 
     return;
 }
