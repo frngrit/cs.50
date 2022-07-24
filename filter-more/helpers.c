@@ -249,8 +249,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     int gx[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
-    int gx[2][3] = {{-1, -2, 1}, {1, 2, 1}};
+    int gy[2][3] = {{-1, -2, 1}, {1, 2, 1}};
 
-    
+
     return;
 }
