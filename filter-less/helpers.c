@@ -96,7 +96,44 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    //
+    //left-top corner (0, 0)
+    int average_red = 0, average_green = 0, average_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        //pattern for row 0 -> 1
+
+        for (int j = 0; j < 2; j++)
+        {
+            //pattern for col 0 -> 1
+            average_red += copy[i][j].rgbtRed;
+            average_green += copy[i][j].rgbtGreen;
+            average_blue += copy[i][j].rgbtBlue;
+        }
+    }
+    image[0][0].rgbtRed = average_red / 9;
+    image[0][0].rgbtGreen = average_green / 9;
+    image[0][0].rgbtBlue = average_blue / 9;
+
+    //right-top corner (0 , width - 1)
+    average_red = 0, average_green = 0, average_blue = 0;
+    for (int i = 0; i > -2; i--)
+    {
+        //pattern for row 0 -> -1
+        for (int j = -1; i < 1; j++)
+        {
+            //pattern for col -1 -> 0
+            average_red += copy[i][j].rgbtRed;
+            average_green += copy[i][j].rgbtGreen;
+            average_blue += copy[i][j].rgbtBlue;
+        }
+    }
+    image[0][width - 1].rgbtRed = average_red / 9;
+    image[0][width - 1].rgbtGreen = average_green / 9;
+    image[0][width - 1].rgbtBlue = average_blue / 9;
+
+    //left-bottom corner (height - 1, 0)
+    average_red = 0, average_green = 0, average_blue = 0;
+
 
     return;
 }
