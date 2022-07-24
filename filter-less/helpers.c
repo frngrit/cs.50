@@ -213,8 +213,31 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // *---
     // ----
     //start from (1, 0) to (height - 1, 0)
+    for (int m = 1; m > -2; m--)
+    {
+        //pattern for row -1 -> 1
+        for (int i = -1; i < 2; i++)
+        {
+            //pattern for col 0 -> 1
+            for (int j = 0; j < 2; j++)
+            {
+                average_red += copy[m + i][j].rgbtRed;
+                average_green += copy[m + i][j].rgbtGreen;
+                average_blue += copy[m + i][j].rgbtBlue;
+            }
+        }
+    }
 
-    //pattern for row -1 -> 0
+    //right-col
+    // ----
+    // ---*
+    // ---*
+    // ----
+    //start from (1, width - 1) to (height - 1, width - 1)
+    for (int m = 1; m > -2; m--)
+    {
+        
+    }
 
     return;
 }
