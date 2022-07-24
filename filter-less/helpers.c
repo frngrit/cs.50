@@ -131,7 +131,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     // left-bottom corner (height - 1, 0)
     average_red = 0, average_green = 0, average_blue = 0;
-    for (int i = -1; i < 1; j++)
+    for (int i = -1; i < 1; i++)
     {
         // pattern for row -1 -> 0
         for (int j = 0; j < 2; j++)
@@ -212,8 +212,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // *---
     // *---
     // ----
-    //start from (1, 0) to (height - 1, 0)
-    for (int m = 1; m > -2; m--)
+    //start from (1, 0) to (height - 2, 0)
+    for (int m = 1; m > height - 1; m--)
     {
         average_red = 0, average_green = 0, average_blue = 0;
         //pattern for row -1 -> 1
@@ -234,8 +234,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // ---*
     // ---*
     // ----
-    //start from (1, width - 1) to (height - 1, width - 1)
-    for (int m = 1; m > -2; m--)
+    //start from (1, width - 1) to (height - 2, width - 1)
+    for (int m = 1; m > height - 1; m--)
     {
         average_red = 0, average_green = 0, average_blue = 0;
         //pattern for row -1 -> 1
