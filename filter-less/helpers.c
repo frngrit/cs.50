@@ -206,6 +206,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    
+    //left-col
+    // ----
+    // *---
+    // *---
+    // ----
+    //start from (1, 0) to (height - 1, 0)
+    //pattern for row -1 -> 0
+
     return;
 }
