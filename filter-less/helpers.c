@@ -66,7 +66,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // inner-square (has 9 around them) the star
+    // inner-square (has 9 around them) or the star
     //  -----
     //  -***-
     //  -***-
@@ -137,12 +137,38 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < 2; j++)
         {
             // pattern for row 0 -> 1
-            average_red += copy[i][j].rgbtRed;
-            average_green += copy[i][j].rgbtGreen;
-            average_blue += copy[i][j].rgbtBlue;
+            average_red += copy[height - 1 + i][j].rgbtRed;
+            average_green += copy[height - 1 + i][j].rgbtGreen;
+            average_blue += copy[height - 1 + i][j].rgbtBlue;
         }
-
     }
+    image[height - 1][0].rgbtRed = average_red / 9;
+    image[height - 1][0].rgbtGreen = average_green / 9;
+    image[height - 1][0].rgbtBlue = average_blue / 9;
+
+    // left-bottom corner (height - 1, width - 1)
+    average_red = 0, average_green = 0, average_blue = 0;
+    //pattern for row -1 -> 0
+    for (int i = -1; i < 1; i++)
+    {
+        //pattern for col -1 -> 0
+        for (int j = -1; j < 1; j++)
+        {
+            average_red += copy[height - 1 + i][width - 1 + j].rgbtRed;
+            average_green += copy[height - 1 + i][width - 1 + j].rgbtGreen;
+            average_blue += copy[height - 1 + i][width - 1 + j].rgbtBlue;
+        }
+    }
+    image[height - 1][width - 1].rgbtRed = average_red / 9;
+    image[height - 1][width - 1].rgbtGreen = average_green / 9;
+    image[height - 1][width - 1].rgbtBlue = average_blue / 9;
+
+    //upper-row
+    // -**-
+    // ----
+    // ----
+    // ----
+    
 
     return;
 }
