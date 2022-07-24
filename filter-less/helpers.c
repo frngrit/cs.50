@@ -116,7 +116,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // right-top corner (0 , width - 1)
     average_red = 0, average_green = 0, average_blue = 0;
     // pattern for row 0 -> -1
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 2; i++)
     {
         // pattern for col -1 -> 0
         for (int j = -1; j < 1; j++)
