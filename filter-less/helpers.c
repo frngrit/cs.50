@@ -190,6 +190,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // ----
     // ----
     // -**-
-    
+    //pattern for row -1 -> 0
+    for (int i = -1, i < 1; i++)
+    {
+        //pattern for 
+        for (int j = -1;
+    }
     return;
 }
