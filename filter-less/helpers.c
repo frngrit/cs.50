@@ -8,10 +8,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) // control width (column)
         {
-            int average = ceil((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0); // find average of 3 color
-            image[i][j].rgbtBlue = average;                                                         // set it all the same
-            image[i][j].rgbtGreen = average;
-            image[i][j].rgbtRed = average;
+            flaot average = ceil((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0); // find average of 3 color
+            image[i][j].rgbtBlue = (int) average;                                                         // set it all the same
+            image[i][j].rgbtGreen = (int) average;
+            image[i][j].rgbtRed = (int) average;
         }
     }
     return;
