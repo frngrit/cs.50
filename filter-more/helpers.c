@@ -9,9 +9,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++) // control width (column)
         {
             float average = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0); // find average of 3 color
-            image[i][j].rgbtBlue = (int) average;                                                         // set it all the same
-            image[i][j].rgbtGreen = (int) average;
-            image[i][j].rgbtRed = (int) average;
+            image[i][j].rgbtBlue = (int)average;                                                               // set it all the same
+            image[i][j].rgbtGreen = (int)average;
+            image[i][j].rgbtRed = (int)average;
         }
     }
     return;
@@ -35,7 +35,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    //copy a picture to
+    // copy a picture to
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++) // control height (row)
     {
@@ -127,10 +127,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     // left-bottom corner (height - 1, width - 1)
     average_red = 0, average_green = 0, average_blue = 0;
-    //pattern for row -1 -> 0
+    // pattern for row -1 -> 0
     for (int i = -1; i < 1; i++)
     {
-        //pattern for col -1 -> 0
+        // pattern for col -1 -> 0
         for (int j = -1; j < 1; j++)
         {
             average_red += copy[height - 1 + i][width - 1 + j].rgbtRed;
@@ -142,19 +142,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     image[height - 1][width - 1].rgbtGreen = (int) round(average_green / 4.0);
     image[height - 1][width - 1].rgbtBlue = (int) round(average_blue / 4.0);
 
-    //upper-row
-    // -**-
-    // ----
-    // ----
-    // ----
-    //start from (0, 1) to (0, width -2)
+    // upper-row
+    //  -**-
+    //  ----
+    //  ----
+    //  ----
+    // start from (0, 1) to (0, width -2)
     for (int m = 1; m < width - 1; m++)
     {
         average_red = 0, average_green = 0, average_blue = 0;
-        //pattern for row 0 -> 1
+        // pattern for row 0 -> 1
         for (int i = 0; i < 2; i++)
         {
-            //pattern for col -1 -> 1
+            // pattern for col -1 -> 1
             for (int j = -1; j < 2; j++)
             {
                 average_red += copy[0 + i][m + j].rgbtRed;
@@ -167,19 +167,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image[0][m].rgbtBlue = (int) round(average_blue / 6.0);
     }
 
-    //lower-row
-    // ----
-    // ----
-    // ----
-    // -**-
-    //start from (height - 1, 1) to (height - 1, width -2)
+    // lower-row
+    //  ----
+    //  ----
+    //  ----
+    //  -**-
+    // start from (height - 1, 1) to (height - 1, width -2)
     for (int m = 1; m < width - 1; m++)
     {
         average_red = 0, average_green = 0, average_blue = 0;
-        //pattern for row -1 -> 0
+        // pattern for row -1 -> 0
         for (int i = -1; i < 1; i++)
         {
-            //pattern for col -1 -> 1
+            // pattern for col -1 -> 1
             for (int j = -1; j < 2; j++)
             {
                 average_red += copy[height - 1 + i][m + j].rgbtRed;
@@ -192,19 +192,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image[height - 1][m].rgbtBlue = (int) round(average_blue / 6.0);
     }
 
-    //left-col
-    // ----
-    // *---
-    // *---
-    // ----
-    //start from (1, 0) to (height - 2, 0)
+    // left-col
+    //  ----
+    //  *---
+    //  *---
+    //  ----
+    // start from (1, 0) to (height - 2, 0)
     for (int m = 1; m < height - 1; m++)
     {
         average_red = 0, average_green = 0, average_blue = 0;
-        //pattern for row -1 -> 1
+        // pattern for row -1 -> 1
         for (int i = -1; i < 2; i++)
         {
-            //pattern for col 0 -> 1
+            // pattern for col 0 -> 1
             for (int j = 0; j < 2; j++)
             {
                 average_red += copy[m + i][j].rgbtRed;
@@ -217,25 +217,24 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image[m][0].rgbtBlue = (int) round(average_blue / 6.0);
     }
 
-    //right-col
-    // ----
-    // ---*
-    // ---*
-    // ----
-    //start from (1, width - 1) to (height - 2, width - 1)
+    // right-col
+    //  ----
+    //  ---*
+    //  ---*
+    //  ----
+    // start from (1, width - 1) to (height - 2, width - 1)
     for (int m = 1; m < height - 1; m++)
     {
         average_red = 0, average_green = 0, average_blue = 0;
-        //pattern for row -1 -> 1
+        // pattern for row -1 -> 1
         for (int i = -1; i < 2; i++)
         {
-            //pattern for col -1 -> 0
+            // pattern for col -1 -> 0
             for (int j = -1; j < 1; j++)
             {
                 average_red += copy[m + i][width - 1 + j].rgbtRed;
                 average_green += copy[m + i][width - 1 + j].rgbtGreen;
                 average_blue += copy[m + i][width - 1 + j].rgbtBlue;
-
             }
         }
         image[m][width - 1].rgbtRed = (int) round(average_red / 6.0);
@@ -248,7 +247,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    //copy a picture to
+    // copy a picture to
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++) // control height (row)
     {
@@ -258,7 +257,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-
     const int GX[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
     const int GY[2][3] = {{-1, -2, -1}, {1, 2, 1}};
 
@@ -267,27 +265,27 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     // -**-
     // -**-
     // ----
-    //control for row
-    for (int i = 1; i < height -1; i++)
+    // control for row
+    for (int i = 1; i < height - 1; i++)
     {
-        //control for col
+        // control for col
         for (int j = 1; j < width - 1; j++)
         {
             double ans_red = 0, ans_green = 0, ans_blue = 0;
-            //loop for horizontal
-            // *-*-
-            // *0*-
-            // *-*-
-            // ----
-            // example for (1,1)
+            // loop for horizontal
+            //  *-*-
+            //  *0*-
+            //  *-*-
+            //  ----
+            //  example for (1,1)
             double sum_red = 0, sum_green = 0, sum_blue = 0;
             for (int row = 0; row < 3; row++)
             {
                 for (int col = 0; col < 2; col++)
                 {
-                    //pattern
-                    //row -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in row
-                    //col -1 -> 1 but for loop pattern is 0 1 thus col * 2 - 1
+                    // pattern
+                    // row -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in row
+                    // col -1 -> 1 but for loop pattern is 0 1 thus col * 2 - 1
                     sum_red += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtRed;
                     sum_green += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtGreen;
                     sum_blue += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtBlue;
@@ -297,20 +295,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             ans_green += sum_green * sum_green;
             ans_blue += sum_blue * sum_blue;
 
-            //loop for vertical
-            // ***-
-            // -0--
-            // ***-
-            // ----
-            // example for (1,1)
+            // loop for vertical
+            //  ***-
+            //  -0--
+            //  ***-
+            //  ----
+            //  example for (1,1)
             sum_red = 0, sum_green = 0, sum_blue = 0;
             for (int row = 0; row < 2; row++)
             {
                 for (int col = 0; col < 3; col++)
                 {
-                    //pattern
-                    //col -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in col
-                    //row -1 -> 1 but for loop pattern is 0 1 thus row * 2 - 1
+                    // pattern
+                    // col -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in col
+                    // row -1 -> 1 but for loop pattern is 0 1 thus row * 2 - 1
                     sum_red += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtRed;
                     sum_green += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtGreen;
                     sum_blue += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtBlue;
@@ -324,32 +322,59 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             ans_blue += sum_blue * sum_blue;
             printf("%f\n", ans_red);
 
-
             image[i][j].rgbtRed = (int) round(sqrt(ans_red));
-            image[i][j].rgbtRed = image[i][j].rgbtRed > 255? 255: image[i][j].rgbtRed;
+            image[i][j].rgbtRed = image[i][j].rgbtRed > 255 ? 255 : image[i][j].rgbtRed;
 
             image[i][j].rgbtGreen = (int) round(sqrt(ans_green));
-            image[i][j].rgbtGreen = image[i][j].rgbtGreen > 255? 255: image[i][j].rgbtGreen;
+            image[i][j].rgbtGreen = image[i][j].rgbtGreen > 255 ? 255 : image[i][j].rgbtGreen;
 
             image[i][j].rgbtBlue = (int) round(sqrt(ans_blue));
-            image[i][j].rgbtBlue = image[i][j].rgbtBlue > 255? 255: image[i][j].rgbtBlue;
+            image[i][j].rgbtBlue = image[i][j].rgbtBlue > 255 ? 255 : image[i][j].rgbtBlue;
         }
     }
 
-    //top-left corner
-    // 0*--
-    // -*--
-    // ----
-    // ----
-    // 4 adjuntion cell (1, 1)
+    // top-left corner
+    //  0*--
+    //  -*--
+    //  ----
+    //  ----
+    //  4 adjuntion cell (1, 1)
     double ans_red = 0, ans_green = 0, ans_blue = 0;
+
+    // Get Gx
     double sum_red = 0, sum_green = 0, sum_blue = 0;
-    //control for row
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GX[i + 1][2] * copy[i + (row - 1)][2].rgbtRed;
-        sum_green += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtGreen;
-        sum_blue += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtBlue;
+        sum_red += GX[i + 1][2] * copy[i][1].rgbtRed;
+        sum_green += GX[i + 1][2] * copy[i][1].rgbtGreen;
+        sum_blue += GX[i + 1][2] * copy[i][1].rgbtBlue;
     }
+    ans_red += sum_red * sum_red;
+    ans_green += sum_green * sum_green;
+    ans_blue += sum_blue * sum_blue;
+
+    // Get Gy
+    sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        sum_red += GX[2][i + 1] * copy[1][i].rgbtRed;
+        sum_green += GX[2][i + 1] * copy[1][i].rgbtGreen;
+        sum_blue += GX[2][i + 1] * copy[1][i].rgbtBlue;
+    }
+    ans_red += sum_red * sum_red;
+    ans_green += sum_green * sum_green;
+    ans_blue += sum_blue * sum_blue;
+
+    ans_red = (int)round(sqrt(ans_red));
+
+    image[0][0].rgbtRed = (int) round(sqrt(ans_red));
+    image[0][0].rgbtRed = image[i][j].rgbtRed > 255 ? 255 : image[i][j].rgbtRed;
+
+    image[0][0].rgbtGreen = (int) round(sqrt(ans_green));
+    image[0][0].rgbtGreen = image[i][j].rgbtGreen > 255 ? 255 : image[i][j].rgbtGreen;
+
+    image[0][0].rgbtBlue = (int) round(sqrt(ans_blue));
+    image[0][0].rgbtBlue = image[i][j].rgbtBlue > 255 ? 255 : image[i][j].rgbtBlue;
+
     return;
 }
