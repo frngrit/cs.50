@@ -337,5 +337,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
 
     //top-left corner
+    // 0*--
+    // -*--
+    // ----
+    // ----
+    // 4 adjuntion cell (1, 1)
+    //control for row
+    for (int i = 0; i < 2; i++)
+    {
+        
+    }
     return;
 }
