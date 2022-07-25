@@ -1,6 +1,6 @@
 #include "helpers.h"
 #include <math.h>
-
+#include <stdio.h>
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -248,8 +248,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    //copy a picture to
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++) // control height (row)
+    {
+        for (int j = 0; j < width; j++) // control width (column)
+        {
+            copy[i][j] = image[i][j]; // make a copy byte
+        }
+    }
+
+
     const int GX[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
-    const int GX[2][3] = {{-1, -2, 1}, {1, 2, 1}};
+    const int GY[2][3] = {{-1, -2, -1}, {1, 2, 1}};
 
     // do the inner square
     // ----
@@ -260,27 +271,68 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 1; i < height -1; i++)
     {
         //control for col
-        for (int j = 1; j < width; j++)
+        for (int j = 1; j < width - 1; j++)
         {
-            //loop for left side
+            double ans_red = 0, ans_green = 0, ans_blue = 0;
+            //loop for horizontal
             // *-*-
-            // *-*-
+            // *0*-
             // *-*-
             // ----
             // example for (1,1)
-            int row = -1, col = -1, gx = 0;
-            for (int n = 0; n < 6; n++)
+            double sum_red = 0, sum_green = 0, sum_blue = 0;
+            for (int row = 0; row < 3; row++)
             {
-                //looping mechanic
-                if(col == 1)
+                for (int col = 0; col < 2; col++)
                 {
-                    row += 1;
-                    col = -1;
+                    //pattern
+                    //row -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in row
+                    //col -1 -> 1 but for loop pattern is 0 1 thus col * 2 - 1
+                    sum_red += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtRed;
+                    sum_green += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtGreen;
+                    sum_blue += GX[row][col] * copy[i + (row - 1)][j + (2 * col - 1)].rgbtBlue;
                 }
-                col += 2;
-
-
             }
+            ans_red += sum_red * sum_red;
+            ans_green += sum_green * sum_green;
+            ans_blue += sum_blue * sum_blue;
+
+            //loop for vertical
+            // ***-
+            // -0--
+            // ***-
+            // ----
+            // example for (1,1)
+            sum_red = 0, sum_green = 0, sum_blue = 0;
+            for (int row = 0; row < 2; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    //pattern
+                    //col -1 -> 0 -> 1 but for loop pattern is 0 1 2 thus minus 1 in col
+                    //row -1 -> 1 but for loop pattern is 0 1 thus row * 2 - 1
+                    sum_red += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtRed;
+                    sum_green += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtGreen;
+                    sum_blue += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtBlue;
+                    // printf("GX: %i, RED: %i", GX[row][col], copy[i + (2 * row - 1)][j + (col - 1)].rgbtRed);
+                    //
+                }
+            }
+            printf("%f\n", sum_red);
+            ans_red += sum_red * sum_red;
+            ans_green += sum_green * sum_green;
+            ans_blue += sum_blue * sum_blue;
+            printf("%f\n", ans_red);
+
+
+            image[i][j].rgbtRed = (int) round(sqrt(ans_red));
+            image[i][j].rgbtRed = image[i][j].rgbtRed > 255? 255: image[i][j].rgbtRed;
+
+            image[i][j].rgbtGreen = (int) round(sqrt(ans_green));
+            image[i][j].rgbtGreen = image[i][j].rgbtGreen > 255? 255: image[i][j].rgbtGreen;
+
+            image[i][j].rgbtBlue = (int) round(sqrt(ans_blue));
+            image[i][j].rgbtBlue = image[i][j].rgbtBlue > 255? 255: image[i][j].rgbtBlue;
         }
     }
     return;
