@@ -345,9 +345,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     double sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GX[i + 1][2] * copy[i][1].rgbtRed;
-        sum_green += GX[i + 1][2] * copy[i][1].rgbtGreen;
-        sum_blue += GX[i + 1][2] * copy[i][1].rgbtBlue;
+        sum_red += GX[i + 1][1] * copy[i][1].rgbtRed;
+        sum_green += GX[i + 1][1] * copy[i][1].rgbtGreen;
+        sum_blue += GX[i + 1][1] * copy[i][1].rgbtBlue;
     }
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
@@ -357,9 +357,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GX[2][i + 1] * copy[1][i].rgbtRed;
-        sum_green += GX[2][i + 1] * copy[1][i].rgbtGreen;
-        sum_blue += GX[2][i + 1] * copy[1][i].rgbtBlue;
+        sum_red += GX[1][i + 1] * copy[1][i].rgbtRed;
+        sum_green += GX[1][i + 1] * copy[1][i].rgbtGreen;
+        sum_blue += GX[1][i + 1] * copy[1][i].rgbtBlue;
     }
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
