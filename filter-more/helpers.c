@@ -489,6 +489,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     image[height - 1][width - 1].rgbtGreen = (int) ans_green;
     image[height - 1][width - 1].rgbtBlue = (int) ans_blue;
 
+    // upper edge
+    //  *0*-
+    //  ***-
+    //  ----
+    //  ----
+    //  4 adjuntion cell (height - 1, width - 1)
 
     return;
 }
