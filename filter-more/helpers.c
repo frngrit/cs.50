@@ -393,9 +393,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GY[2][i + 1] * copy[1][width - 2 + i].rgbtRed;
-        sum_green += GY[2][i + 1] * copy[1][width - 2 + i].rgbtGreen;
-        sum_blue += GY[2][i + 1] * copy[1][width - 2 + i].rgbtBlue;
+        sum_red += GY[1][i + 1] * copy[1][width - 2 + i].rgbtRed;
+        sum_green += GY[1][i + 1] * copy[1][width - 2 + i].rgbtGreen;
+        sum_blue += GY[1][i + 1] * copy[1][width - 2 + i].rgbtBlue;
     }
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
@@ -473,9 +473,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GY[0][i + 1] * copy[height - 2][i].rgbtRed;
-        sum_green += GY[0][i + 1] * copy[height - 2][i].rgbtGreen;
-        sum_blue += GY[0][i + 1] * copy[height - 2][i].rgbtBlue;
+        sum_red += GY[0][i] * copy[height - 2][width - 2 + i].rgbtRed;
+        sum_green += GY[0][i] * copy[height - 2][width - 2 + i].rgbtGreen;
+        sum_blue += GY[0][i] * copy[height - 2][width - 2 + i].rgbtBlue;
     }
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
