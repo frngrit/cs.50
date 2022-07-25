@@ -335,5 +335,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = image[i][j].rgbtBlue > 255? 255: image[i][j].rgbtBlue;
         }
     }
+
+    //top-left corner
     return;
 }
