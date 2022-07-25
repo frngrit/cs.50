@@ -348,7 +348,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
     ans_blue += sum_blue * sum_blue;
-    printf();
 
     // Get Gy
     sum_red = 0, sum_green = 0, sum_blue = 0;
