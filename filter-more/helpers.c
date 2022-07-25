@@ -514,7 +514,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 sum_blue += GY[i][j] * copy[i][m + (2 * j - 1)].rgbtBlue;
             }
         }
-        printf("%f\n", ans_red);
+        printf("%f\n", sum_red);
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
         ans_blue += sum_blue * sum_blue;
@@ -527,7 +527,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             sum_green += GY[1][i] * copy[1][i].rgbtGreen;
             sum_blue += GY[1][i] * copy[1][i].rgbtBlue;
         }
-        printf("%f\n", ans_red);
+        printf("%f\n", sum_red);
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
         ans_blue += sum_blue * sum_blue;
