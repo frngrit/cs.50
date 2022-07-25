@@ -10,7 +10,15 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    
+    //read file
+    FILE *file = fopen(argv[1], "r");
+
+    //check if file exist
+    if(file == NULL)
+    {
+        printf("File doesn't exsit\n");
+        return 1;
+    }
 
 
 }
