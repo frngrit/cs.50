@@ -609,30 +609,31 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         // -*--     -*
         // ----
         sum_red = 0, sum_green = 0, sum_blue = 0;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 2; j++)
-            {
-                sum_red += GX[i][1] * copy[m][1].rgbtRed;
-                sum_green += GX[i][1] * copy[m][1].rgbtGreen;
-                sum_blue += GX[i][1] * copy[m][1].rgbtBlue;
-            }
+            sum_red += GX[i][1] * copy[m - 1 + i][1].rgbtRed;
+            sum_green += GX[i][1] * copy[m - 1 + i][1].rgbtGreen;
+            sum_blue += GX[i][1] * copy[m - 1 + i][1].rgbtBlue;
         }
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
         ans_blue += sum_blue * sum_blue;
 
         // Get Gy
+        // **--
         // ----
+        // **--
         // ----
-        // ***-
-        // -0--
         sum_red = 0, sum_green = 0, sum_blue = 0;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
-            sum_red += GY[0][i] * copy[height - 2][i].rgbtRed;
-            sum_green += GY[0][i] * copy[height - 2][i].rgbtGreen;
-            sum_blue += GY[0][i] * copy[height - 2][i].rgbtBlue;
+            for (int j = 0; j < 2; j++)
+            {
+                sum_red += GY[0][i] * copy[m][0].rgbtRed;
+                sum_green += GY[0][i] * copy[m][0].rgbtGreen;
+                sum_blue += GY[0][i] * copy[m][0].rgbtBlue;
+            }
+
         }
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
@@ -642,9 +643,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
         ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-        image[height - 1][m].rgbtRed = (int)ans_red;
-        image[height - 1][m].rgbtGreen = (int)ans_green;
-        image[height - 1][m].rgbtBlue = (int)ans_blue;
+        image[m][0].rgbtRed = (int)ans_red;
+        image[m][0].rgbtGreen = (int)ans_green;
+        image[m][0].rgbtBlue = (int)ans_blue;
     }
 
 
