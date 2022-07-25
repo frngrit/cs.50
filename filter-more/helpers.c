@@ -375,13 +375,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  ----
     //  ----
     //  4 adjuntion cell (1, 1)
-    double ans_red = 0, ans_green = 0, ans_blue = 0;
+    ans_red = 0, ans_green = 0, ans_blue = 0;
 
     // Get Gx
-    double sum_red = 0, sum_green = 0, sum_blue = 0;
+    sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        
+        sum_red += GX[i + 1][1] * copy[i][width - 1].rgbtRed;
+        sum_green += GX[i + 1][1] * copy[i][width - 1].rgbtGreen;
+        sum_blue += GX[i + 1][1] * copy[i][width - 1].rgbtBlue;
     }
 
     return;
