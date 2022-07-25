@@ -334,7 +334,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  **--
     //  ----
     //  ----
-    //  4 adjuntion cell (1, 1)
+    //  4 adjuntion cell (0, 0)
     double ans_red = 0, ans_green = 0, ans_blue = 0;
 
     // Get Gx
@@ -374,7 +374,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  -**
     //  ----
     //  ----
-    //  4 adjuntion cell (1, 1)
+    //  4 adjuntion cell (0, width - 1)
     ans_red = 0, ans_green = 0, ans_blue = 0;
 
     // Get Gx
@@ -405,16 +405,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
     ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
 
-    image[0][0].rgbtRed = (int) ans_red;
-    image[0][0].rgbtGreen = (int) ans_green;
-    image[0][0].rgbtBlue = (int) ans_blue;
+    image[0][width - 1].rgbtRed = (int) ans_red;
+    image[0][width - 1].rgbtGreen = (int) ans_green;
+    image[0][width - 1].rgbtBlue = (int) ans_blue;
 
     // bottom-right corner
     //  ----
     //  ----
     //  **--
     //  0*--
-    //  4 adjuntion cell (1, 1)
+    //  4 adjuntion cell (height - 1, 0)
     ans_red = 0, ans_green = 0, ans_blue = 0;
 
     // Get Gx
@@ -433,10 +433,62 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GY[2][i + 1] * copy[1][width - 2 + i].rgbtRed;
-        sum_green += GY[2][i + 1] * copy[1][width - 2 + i].rgbtGreen;
-        sum_blue += GY[2][i + 1] * copy[1][width - 2 + i].rgbtBlue;
+        sum_red += GY[0][i + 1] * copy[height - 2][i].rgbtRed;
+        sum_green += GY[0][i + 1] * copy[height - 2][i].rgbtGreen;
+        sum_blue += GY[0][i + 1] * copy[height - 2][i].rgbtBlue;
     }
+    ans_red += sum_red * sum_red;
+    ans_green += sum_green * sum_green;
+    ans_blue += sum_blue * sum_blue;
+
+    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+
+    image[height - 1][0].rgbtRed = (int) ans_red;
+    image[height - 1][0].rgbtGreen = (int) ans_green;
+    image[height - 1][0].rgbtBlue = (int) ans_blue;
+
+    // bottom-right corner
+    //  ----
+    //  ----
+    //  --**
+    //  --*0
+    //  4 adjuntion cell (height - 1, width - 1)
+    ans_red = 0, ans_green = 0, ans_blue = 0;
+
+    // Get Gx
+    sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        sum_red += GX[i][1] * copy[height - 1 - i][width - 1].rgbtRed;
+        sum_green += GX[i][1] * copy[height - 1 - i][width - 1].rgbtGreen;
+        sum_blue += GX[i][1] * copy[height - 1 - i][width - 1].rgbtBlue;
+    }
+    ans_red += sum_red * sum_red;
+    ans_green += sum_green * sum_green;
+    ans_blue += sum_blue * sum_blue;
+
+    // Get Gy
+    sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        sum_red += GY[0][i + 1] * copy[height - 2][i].rgbtRed;
+        sum_green += GY[0][i + 1] * copy[height - 2][i].rgbtGreen;
+        sum_blue += GY[0][i + 1] * copy[height - 2][i].rgbtBlue;
+    }
+    ans_red += sum_red * sum_red;
+    ans_green += sum_green * sum_green;
+    ans_blue += sum_blue * sum_blue;
+
+    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+
+    image[height - 1][width - 1].rgbtRed = (int) ans_red;
+    image[height - 1][width - 1].rgbtGreen = (int) ans_green;
+    image[height - 1][width - 1].rgbtBlue = (int) ans_blue;
+
 
     return;
 }
