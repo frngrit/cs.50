@@ -494,7 +494,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  ***-
     //  ----
     //  ----
-    //  4 adjuntion cell (height - 1, width - 1)
+    //  5 adjuntion cell example: (1, 1)
+    ans_red = 0, ans_green = 0, ans_blue = 0;
 
+    // Get Gx
+    sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        
+    }
     return;
 }
