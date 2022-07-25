@@ -251,6 +251,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int gx[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
     int gy[2][3] = {{-1, -2, 1}, {1, 2, 1}};
 
-    
+    // do the inner square
+    // ----
+    // -**-
+    // -**-
+    // ----
+    //control for row
+    for (int i = 1; i < height -1; i++)
+    {
+        //control for col
+        for (int j = 1; j < width; j++)
+        {
+            
+        }
+    }
     return;
 }
