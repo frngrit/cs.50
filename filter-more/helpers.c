@@ -67,9 +67,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     average_blue += copy[i + m][j + n].rgbtBlue;
                 }
             }
-            image[i][j].rgbtRed = (int) round(average_red / 9.0);
-            image[i][j].rgbtGreen = (int) round(average_green / 9.0);
-            image[i][j].rgbtBlue = (int) round(average_blue / 9.0);
+            image[i][j].rgbtRed = (int)round(average_red / 9.0);
+            image[i][j].rgbtGreen = (int)round(average_green / 9.0);
+            image[i][j].rgbtBlue = (int)round(average_blue / 9.0);
         }
     }
 
@@ -87,9 +87,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             average_blue += copy[i][j].rgbtBlue;
         }
     }
-    image[0][0].rgbtRed = (int) round(average_red / 4.0);
-    image[0][0].rgbtGreen = (int) round(average_green / 4.0);
-    image[0][0].rgbtBlue = (int) round(average_blue / 4.0);
+    image[0][0].rgbtRed = (int)round(average_red / 4.0);
+    image[0][0].rgbtGreen = (int)round(average_green / 4.0);
+    image[0][0].rgbtBlue = (int)round(average_blue / 4.0);
 
     // right-top corner (0 , width - 1)
     average_red = 0, average_green = 0, average_blue = 0;
@@ -104,9 +104,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             average_blue += copy[i][width - 1 + j].rgbtBlue;
         }
     }
-    image[0][width - 1].rgbtRed = (int) round(average_red / 4.0);
-    image[0][width - 1].rgbtGreen = (int) round(average_green / 4.0);
-    image[0][width - 1].rgbtBlue = (int) round(average_blue / 4.0);
+    image[0][width - 1].rgbtRed = (int)round(average_red / 4.0);
+    image[0][width - 1].rgbtGreen = (int)round(average_green / 4.0);
+    image[0][width - 1].rgbtBlue = (int)round(average_blue / 4.0);
 
     // left-bottom corner (height - 1, 0)
     average_red = 0, average_green = 0, average_blue = 0;
@@ -121,9 +121,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             average_blue += copy[height - 1 + i][j].rgbtBlue;
         }
     }
-    image[height - 1][0].rgbtRed = (int) round(average_red / 4.0);
-    image[height - 1][0].rgbtGreen = (int) round(average_green / 4.0);
-    image[height - 1][0].rgbtBlue = (int) round(average_blue / 4.0);
+    image[height - 1][0].rgbtRed = (int)round(average_red / 4.0);
+    image[height - 1][0].rgbtGreen = (int)round(average_green / 4.0);
+    image[height - 1][0].rgbtBlue = (int)round(average_blue / 4.0);
 
     // left-bottom corner (height - 1, width - 1)
     average_red = 0, average_green = 0, average_blue = 0;
@@ -138,9 +138,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             average_blue += copy[height - 1 + i][width - 1 + j].rgbtBlue;
         }
     }
-    image[height - 1][width - 1].rgbtRed = (int) round(average_red / 4.0);
-    image[height - 1][width - 1].rgbtGreen = (int) round(average_green / 4.0);
-    image[height - 1][width - 1].rgbtBlue = (int) round(average_blue / 4.0);
+    image[height - 1][width - 1].rgbtRed = (int)round(average_red / 4.0);
+    image[height - 1][width - 1].rgbtGreen = (int)round(average_green / 4.0);
+    image[height - 1][width - 1].rgbtBlue = (int)round(average_blue / 4.0);
 
     // upper-row
     //  -**-
@@ -162,9 +162,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 average_blue += copy[0 + i][m + j].rgbtBlue;
             }
         }
-        image[0][m].rgbtRed = (int) round(average_red / 6.0);
-        image[0][m].rgbtGreen = (int) round(average_green / 6.0);
-        image[0][m].rgbtBlue = (int) round(average_blue / 6.0);
+        image[0][m].rgbtRed = (int)round(average_red / 6.0);
+        image[0][m].rgbtGreen = (int)round(average_green / 6.0);
+        image[0][m].rgbtBlue = (int)round(average_blue / 6.0);
     }
 
     // lower-row
@@ -187,9 +187,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 average_blue += copy[height - 1 + i][m + j].rgbtBlue;
             }
         }
-        image[height - 1][m].rgbtRed = (int) round(average_red / 6.0);
-        image[height - 1][m].rgbtGreen = (int) round(average_green / 6.0);
-        image[height - 1][m].rgbtBlue = (int) round(average_blue / 6.0);
+        image[height - 1][m].rgbtRed = (int)round(average_red / 6.0);
+        image[height - 1][m].rgbtGreen = (int)round(average_green / 6.0);
+        image[height - 1][m].rgbtBlue = (int)round(average_blue / 6.0);
     }
 
     // left-col
@@ -212,9 +212,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 average_blue += copy[m + i][j].rgbtBlue;
             }
         }
-        image[m][0].rgbtRed = (int) round(average_red / 6.0);
-        image[m][0].rgbtGreen = (int) round(average_green / 6.0);
-        image[m][0].rgbtBlue = (int) round(average_blue / 6.0);
+        image[m][0].rgbtRed = (int)round(average_red / 6.0);
+        image[m][0].rgbtGreen = (int)round(average_green / 6.0);
+        image[m][0].rgbtBlue = (int)round(average_blue / 6.0);
     }
 
     // right-col
@@ -237,9 +237,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 average_blue += copy[m + i][width - 1 + j].rgbtBlue;
             }
         }
-        image[m][width - 1].rgbtRed = (int) round(average_red / 6.0);
-        image[m][width - 1].rgbtGreen = (int) round(average_green / 6.0);
-        image[m][width - 1].rgbtBlue = (int) round(average_blue / 6.0);
+        image[m][width - 1].rgbtRed = (int)round(average_red / 6.0);
+        image[m][width - 1].rgbtGreen = (int)round(average_green / 6.0);
+        image[m][width - 1].rgbtBlue = (int)round(average_blue / 6.0);
     }
     return;
 }
@@ -318,13 +318,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             ans_green += sum_green * sum_green;
             ans_blue += sum_blue * sum_blue;
 
-            image[i][j].rgbtRed = (int) round(sqrt(ans_red));
+            image[i][j].rgbtRed = (int)round(sqrt(ans_red));
             image[i][j].rgbtRed = image[i][j].rgbtRed > 255 ? 255 : image[i][j].rgbtRed;
 
-            image[i][j].rgbtGreen = (int) round(sqrt(ans_green));
+            image[i][j].rgbtGreen = (int)round(sqrt(ans_green));
             image[i][j].rgbtGreen = image[i][j].rgbtGreen > 255 ? 255 : image[i][j].rgbtGreen;
 
-            image[i][j].rgbtBlue = (int) round(sqrt(ans_blue));
+            image[i][j].rgbtBlue = (int)round(sqrt(ans_blue));
             image[i][j].rgbtBlue = image[i][j].rgbtBlue > 255 ? 255 : image[i][j].rgbtBlue;
         }
     }
@@ -361,13 +361,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_green += sum_green * sum_green;
     ans_blue += sum_blue * sum_blue;
 
-    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
-    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
-    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+    ans_red = round(sqrt(ans_red)) > 255 ? 255 : round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-    image[0][0].rgbtRed = (int) ans_red;
-    image[0][0].rgbtGreen = (int) ans_green;
-    image[0][0].rgbtBlue = (int) ans_blue;
+    image[0][0].rgbtRed = (int)ans_red;
+    image[0][0].rgbtGreen = (int)ans_green;
+    image[0][0].rgbtBlue = (int)ans_blue;
 
     // top-right corner
     //  -*0
@@ -401,13 +401,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_green += sum_green * sum_green;
     ans_blue += sum_blue * sum_blue;
 
-    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
-    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
-    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+    ans_red = round(sqrt(ans_red)) > 255 ? 255 : round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-    image[0][width - 1].rgbtRed = (int) ans_red;
-    image[0][width - 1].rgbtGreen = (int) ans_green;
-    image[0][width - 1].rgbtBlue = (int) ans_blue;
+    image[0][width - 1].rgbtRed = (int)ans_red;
+    image[0][width - 1].rgbtGreen = (int)ans_green;
+    image[0][width - 1].rgbtBlue = (int)ans_blue;
 
     // bottom-right corner
     //  ----
@@ -441,13 +441,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_green += sum_green * sum_green;
     ans_blue += sum_blue * sum_blue;
 
-    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
-    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
-    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+    ans_red = round(sqrt(ans_red)) > 255 ? 255 : round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-    image[height - 1][0].rgbtRed = (int) ans_red;
-    image[height - 1][0].rgbtGreen = (int) ans_green;
-    image[height - 1][0].rgbtBlue = (int) ans_blue;
+    image[height - 1][0].rgbtRed = (int)ans_red;
+    image[height - 1][0].rgbtGreen = (int)ans_green;
+    image[height - 1][0].rgbtBlue = (int)ans_blue;
 
     // bottom-right corner
     //  ----
@@ -481,13 +481,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_green += sum_green * sum_green;
     ans_blue += sum_blue * sum_blue;
 
-    ans_red = round(sqrt(ans_red)) > 255 ? 255: round(sqrt(ans_red));
-    ans_green = round(sqrt(ans_green)) > 255 ? 255: round(sqrt(ans_green));
-    ans_blue = round(sqrt(ans_blue)) > 255 ? 255: round(sqrt(ans_blue));
+    ans_red = round(sqrt(ans_red)) > 255 ? 255 : round(sqrt(ans_red));
+    ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
+    ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-    image[height - 1][width - 1].rgbtRed = (int) ans_red;
-    image[height - 1][width - 1].rgbtGreen = (int) ans_green;
-    image[height - 1][width - 1].rgbtBlue = (int) ans_blue;
+    image[height - 1][width - 1].rgbtRed = (int)ans_red;
+    image[height - 1][width - 1].rgbtGreen = (int)ans_green;
+    image[height - 1][width - 1].rgbtBlue = (int)ans_blue;
 
     // upper edge
     //  *0*-
@@ -495,20 +495,48 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  ----
     //  ----
     //  5 adjuntion cell example: (1, 1)
-    ans_red = 0, ans_green = 0, ans_blue = 0;
-
-    // Get Gx
-    // *0*-
-    // *-*-
-    // ----
-    // ----
-    sum_red = 0, sum_green = 0, sum_blue = 0;
-    for (int i = 0; i < 2; i++)
+    for (int m = 1; m < width - 1; m++)
     {
-        for (int j = 0; j < 2; j++)
+        double ans_red = 0, ans_green = 0, ans_blue = 0;
+
+        // Get Gx
+        // *0*-
+        // *-*-
+        // ----
+        // ----
+        double sum_red = 0, sum_green = 0, sum_blue = 0;
+        for (int i = 0; i < 2; i++)
         {
-            
+            for (int j = 0; j < 2; j++)
+            {
+                sum_red += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtRed;
+                sum_green += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtGreen;
+                sum_blue += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtBlue
+            }
         }
+        ans_red += sum_red * sum_red;
+        ans_green += sum_green * sum_green;
+        ans_blue += sum_blue * sum_blue;
+
+        // Get Gy
+        sum_red = 0, sum_green = 0, sum_blue = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            sum_red += GY[1][i] * copy[1][i].rgbtRed;
+            sum_green += GY[1][i] * copy[1][i].rgbtGreen;
+            sum_blue += GY[1][i] * copy[1][i].rgbtBlue;
+        }
+        ans_red += sum_red * sum_red;
+        ans_green += sum_green * sum_green;
+        ans_blue += sum_blue * sum_blue;
+
+        ans_red = round(sqrt(ans_red)) > 255 ? 255 : round(sqrt(ans_red));
+        ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
+        ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
+
+        image[height - 1][width - 1].rgbtRed = (int)ans_red;
+        image[height - 1][width - 1].rgbtGreen = (int)ans_green;
+        image[height - 1][width - 1].rgbtBlue = (int)ans_blue;
     }
     return;
 }
