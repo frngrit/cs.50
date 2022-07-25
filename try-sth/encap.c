@@ -11,13 +11,17 @@ int main(void)
 {
     corres array[6];
 
+    int n = 0;
     for (int i = 0; i < 3; i++)
     {
 
         for (int j = 0; j < 2; j++)
         {
-            array[i].x = i;
-            array[i].y = j;
+            array[n].x = i;
+            array[n].y = j;
         }
+        printf("(%i, %i)", array[n].x, array[n].y);
+        n++;
+
     }
 }
