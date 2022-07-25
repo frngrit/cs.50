@@ -262,15 +262,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         //control for col
         for (int j = 1; j < width; j++)
         {
-            //loop for left and right
-            //row -1 -> 1
-            for (int row = -1; row < 2; row++)
+            //loop for left side
+            // *-*-
+            // *-*-
+            // *-*-
+            // ----
+            // example for (1,1)
+            int row = -1, col = -1, gx = 0;
+            for (int n = 0; n < 6; n++)
             {
-                //col -1 and 1
-                for (int col = -1; row < 2; col += 2)
+                //looping mechanic
+                if(col == 1)
                 {
-                    
+                    row += 1;
+                    col = -1;
                 }
+                col += 2;
+
+
             }
         }
     }
