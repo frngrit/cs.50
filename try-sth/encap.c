@@ -19,7 +19,8 @@ int main(void)
         {
             array[n].x = i;
             array[n].y = j;
-            printf("(%p, %p)\n", &array[n].x, &array[n].y);
+            printf("(%i, %i)\n", array[n].x, array[n].y);
+            printf("(%p, %p)\n", &(array[n].x), &(array[n].y));
         }
         n++;
     }
