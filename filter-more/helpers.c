@@ -312,16 +312,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     sum_red += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtRed;
                     sum_green += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtGreen;
                     sum_blue += GY[row][col] * copy[i + (2 * row - 1)][j + (col - 1)].rgbtBlue;
-                    // printf("GX: %i, RED: %i", GX[row][col], copy[i + (2 * row - 1)][j + (col - 1)].rgbtRed);
-                    //
                 }
             }
-            printf("%f\n", sum_red);
             ans_red += sum_red * sum_red;
             ans_green += sum_green * sum_green;
             ans_blue += sum_blue * sum_blue;
-            printf("%f\n", ans_red);
-
+            
             image[i][j].rgbtRed = (int) round(sqrt(ans_red));
             image[i][j].rgbtRed = image[i][j].rgbtRed > 255 ? 255 : image[i][j].rgbtRed;
 
