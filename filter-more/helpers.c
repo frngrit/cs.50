@@ -505,13 +505,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         // ----
         // ----
         sum_red = 0, sum_green = 0, sum_blue = 0;
-        for (int i = 0; i < 2; i++) // row -> 0, 1
+        for (int i = 0; i < 2; i++)
         {
-            for (int j = 0; j < 2; j++) // col -> 0, 1
+            for (int j = 0; j < 2; j++)
             {
-                sum_red += GX[i + 1][2 * j] * copy[0 + i][m + (2 * j - 1)].rgbtRed;
-                sum_green += GX[i + 1][2 * j] * copy[i][m + (2 * j - 1)].rgbtGreen;
-                sum_blue += GX[i + 1][2 * j] * copy[i][m + (2 * j - 1)].rgbtBlue;
+                sum_red += GX[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtRed;
+                sum_green += GX[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtGreen;
+                sum_blue += GX[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtBlue;
             }
         }
         ans_red += sum_red * sum_red;
@@ -522,9 +522,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         sum_red = 0, sum_green = 0, sum_blue = 0;
         for (int i = 0; i < 3; i++)
         {
-            sum_red += GY[1][i] * copy[1][i].rgbtRed;
-            sum_green += GY[1][i] * copy[1][i].rgbtGreen;
-            sum_blue += GY[1][i] * copy[1][i].rgbtBlue;
+            sum_red += GY[1][i] * copy[1][i + m].rgbtRed;
+            sum_green += GY[1][i] * copy[1][i + m].rgbtGreen;
+            sum_blue += GY[1][i] * copy[1][i + m].rgbtBlue;
         }
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
@@ -576,9 +576,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         sum_red = 0, sum_green = 0, sum_blue = 0;
         for (int i = 0; i < 3; i++)
         {
-            sum_red += GY[0][i] * copy[height - 2][i].rgbtRed;
-            sum_green += GY[0][i] * copy[height - 2][i].rgbtGreen;
-            sum_blue += GY[0][i] * copy[height - 2][i].rgbtBlue;
+            sum_red += GY[0][i] * copy[height - 2][i + m].rgbtRed;
+            sum_green += GY[0][i] * copy[height - 2][i + m].rgbtGreen;
+            sum_blue += GY[0][i] * copy[height - 2][i + m].rgbtBlue;
         }
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
