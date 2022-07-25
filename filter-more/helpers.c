@@ -644,7 +644,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         image[m][0].rgbtBlue = (int)ans_blue;
     }
 
-    // left edge
+    // right edge
     //  --*-
     //  --*0
     //  --*-
