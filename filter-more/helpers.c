@@ -393,9 +393,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        sum_red += GY[2][i + 1] * copy[1][width - 2 ].rgbtRed;
-        sum_green += GY[2][i + 1] * copy[1][i].rgbtGreen;
-        sum_blue += GY[2][i + 1] * copy[1][i].rgbtBlue;
+        sum_red += GY[2][i + 1] * copy[1][width - 2 + i].rgbtRed;
+        sum_green += GY[2][i + 1] * copy[1][width - 2 + i].rgbtGreen;
+        sum_blue += GY[2][i + 1] * copy[1][width - 2 + i].rgbtBlue;
     }
     ans_red += sum_red * sum_red;
     ans_green += sum_green * sum_green;
@@ -408,6 +408,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     image[0][0].rgbtRed = (int) ans_red;
     image[0][0].rgbtGreen = (int) ans_green;
     image[0][0].rgbtBlue = (int) ans_blue;
+
+    // bottom-right corner
+    //  ----
+    //  ----
+    //  **--
+    //  0*--
+    //  4 adjuntion cell (1, 1)
+    ans_red = 0, ans_green = 0, ans_blue = 0;
+
+    // Get Gx
+    sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        
+    }
 
     return;
 }
