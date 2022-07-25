@@ -498,10 +498,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     ans_red = 0, ans_green = 0, ans_blue = 0;
 
     // Get Gx
+    // *0*-
+    // *-*-
+    // ----
+    // ----
     sum_red = 0, sum_green = 0, sum_blue = 0;
     for (int i = 0; i < 2; i++)
     {
-        
+        for (int j = 0; j < 2; j++)
+        {
+            
+        }
     }
     return;
 }
