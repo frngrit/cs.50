@@ -331,7 +331,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     // top-left corner
     //  0*--
-    //  -*--
+    //  **--
     //  ----
     //  ----
     //  4 adjuntion cell (1, 1)
@@ -368,6 +368,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     image[0][0].rgbtRed = (int) ans_red;
     image[0][0].rgbtGreen = (int) ans_green;
     image[0][0].rgbtBlue = (int) ans_blue;
+
+    // top-right corner
+    //  -*0
+    //  -**
+    //  ----
+    //  ----
+    //  4 adjuntion cell (1, 1)
+    double ans_red = 0, ans_green = 0, ans_blue = 0;
+
+    // Get Gx
+    double sum_red = 0, sum_green = 0, sum_blue = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        
+    }
 
     return;
 }
