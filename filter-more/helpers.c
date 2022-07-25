@@ -248,8 +248,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int gx[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
-    int gy[2][3] = {{-1, -2, 1}, {1, 2, 1}};
+    const int GX[3][2] = {{-1, 1}, {-2, 2}, {-1, 1}};
+    const int GX[2][3] = {{-1, -2, 1}, {1, 2, 1}};
 
     // do the inner square
     // ----
@@ -262,7 +262,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         //control for col
         for (int j = 1; j < width; j++)
         {
-            
+
         }
     }
     return;
