@@ -497,21 +497,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //  5 adjuntion cell example: (1, 1)
     for (int m = 1; m < width - 1; m++)
     {
-        double ans_red = 0, ans_green = 0, ans_blue = 0;
+        ans_red = 0, ans_green = 0, ans_blue = 0;
 
         // Get Gx
         // *0*-
         // *-*-
         // ----
         // ----
-        double sum_red = 0, sum_green = 0, sum_blue = 0;
+        sum_red = 0, sum_green = 0, sum_blue = 0;
         for (int i = 0; i < 2; i++)
         {
             for (int j = 0; j < 2; j++)
             {
-                sum_red += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtRed;
-                sum_green += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtGreen;
-                sum_blue += GY[i + 1][j] * copy[i][m + (2 * j - 1)].rgbtBlue
+                sum_red += GY[i][j] * copy[i][m + (2 * j - 1)].rgbtRed;
+                sum_green += GY[i][j] * copy[i][m + (2 * j - 1)].rgbtGreen;
+                sum_blue += GY[i][j] * copy[i][m + (2 * j - 1)].rgbtBlue;
             }
         }
         ans_red += sum_red * sum_red;
