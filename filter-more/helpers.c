@@ -534,9 +534,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         ans_green = round(sqrt(ans_green)) > 255 ? 255 : round(sqrt(ans_green));
         ans_blue = round(sqrt(ans_blue)) > 255 ? 255 : round(sqrt(ans_blue));
 
-        image[height - 1][width - 1].rgbtRed = (int)ans_red;
-        image[height - 1][width - 1].rgbtGreen = (int)ans_green;
-        image[height - 1][width - 1].rgbtBlue = (int)ans_blue;
+        image[0][m].rgbtRed = (int)ans_red;
+        image[0][m].rgbtGreen = (int)ans_green;
+        image[0][m].rgbtBlue = (int)ans_blue;
     }
     return;
 }
