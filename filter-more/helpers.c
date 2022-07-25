@@ -522,9 +522,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         sum_red = 0, sum_green = 0, sum_blue = 0;
         for (int i = 0; i < 3; i++)
         {
-            sum_red += GY[1][i] * copy[1][i + m].rgbtRed;
-            sum_green += GY[1][i] * copy[1][i + m].rgbtGreen;
-            sum_blue += GY[1][i] * copy[1][i + m].rgbtBlue;
+            sum_red += GY[1][i] * copy[1][i + m - 1].rgbtRed;
+            sum_green += GY[1][i] * copy[1][i + m - 1].rgbtGreen;
+            sum_blue += GY[1][i] * copy[1][i + m - 1].rgbtBlue;
         }
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
