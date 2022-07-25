@@ -618,21 +618,22 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
         ans_blue += sum_blue * sum_blue;
-        printf("%f", sum_red);
 
         // Get Gy
-        // -*--
+        // -**-
         // ----
-        // -*--
+        // -**-
         // ----
         sum_red = 0, sum_green = 0, sum_blue = 0;
         for (int i = 0; i < 2; i++)
         {
-            sum_red += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtRed;
-            sum_green += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtGreen;
-            sum_blue += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtBlue;
+            for (int j = 0; j < 2; j++)
+            {
+                sum_red += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtRed;
+                sum_green += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtGreen;
+                sum_blue += GY[i][0] * copy[m + (i * 2 - 1)][1].rgbtBlue;
+            }
         }
-        printf("%f", sum_red);
         ans_red += sum_red * sum_red;
         ans_green += sum_green * sum_green;
         ans_blue += sum_blue * sum_blue;
