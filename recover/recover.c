@@ -3,6 +3,7 @@
 #include <stdint.h>
 
 check_jpg(FILE *input);
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +30,6 @@ int main(int argc, char *argv[])
 
 check_jpg(FILE *input)
 {
-    int *buffer[4];
+    BYTE *buffer[4];
     fread();
 }
