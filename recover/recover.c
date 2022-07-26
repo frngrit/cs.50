@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+check_jpg(FILE *input);
 
 int main(int argc, char *argv[])
 {
@@ -23,4 +24,11 @@ int main(int argc, char *argv[])
     }
 
 
+}
+
+
+check_jpg(FILE *input)
+{
+    int *buffer[4];
+    fread();
 }
