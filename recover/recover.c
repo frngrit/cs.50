@@ -20,5 +20,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    const int BLOCK_SIZE = 512;
 
 }
