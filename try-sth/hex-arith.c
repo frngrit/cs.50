@@ -8,4 +8,8 @@ int main(void)
     int answer = x + y;
 
     printf("%x\n", answer);
+    if (0xe == 12)
+    {
+        printf("true\n");
+    }
 }
