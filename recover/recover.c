@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +14,7 @@ int main(int argc, char *argv[])
     }
 
     //read file
-    FILE *file = fopen(argv[1], "r");
+    FILE *input = fopen(argv[1], "r");
 
     //check if file exist
     if(file == NULL)
@@ -20,6 +23,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    while (fread(file, size(BYTE),
+
+    for (int i = 0; i < 3; i++)
+    
 
 }
