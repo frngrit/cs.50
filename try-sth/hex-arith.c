@@ -8,7 +8,7 @@ int main(void)
     int answer = x + y;
 
     printf("%x\n", answer);
-    if (0xe == 12)
+    if (0x0e > 0x0a)
     {
         printf("true\n");
     }
