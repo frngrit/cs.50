@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    while (fread(file, 
+    while (fread(file, size(BYTE),
 
 }
