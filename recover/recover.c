@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -23,8 +22,16 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-
+    const int FIRST_THREE[3] = {0xff, 0xd8, 0xff}
+    uint8_t *buffer;
     for (int i = 0; i < 3; i++)
-    
+    {
+        fread(buffer, sizeof(uint8_t), 1, input);
+        if(buffer != FIRST_THREE[i])
+        {
+            printf("Not jpeg file.\n");
+            return 1;
+        }
+    }
 
 }
