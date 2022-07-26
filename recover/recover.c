@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     const int BLOCK_SIZE = 512;
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-
+        if(is_jpeg(
 
     }
 
