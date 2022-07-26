@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-check_jpg(FILE *input);
+bool is_jpeg(FILE *input);
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -24,12 +24,36 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    const int BLOCK_SIZE = 512;
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
+
+
+    }
+
 
 }
 
 
-check_jpg(FILE *input)
+bool is_jpeg(FILE *input)
 {
-    BYTE *buffer[4];
-    fread();
+    BYTE *buffer;
+    fread(buffer, sizeof(BYTE), 4, input);
+    if(buffer[0] != 0xff)
+    {
+        return false;
+    }
+    if(buffer[1] != 0xd8)
+    {
+        return false;
+    }
+    if(buffer[2] != 0xff)
+    {
+        return false
+    }
+    if(buffer[3] & 0xf0 != 0xe0)
+    {
+        return false
+    }
+    return true
 }
