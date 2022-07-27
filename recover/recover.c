@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
             }
             else
             {
-                fclose(output);
+                rite(buffer, 1, BLOCK_SIZE, output);  //write those chunk of data into output file
             }
         }
     }
