@@ -36,11 +36,13 @@ int main(int argc, char *argv[])
         {
             if(!is_found)
             {
-                count += 1;
-                char *file_name = malloc(sizeof(char) * 7);
+
+                char *file_name = malloc(sizeof(char) * 7); //create name for output file
                 sprintf(file_name, "%i03.jpg", count);
-                FILE *output = fopen(file_name, "w");
-                fwrite(buffer, 1, BLOCK_SIZE, output);
+                FILE *output = fopen(file_name, "w");   //open output file for writing
+                fwrite(buffer, 1, BLOCK_SIZE, output);  //write those chunk of data into output file
+                count += 1;
+                is_found = true;
             }
             else
             {
