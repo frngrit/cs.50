@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     const int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
+    FILE *output;
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
         if(is_jpeg(buffer))
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
             {
                 char *file_name = malloc(sizeof(char) * 7); //create name for output file
                 sprintf(file_name, "%i03.jpg", count);
-                FILE *output = fopen(file_name, "w");   //open output file for writing
+                output = fopen(file_name, "w");   //open output file for writing
                 fwrite(buffer, 1, BLOCK_SIZE, output);  //write those chunk of data into output file
                 count += 1;
             }
@@ -69,9 +70,9 @@ bool is_jpeg(BYTE *buffer)
     }
     if(buffer[2] != 0xff)
     {
-        return false
+        return false;
     }
-    if(buffer[3] & 0xf0 != 0xe0)
+    if((buffer[3] & 0xf0) != 0xe0)
     {
         return false;
     }
