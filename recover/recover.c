@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-bool is_jpeg(FILE *input);
+
 typedef uint8_t BYTE;
+bool is_jpeg(FILE *buffer);
 
 int main(int argc, char *argv[])
 {
