@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 bool is_jpeg(FILE *input)
 {
-    BYTE *buffer;
+    BYTE *buffer = malloc(sizeof(BYTE) * 4);
     fread(buffer, sizeof(BYTE), 4, input);
     if(buffer[0] != 0xff)
     {
@@ -55,5 +55,6 @@ bool is_jpeg(FILE *input)
     {
         return false
     }
+    free(buffer);
     return true
 }
