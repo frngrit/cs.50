@@ -33,16 +33,14 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
-
+        is_jpeg(buffer)
     }
 
 }
 
 
-bool is_jpeg(FILE *input)
+bool is_jpeg(FILE *buffer)
 {
-    BYTE *buffer = malloc(sizeof(BYTE) * 4);
-    fread(buffer, sizeof(BYTE), 4, input);
     if(buffer[0] != 0xff)
     {
         return false;
