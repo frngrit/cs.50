@@ -33,7 +33,11 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
-        is_jpeg(buffer)
+        if(is_jpeg(buffer))
+        {
+            char *file_name;
+            sprintf(char *str, const char *format, ...);
+        }
     }
 
 }
