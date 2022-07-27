@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 bool is_jpeg(FILE *input);
-void copy_phto(FILE *input);
+FILE copy_phto(FILE *input);
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -25,7 +25,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    
+    if(is_jpeg)
+    {
+        FILE *output = fopen()
+    }
+
 
 
 }
@@ -55,10 +59,11 @@ bool is_jpeg(FILE *input)
     return true
 }
 
-void copy_photo(FILE *input);
+void copy_photo(FILE *input, FILE *output)
 {
     const int BLOCK_SIZE = 512;
-    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    BYTE buffer[BLOCK_SIZE];
+    while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
 
     }
