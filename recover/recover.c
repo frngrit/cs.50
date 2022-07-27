@@ -43,8 +43,12 @@ int main(int argc, char *argv[])
             }
             else
             {
-                rite(buffer, 1, BLOCK_SIZE, output);  //write those chunk of data into output file
+                fclose(output);
             }
+        }
+        else
+        {
+            fwrite(buffer, 1, BLOCK_SIZE, output);  //write those chunk of data into output file
         }
     }
 
