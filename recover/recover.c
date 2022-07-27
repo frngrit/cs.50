@@ -31,12 +31,14 @@ int main(int argc, char *argv[])
 
     const int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
+    int count = 0;
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
         if(is_jpeg(buffer))
         {
-            char *file_name;
-            sprintf(char *str, const char *format, ...);
+            count += 1;
+            char *file_name = malloc(sizeof(char) * 7);
+            sprintf(file_name, "%i03.jpg", count);
         }
     }
 
