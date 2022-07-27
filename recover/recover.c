@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 
 typedef uint8_t BYTE;
-bool is_jpeg(FILE *buffer);
+bool is_jpeg(BYTE buffer);
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
     FILE *input = fopen(argv[1], "r");
 
     //check if file exist
-    if(file == NULL)
+    if(input == NULL)
     {
         printf("File doesn't exsit\n");
         return 1;
@@ -56,7 +57,7 @@ int main(int argc, char *argv[])
 }
 
 
-bool is_jpeg(FILE *buffer)
+bool is_jpeg(BYTE buffer)
 {
     if(buffer[0] != 0xff)
     {
