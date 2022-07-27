@@ -5,7 +5,7 @@
 
 
 typedef uint8_t BYTE;
-bool is_jpeg(BYTE buffer);
+bool is_jpeg(BYTE *buffer);
 
 int main(int argc, char *argv[])
 {
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 }
 
 
-bool is_jpeg(BYTE buffer)
+bool is_jpeg(BYTE *buffer)
 {
     if(buffer[0] != 0xff)
     {
