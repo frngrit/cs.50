@@ -24,21 +24,28 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    if(is_jpeg)
-    {
-        FILE *output = fopen()
-    }
+
 
     const int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
+    bool is_found = false;
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
         if(is_jpeg(buffer))
         {
-            count += 1;
-            char *file_name = malloc(sizeof(char) * 7);
-            sprintf(file_name, "%i03.jpg", count);
+            if(!is_found)
+            {
+                count += 1;
+                char *file_name = malloc(sizeof(char) * 7);
+                sprintf(file_name, "%i03.jpg", count);
+                FILE *output = fopen(file_name, "w");
+                fwrite(buffer, 1, BLOCK_SIZE, output);
+            }
+            else
+            {
+                fclose(output);
+            }
         }
     }
 
