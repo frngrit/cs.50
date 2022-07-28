@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
 
     //read file
-    FILE *input = fopen(argv[1], "r");
+    FILE *input = fopen("card.raw", "r");
 
     //check if file exist
     if(input == NULL)
