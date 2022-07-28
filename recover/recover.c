@@ -41,7 +41,9 @@ int main(int argc, char *argv[])
     {
         if (is_jpeg(buffer))
         {
-            
+            sprintf(filename, "%03i.jpg", count);
+            output = fopen(filename, "w");
+            count++;
         }
         else
         {
