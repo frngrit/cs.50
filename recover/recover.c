@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
 
     //read file
-    FILE *input = fopen("card.raw", "r");
+    FILE *input = fopen(argv[1], "r");
 
     //check if file exist
     if(input == NULL)
@@ -33,9 +33,8 @@ int main(int argc, char *argv[])
 
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
-    char *filename = malloc(sizeof(char) * 8);
+    char filename[8];
     FILE *output = NULL;
-
 
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
@@ -57,7 +56,6 @@ int main(int argc, char *argv[])
 
     fclose(output);
     fclose(input);
-    free(filename);
 }
 
 
