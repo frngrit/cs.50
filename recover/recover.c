@@ -49,11 +49,14 @@ int main(int argc, char *argv[])
             output = fopen(filename, "w");
             count++;
         }
-        else
+        if (output != NULL)
         {
-
+            fwrite(buffer, 1, BLOCK_SIZE, output);
         }
     }
+
+    fclose(output);
+    fclose(input);
 }
 
 
