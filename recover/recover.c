@@ -78,8 +78,6 @@ bool is_jpeg(BYTE *buffer)
         return false;
     }
 
-    free(buffer);
-
     return true;
 }
 
