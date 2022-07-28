@@ -6,6 +6,8 @@
 
 typedef uint8_t BYTE;
 bool is_jpeg(BYTE *buffer);
+const int BLOCK_SIZE = 512;
+
 
 int main(int argc, char *argv[])
 {
@@ -28,18 +30,21 @@ int main(int argc, char *argv[])
 
 
 
-    const int BLOCK_SIZE = 512;
+
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
+    char *filename = malloc(sizeof(char) * 8);
+    FILE *output;
+
+
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
         if (count == 0)
         {
             if(is_jpeg(buffer)) //ถ้าเป็นรูปแรกให้สร้างไฟล์
             {
-                char *filename = malloc(sizeof(char) * 7);
                 sprintf(filename, "%i03.jpg",  count);
-                FILE output = fopen(filename);
+                output = fopen(filename);
                 fwrite(buffer, 1, BLOCK_SIZE, output);
                 count += 1;
             }
@@ -53,9 +58,8 @@ int main(int argc, char *argv[])
             if(is_jpeg(buffer)) //ไม่ใช่รูปแรกไม่ใช่ jpg ขึ้นไฟล์ใหม่
             {
                 fclose(filename);
-                char *filename = malloc(sizeof(char) * 7);
                 sprintf(filename, "%i03.jpg",  count);
-                FILE output = fopen(filename);
+                output = fopen(filename);
                 count += 1;
             }
             fwrite(buffer, 1, BLOCK_SIZE, output);
