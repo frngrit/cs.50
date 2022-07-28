@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         }
         if (output != NULL)
         {
-            fwrite(buffer, 1, BLOCK_SIZE, output);
+            fwrite(buffer, sizeof(buffer), 1, output);
         }
     }
 
