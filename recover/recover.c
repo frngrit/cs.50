@@ -35,13 +35,32 @@ int main(int argc, char *argv[])
     {
         if (count == 0)
         {
-            if(is_jpeg(buffer))
+            if(is_jpeg(buffer)) //ถ้าเป็นรูปแรกให้สร้างไฟล์
             {
                 char *filename = malloc(sizeof(char) * 7);
-                
+                sprintf(filename, "%i03.jpg",  count);
                 FILE output = fopen(filename);
+                fwrite(buffer, 1, BLOCK_SIZE, output);
+                count += 1;
+            }
+            else //รูปแรกแต่ไม่ใช่ jpeg ไม่ต้องทำไร
+            {
+
             }
         }
+        else
+        {
+            if(is_jpeg(buffer)) //ไม่ใช่รูปแรกไม่ใช่ jpg ขึ้นไฟล์ใหม่
+            {
+                fclose(filename);
+                char *filename = malloc(sizeof(char) * 7);
+                sprintf(filename, "%i03.jpg",  count);
+                FILE output = fopen(filename);
+                count += 1;
+            }
+            fwrite(buffer, 1, BLOCK_SIZE, output);
+        }
+        fclose(filename);
     }
 }
 
