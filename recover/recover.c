@@ -39,32 +39,14 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
-        if (count == 0)
+        if (is_jpeg(buffer))
         {
-            if(is_jpeg(buffer)) //ถ้าเป็นรูปแรกให้สร้างไฟล์
-            {
-                sprintf(filename, "%i03.jpg",  count);
-                output = fopen(filename);
-                fwrite(buffer, 1, BLOCK_SIZE, output);
-                count += 1;
-            }
-            else //รูปแรกแต่ไม่ใช่ jpeg ไม่ต้องทำไร
-            {
-
-            }
+            
         }
         else
         {
-            if(is_jpeg(buffer)) //ไม่ใช่รูปแรกไม่ใช่ jpg ขึ้นไฟล์ใหม่
-            {
-                fclose(filename);
-                sprintf(filename, "%i03.jpg",  count);
-                output = fopen(filename);
-                count += 1;
-            }
-            fwrite(buffer, 1, BLOCK_SIZE, output);
+
         }
-        fclose(filename);
     }
 }
 
