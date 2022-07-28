@@ -34,14 +34,17 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
     int count = 0;
     char *filename = malloc(sizeof(char) * 8);
-    FILE *output;
+    FILE *output = NULL;
 
 
     while (fread(buffer, 1, BLOCK_SIZE, input) == BLOCK_SIZE)
     {
         if (is_jpeg(buffer))
         {
-            if()
+            if(output != NULL)
+            {
+                fclose(output);
+            }
             sprintf(filename, "%03i.jpg", count);
             output = fopen(filename, "w");
             count++;
