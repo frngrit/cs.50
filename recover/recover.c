@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     FILE *input = fopen("card.raw", "r");
 
     //check if file exist
-    if(input == NULL)
+    if (input == NULL)
     {
         printf("File doesn't exsit\n");
         return 1;
@@ -40,15 +40,15 @@ int main(int argc, char *argv[])
     {
         if (is_jpeg(buffer))
         {
-            if(output != NULL)
+            if (output != NULL) //if it's jpg header and openning -> close it
             {
                 fclose(output);
             }
-            sprintf(filename, "%03i.jpg", count);
+            sprintf(filename, "%03i.jpg", count); //then create a new file
             output = fopen(filename, "w");
             count++;
         }
-        if (output != NULL)
+        if (output != NULL) //if the output file is created write down data to the file
         {
             fwrite(buffer, sizeof(buffer), 1, output);
         }
@@ -61,19 +61,23 @@ int main(int argc, char *argv[])
 
 bool is_jpeg(BYTE *buffer)
 {
-    if(buffer[0] != 0xff)
+    //check if the first is 0xff
+    if (buffer[0] != 0xff)
     {
         return false;
     }
-    if(buffer[1] != 0xd8)
+    //check if the first is 0xd8
+    if (buffer[1] != 0xd8)
     {
         return false;
     }
-    if(buffer[2] != 0xff)
+    //check if the first is 0xff
+    if (buffer[2] != 0xff)
     {
         return false;
     }
-    if((buffer[3] & 0xf0) != 0xe0)
+    //check if the first is 0xe..
+    if ((buffer[3] & 0xf0) != 0xe0)
     {
         return false;
     }
