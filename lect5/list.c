@@ -27,7 +27,7 @@ int main(void)
     {
         tmp[i] = list[i];
     }
-    list[3] = 4;
+    tmp[3] = 4;
 
     list = tmp;
 
@@ -35,6 +35,5 @@ int main(void)
     {
         printf("%i\n", list[i]);
     }
-    free(list);
-    free(tmp);
+
 }
