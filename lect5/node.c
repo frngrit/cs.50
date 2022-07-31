@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node //<-- node is telling the complier
 {
@@ -55,9 +56,9 @@ int main(void)
     list -> next -> next = n;
 
     //Print number
-    for (int i =0; i < 3; i++)
+    for (node *tmp = list; tmp != NULL; tmp = tmp -> next)
     {
-        int number = 
+        printf("%i\n", tmp -> number);
     }
 
 }
