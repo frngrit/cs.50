@@ -6,3 +6,8 @@ typedef struct node //<-- node is telling the complier
     struct node *next;
 }
 node;
+
+int main(void)
+{
+    node *n = malloc(sizeof(node));
+}
