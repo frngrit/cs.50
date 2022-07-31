@@ -15,5 +15,6 @@ int main(void)
 
     printf("(%i, %i)\n", node.x, node.y);
     printf("(%p, %p)\n", &node.x, &node.y);
+    printf("%p\n", &node);
 
 }
