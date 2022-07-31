@@ -62,7 +62,13 @@ int main(void)
     {
         printf("%i\n", tmp -> number);
     }
-    free_linked_list(list);
+    // free_linked_list(list);
+    while (list != NULL)
+    {
+        node *tmp = list -> next;
+        free(list);
+        list = tmp;
+    }
 }
 
 void free_linked_list(node *list)
