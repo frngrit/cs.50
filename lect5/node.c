@@ -10,4 +10,15 @@ node;
 int main(void)
 {
     node *n = malloc(sizeof(node));
+
+    if (n != NULL) //malloc able to allocate memory
+    {
+        // (*n).number = 1;
+        // (*n).next = NULL;
+        // too cryptic do the following instead
+
+        n -> number = 1;
+    }
+
+
 }
