@@ -8,6 +8,8 @@ typedef struct node //<-- node is telling the complier
 }
 node;
 
+void free_linked_list(node *list);
+
 int main(void)
 {
     node *list = NULL;
@@ -60,10 +62,16 @@ int main(void)
     {
         printf("%i\n", tmp -> number);
     }
-
+    free_linked_list(list);
 }
 
 void free_linked_list(node *list)
 {
-    
+    if (list->next == NULL)
+    {
+        free(list);
+        return;
+    }
+    free_linked_list(list->next);
+
 }
