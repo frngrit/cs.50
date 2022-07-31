@@ -47,11 +47,17 @@ int main(void)
     {
         free(list -> next); //free second node
         free(list); //free first node
-        
+
         return 1;
     }
     n -> number = 3;
     n -> next = NULL;
     list -> next -> next = n;
+
+    //Print number
+    for (int i =0; i < 3; i++)
+    {
+        int number = 
+    }
 
 }
