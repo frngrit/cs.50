@@ -73,5 +73,17 @@ void free_linked_list(node *list)
         return;
     }
     free_linked_list(list->next);
+    free(list);
 
 }
+
+// void recur(int n)
+// {
+//     if (n == 0)
+//     {
+//         printf("0\n");
+//         return;
+//     }
+//     recur(n-1);
+
+// }
