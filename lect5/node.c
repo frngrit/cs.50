@@ -9,6 +9,7 @@ node;
 
 int main(void)
 {
+    node *list = NULL;
     node *n = malloc(sizeof(node));
 
     if (n != NULL) //malloc able to allocate memory
@@ -20,6 +21,6 @@ int main(void)
         n -> number = 1;
         n -> next = NULL;
     }
-
-
+    list = n;
+    
 }
