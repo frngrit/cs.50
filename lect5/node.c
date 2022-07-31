@@ -17,7 +17,8 @@ int main(void)
         // (*n).next = NULL;
         // too cryptic do the following instead
 
-        n -> number = 1; 
+        n -> number = 1;
+        n -> next = NULL;
     }
 
 
