@@ -26,4 +26,13 @@ int main(void)
 
     list = n;
 
+    //add number to list
+    n = malloc(sizeof(node));
+
+    if (n == NULL)
+    {
+        printf("Not enough memory\n");
+        return 1;
+    }
+
 }
