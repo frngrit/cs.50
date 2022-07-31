@@ -62,3 +62,8 @@ int main(void)
     }
 
 }
+
+void free_linked_list(node *list)
+{
+    
+}
