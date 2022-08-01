@@ -66,10 +66,10 @@ int main(void)
     tree->right = n;
 
     print_tree(tree);
-    add_element(tree, 5);
-    add_element(tree, 6);
-    printf("-----------\n");
-    print_tree(tree);
+    // add_element(tree, 5);
+    // add_element(tree, 6);
+    // printf("-----------\n");
+    // print_tree(tree);
     free_tree(tree);
 
 }
@@ -141,7 +141,9 @@ void free_tree(node *root)
     {
         return;
     }
+    printf("freeing: %i\n", root->number);
     free(root->left);
     free(root->right);
     free(root);
+
 }
