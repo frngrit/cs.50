@@ -85,89 +85,54 @@ void print_tree(node *root)
     print_tree(root->right);
 }
 
-// void add_element(node *root, int number)
-// {
-//     //go to left
-//     if(number < root->number)
-//     {
-//         //if it available put it in
-//         if (root->left == NULL)
-//         {
-//             node *n = malloc(sizeof(node));
-//             if(n == NULL)
-//             {
-//                 return;
-//             }
-//             n->number = number;
-//             n->left = NULL;
-//             n->right = NULL;
-//             root->left = n;
-//             return;
-//         }
-//         //if it's not available
-//         add_element(root->left, number);
-//         return;
-
-//     }
-//     if(number > root->number)
-//     {
-//         if (root->right == NULL)
-//         {
-//             //initialize new node
-//             node *n = malloc(sizeof(node));
-//             if(n == NULL)
-//             {
-//                 return;
-//             }
-//             n->number = number;
-//             n->left = NULL;
-//             n->right = NULL;
-//             root->right = n;
-//             return;
-//         }
-//         add_element(root->right, number);
-//         return;
-//     }
-//     printf("%i is invalid input\n", number);
-//     return;
-// }
-
 void add_element(node *root, int number)
 {
-    // if it available put it in
-    if (root == NULL)
+    //go to left
+    if(number < root->number)
     {
-        node *n = malloc(sizeof(node));
-        if (n == NULL)
+        //if it available put it in
+        if (root->left == NULL)
         {
+            node *n = malloc(sizeof(node));
+            if(n == NULL)
+            {
+                return;
+            }
+            n->number = number;
+            n->left = NULL;
+            n->right = NULL;
+            root->left = n;
             return;
         }
-        n->number = number;
-        n->left = NULL;
-        n->right = NULL;
-        root = n;
-        return;
-    }
-
-    // go to left
-    if (number < root->number)
-    {
-        // if it's not available
+        //if it's not available
         add_element(root->left, number);
         return;
+
     }
-    if (number > root->number)
+    if(number > root->number)
     {
+        if (root->right == NULL)
+        {
+            //initialize new node
+            node *n = malloc(sizeof(node));
+            if(n == NULL)
+            {
+                return;
+            }
+            n->number = number;
+            n->left = NULL;
+            n->right = NULL;
+            root->right = n;
+            return;
+        }
         add_element(root->right, number);
         return;
     }
-    if (number == root->number)
-    {
-        printf("%i is invalid input\n", number);
-        return;
-    }
-
+    printf("%i is invalid input\n", number);
+    return;
 }
+
+
 
 void free_tree(node *root)
 {
