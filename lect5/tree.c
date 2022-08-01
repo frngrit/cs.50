@@ -67,6 +67,8 @@ int main(void)
 
     print_tree(tree);
     add_element(tree, 5);
+    printf("-----------\n");
+    print_tree(tree);
 
 }
 
@@ -101,6 +103,7 @@ void add_element(node *root, int number)
         }
         //if it's not available
         add_element(root->left, number);
+        return;
 
     }
     if(number > root->number)
@@ -116,6 +119,7 @@ void add_element(node *root, int number)
             return;
         }
         add_element(root->right, number);
+        return;
     }
     printf("%i is invalid input\n", number);
     return;
