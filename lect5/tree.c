@@ -68,8 +68,8 @@ int main(void)
     print_tree(tree);
     add_element(tree, 5);
     // add_element(tree, 6);
-    // printf("-----------\n");
-    // print_tree(tree);
+    printf("-----------\n");
+    print_tree(tree);
     free_tree(tree);
 
 }
