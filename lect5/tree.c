@@ -66,7 +66,7 @@ int main(void)
     tree->right = n;
 
     print_tree(tree);
-    // add_element(tree, 5);
+    add_element(tree, 5);
     // add_element(tree, 6);
     // printf("-----------\n");
     // print_tree(tree);
