@@ -70,6 +70,7 @@ int main(void)
     add_element(tree, 6);
     add_element(tree, 4);
     add_element(tree, 0);
+    add_element(tree, 0);
     printf("-----------\n");
     print_tree(tree);
     free_tree(tree);
