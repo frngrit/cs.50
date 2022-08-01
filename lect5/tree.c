@@ -26,7 +26,7 @@ int main(void)
         return 1;
     }
 
-    n->number = 4;
+    n->number = 2;
     n->left = NULL;
     n->right = NULL;
     //point tree to n
@@ -38,13 +38,46 @@ int main(void)
     //check if n is allocated memory
     if (n == NULL)
     {
-        free(tree);
+        //free(tree);
         return 1;
     }
 
-    n->number = 4;
+    n->number = 1;
     n->left = NULL;
     n->right = NULL;
+    //point the parent left to the children
+    tree->left = n;
 
+    //Add second number to the three
+    n = malloc(sizeof(node));
 
+    //check if n is allocated memory
+    if (n == NULL)
+    {
+        //free(tree);
+        return 1;
+    }
+
+    n->number = 3;
+    n->left = NULL;
+    n->right = NULL;
+    //point the parent left to the children
+    tree->right = n;
+
+    print_tree(tree);
+
+}
+
+void print_tree(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    //show left
+    print_tree(root->left);
+    //print parent first
+    printf("%i\n", root->number);
+    //show right
+    print_tree(root->right);
 }
