@@ -89,30 +89,33 @@ void add_element(node *root, int number)
     //go to left
     if(number < root->number)
     {
-        node *left = root->left;
         //if it available put it in
         if (root->left == NULL)
         {
-            left->number = number;
-            left->left = NULL;
-            left->right = NULL;
+            node *n = malloc(sizeof(node));
+            n->number = number;
+            n->left = NULL;
+            n->right = NULL;
+            root->left = n;
             return;
         }
         //if it's not available
-        add_element(left, number);
+        add_element(root->left, number);
 
     }
     if(number > root->number)
     {
-        node *right = root->right;
-        if (right == NULL)
+        if (root->right == NULL)
         {
-            right->number = number;
-            right->left = NULL;
-            right->right = NULL;
+            //initialize new node
+            node *n = malloc(sizeof(node));
+            n->number = number;
+            n->left = NULL;
+            n->right = NULL;
+            root->right = n;
             return;
         }
-        add_element(right, number);
+        add_element(root->right, number);
     }
     printf("%i is invalid input\n", number);
     return;
