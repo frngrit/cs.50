@@ -141,7 +141,6 @@ void free_tree(node *root)
     {
         return;
     }
-    printf("freeing: %i\n", root->number);
     free(root->left);
     free(root->right);
     free(root);
