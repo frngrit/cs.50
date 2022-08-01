@@ -76,7 +76,7 @@ void print_tree(node *root)
     }
     //show left
     print_tree(root->left);
-    //print parent first
+    //print parent
     printf("%i\n", root->number);
     //show right
     print_tree(root->right);
