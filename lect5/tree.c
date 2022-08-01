@@ -67,6 +67,7 @@ int main(void)
 
     print_tree(tree);
     add_element(tree, 5);
+    add_element(tree, 6);
     printf("-----------\n");
     print_tree(tree);
 
@@ -95,6 +96,10 @@ void add_element(node *root, int number)
         if (root->left == NULL)
         {
             node *n = malloc(sizeof(node));
+            if(n == NULL)
+            {
+                return;
+            }
             n->number = number;
             n->left = NULL;
             n->right = NULL;
@@ -112,6 +117,10 @@ void add_element(node *root, int number)
         {
             //initialize new node
             node *n = malloc(sizeof(node));
+            if(n == NULL)
+            {
+                return;
+            }
             n->number = number;
             n->left = NULL;
             n->right = NULL;
