@@ -70,6 +70,7 @@ int main(void)
     add_element(tree, 6);
     printf("-----------\n");
     print_tree(tree);
+    free_tree(tree);
 
 }
 
@@ -132,4 +133,15 @@ void add_element(node *root, int number)
     }
     printf("%i is invalid input\n", number);
     return;
+}
+
+void free_tree(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    free(root->left);
+    free(root->right);
+    free(root);
 }
