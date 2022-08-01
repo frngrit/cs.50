@@ -67,7 +67,9 @@ int main(void)
 
     print_tree(tree);
     add_element(tree, 5);
-    // add_element(tree, 6);
+    add_element(tree, 6);
+    add_element(tree, 4);
+    add_element(tree, 0);
     printf("-----------\n");
     print_tree(tree);
     free_tree(tree);
@@ -141,8 +143,8 @@ void free_tree(node *root)
     {
         return;
     }
-    free(root->left);
-    free(root->right);
+    free_tree(root->left);
+    free_tree(root->right);
     free(root);
 
 }
