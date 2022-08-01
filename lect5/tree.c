@@ -11,6 +11,7 @@ node;
 
 void free_tree(node *root);
 void print_tree(node *root);
+void add_element(node *root, int number);
 
 int main(void)
 {
@@ -65,6 +66,7 @@ int main(void)
     tree->right = n;
 
     print_tree(tree);
+    add_element(tree, 5);
 
 }
 
@@ -80,4 +82,38 @@ void print_tree(node *root)
     printf("%i\n", root->number);
     //show right
     print_tree(root->right);
+}
+
+void add_element(node *root, int number)
+{
+    //go to left
+    if(number < root->number)
+    {
+        node *left = root->left;
+        //if it available put it in
+        if (root->left == NULL)
+        {
+            left->number = number;
+            left->left = NULL;
+            left->right = NULL;
+            return;
+        }
+        //if it's not available
+        add_element(left, number);
+
+    }
+    if(number > root->number)
+    {
+        node *right = root->right;
+        if (right == NULL)
+        {
+            right->number = number;
+            right->left = NULL;
+            right->right = NULL;
+            return;
+        }
+        add_element(right, number);
+    }
+    printf("%i is invalid input\n", number);
+    return;
 }
