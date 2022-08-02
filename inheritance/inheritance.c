@@ -55,7 +55,7 @@ person *create_family(int generations)
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
 
-        current->alleles = 
+        current->alleles =
 
     }
 
@@ -69,7 +69,7 @@ person *create_family(int generations)
     }
 
     // TODO: Return newly created person
-    return NULL;
+    return current;
 }
 
 // Free `p` and all ancestors of `p`.
