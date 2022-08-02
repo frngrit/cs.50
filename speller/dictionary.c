@@ -46,10 +46,11 @@ bool load(const char *dictionary)
         return false;
     }
 
-    
+    char *temp;
+    while (fread(temp, sizeof(char), 1, dictionary))
+    {
 
-
-
+    }
 
 
     return true;
