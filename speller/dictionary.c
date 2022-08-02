@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+#include <stdio.h>
+
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -37,9 +39,21 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    unsigned int hashed = hash(dictionary[0]);
+    FILE *dictionary = fopen(dictionary, "r"); //open dictionary file
+
+    if (dictionary == NULL) //check if file exist
+    {
+        return false;
+    }
+
     
-    return false;
+
+
+
+
+
+    return true;
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
