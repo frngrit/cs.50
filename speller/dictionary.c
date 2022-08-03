@@ -47,20 +47,30 @@ bool load(const char *dictionary)
     }
 
     char *temp;
-    node latest = NULL;
     while (fread(temp, sizeof(char), 1, dictionary))
     {
         if (temp == '\n') //when start new word check where to go
         {
             unsigned int pos = hash(temp);
         }
-        
+
 
     }
 
 
     return true;
 
+}
+
+
+void add_element(node *bucket)
+{
+    node *new = malloc(sizeof(node));
+    
+    if (bucket->next == NULL)
+    {
+
+    }
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
