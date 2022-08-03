@@ -63,15 +63,19 @@ bool load(const char *dictionary)
 }
 
 
-void add_element(node *bucket)
+void add_element(node *bucket, char *word)
 {
     node *new = malloc(sizeof(node));
+    new->word = word;
+    new->next = NULL;
 
-    new->word =
     if (bucket->next == NULL)
     {
-
+        bucket->next = new;
+        return;
     }
+    add_element(bucket->next, word);
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
