@@ -49,7 +49,19 @@ bool load(const char *dictionary)
     char word[];
     while (fscanf(file, "%s", word) != EOF)
     {
-
+        //inital new node
+        node *new = malloc(sizeof(node));
+        if (new_node == NULL)
+        {
+            return false;
+        }
+        strcpy(new->word, word); //set word to the word we get
+        //get index of bucket
+        unsigned int pos = hash(word[0]);
+        //point to where that bucket points
+        new->next = table[pos];
+        //that bucket point to me
+        table[pos]->next = new;
     }
 
 
