@@ -46,15 +46,10 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char temp[];
-    while (fread(temp, sizeof(char), 1, dictionary))
+    char word[];
+    while (fscanf(file, "%s", word) != EOF)
     {
-        if (temp == '\n') //when start new word check where to go
-        {
-            unsigned int pos = hash(temp);
-        }
-
-
+        
     }
 
 
