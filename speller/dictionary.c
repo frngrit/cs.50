@@ -67,7 +67,7 @@ void add_element(node *bucket)
 {
     node *new = malloc(sizeof(node));
 
-    
+    new->word = 
     if (bucket->next == NULL)
     {
 
