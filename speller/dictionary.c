@@ -66,7 +66,7 @@ bool load(const char *dictionary)
 void add_element(node *bucket, char *word)
 {
     node *new = malloc(sizeof(node));
-    new->word = word;
+    strcpy(new->word, word);
     new->next = NULL;
 
     if (bucket->next == NULL)
