@@ -54,10 +54,7 @@ bool load(const char *dictionary)
         {
             unsigned int pos = hash(temp);
         }
-        else
-        {
-            
-        }
+
 
     }
 
