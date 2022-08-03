@@ -53,6 +53,7 @@ bool load(const char *dictionary)
         node *new = malloc(sizeof(node));
         if (new_node == NULL)
         {
+            unload();
             return false;
         }
         strcpy(new->word, word); //set word to the word we get
