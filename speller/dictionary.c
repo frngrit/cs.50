@@ -49,30 +49,13 @@ bool load(const char *dictionary)
     char word[];
     while (fscanf(file, "%s", word) != EOF)
     {
-        
+
     }
 
 
     return true;
 
 }
-
-
-void add_element(node *bucket, char *word)
-{
-    node *new = malloc(sizeof(node));
-    strcpy(new->word, word);
-    new->next = NULL;
-
-    if (bucket->next == NULL)
-    {
-        bucket->next = new;
-        return;
-    }
-    add_element(bucket->next, word);
-
-}
-
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
