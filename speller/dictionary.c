@@ -46,7 +46,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *temp;
+    char tmp[];
     while (fread(temp, sizeof(char), 1, dictionary))
     {
         if (temp == '\n') //when start new word check where to go
@@ -67,7 +67,7 @@ void add_element(node *bucket)
 {
     node *new = malloc(sizeof(node));
 
-    new->word = 
+    new->word =
     if (bucket->next == NULL)
     {
 
