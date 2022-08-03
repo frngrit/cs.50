@@ -46,7 +46,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char ;
+    char temp[];
     while (fread(temp, sizeof(char), 1, dictionary))
     {
         if (temp == '\n') //when start new word check where to go
