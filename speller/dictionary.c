@@ -33,6 +33,12 @@ bool check(const char *word)
     unsigned int pos = hash(word);
     node *tmp = table[pos];
 
+    //turn word to lower
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        word[i] = tolower(word[i]);
+    }
+
     while (tmp != NULL)
     {
         if (strcmp(tmp->word, word) == 0)
