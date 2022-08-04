@@ -51,7 +51,11 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
 
-    return word[0] % N;
+    int total = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        
+    }
 
 
 }
