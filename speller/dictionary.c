@@ -5,6 +5,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 #include "dictionary.h"
 
@@ -47,7 +49,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *word;
+    char *word = NULL;
     while (fscanf(file, "%s", word) != EOF)
     {
         //inital new node
@@ -59,7 +61,7 @@ bool load(const char *dictionary)
         }
         strcpy(new->word, word); //set word to the word we get
         //get index of bucket
-        unsigned int pos = hash(word[0]);
+        unsigned int pos = hash(word);
         //point to where that bucket points
         new->next = table[pos];
         //that bucket point to new
