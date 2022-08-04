@@ -32,6 +32,7 @@ bool check(const char *word)
 {
     unsigned int pos = hash(word);
     node *tmp = table[pos];
+    
     while (tmp != NULL)
     {
         if (strcmp(tmp->word, word) == 0)
