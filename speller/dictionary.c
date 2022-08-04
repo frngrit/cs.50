@@ -32,7 +32,7 @@ bool check(const char *word)
 {
     unsigned int pos = hash(word);
     node *tmp = table[pos];
-    
+
     while (tmp != NULL)
     {
         if (strcmp(tmp->word, word) == 0)
@@ -115,7 +115,8 @@ bool unload(void)
         node *tmp = table[i];
         while (tmp != NULL)
         {
-            node *next = tmp->next;
+            node *next = tmp;
+            tmp = tmp->next;
             free(next);
         }
         if (tmp == NULL)
