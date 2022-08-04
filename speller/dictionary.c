@@ -10,6 +10,9 @@
 
 #include "dictionary.h"
 
+//define counter
+unsigned int word_count = 0;
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -27,6 +30,16 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    unsigned int pos = hash(word);
+    node *tmp = table[pos];
+    while (tmp != NULL)
+    {
+        if (tmp->word == word)
+        {
+            return true;
+        }
+        tmp = tmp->next;
+    }
     // TODO
     return false;
 }
@@ -35,8 +48,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int N = strlen(word);
-    return toupper(word[N - 1]) - 'A';
+    int len = strlen(word);
+    return toupper(word[len - 1]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -67,15 +80,21 @@ bool load(const char *dictionary)
         new->next = table[pos];
         //that bucket point to new
         table[pos] = new;
+
+        //up the counter
+        word_count++;
     }
-
-
+    fclose(file);
     return true;
 
 }
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
+    if (word_count > 0)
+    {
+        return word_count;
+    }
     // TODO
     return 0;
 }
