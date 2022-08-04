@@ -121,12 +121,8 @@ bool unload(void)
             tmp = tmp->next;
             free(current);
         }
-        if (tmp == NULL)
-        {
-            return true;
-        }
     }
 
     // TODO
-    return false;
+    return true;
 }
