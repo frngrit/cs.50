@@ -63,9 +63,9 @@ bool load(const char *dictionary)
         //get index of bucket
         unsigned int pos = hash(word);
         //point to where that bucket points
-        new->next = table[pos]->next;
+        new->next = table[pos];
         //that bucket point to new
-        table[pos]->next = new;
+        table[pos] = new;
     }
 
 
