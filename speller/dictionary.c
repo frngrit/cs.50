@@ -108,7 +108,7 @@ bool unload(void)
         node *tmp = table[i];
         if (tmp != NULL)
         {
-            node next = tmp->next;
+            node *next = tmp->next;
             free(next);
         }
     }
