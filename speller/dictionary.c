@@ -34,7 +34,7 @@ bool check(const char *word)
     node *tmp = table[pos];
     while (tmp != NULL)
     {
-        if (tmp->word == word)
+        if (strcmp(tmp->word, word) == 0)
         {
             return true;
         }
