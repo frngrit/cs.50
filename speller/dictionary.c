@@ -107,7 +107,14 @@ bool unload(void)
     {
         node *tmp = table[i];
         while (tmp != NULL)
-        
+        {
+            node *next = tmp->next;
+            free(next);
+        }
+        if (tmp == NULL)
+        {
+            return true;
+        }
     }
 
     // TODO
