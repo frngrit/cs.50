@@ -12,5 +12,6 @@
         "string_view": "c",
         "stdint.h": "c",
         "dictionary.h": "c"
-    }
+    },
+    "gitdoc.enabled": true
 }
