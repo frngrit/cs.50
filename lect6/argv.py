@@ -1,10 +1,11 @@
-from sys import argv
+from sys import argv, exit
 
-# if len(argv) == 2:
-#     print(f'hello, {argv[1]}')
-# else:
-#     print('hello world')
+if len(argv) != 2:
+    print("Usage: python argv.py [Your name]")
+    exit(1)
 
+print(f"Hello {argv[1]}")
+exit(0)
 
-for arg in argv:
-    print(arg)
+# for arg in argv:
+#     print(arg)
