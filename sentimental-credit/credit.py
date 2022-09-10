@@ -15,15 +15,26 @@ def get_int():
 # check if credit numb is valid with Luhn's algorithm
 def luhn_checking(credit_numb):
     luhn_check = 0
-    flag = True
-    for s in str(credit_numb):
-        if flag:
-            luhn_check += int(s)
-            flag = False
-        else:
-            luhn_check += 2 * int(s)
-            flag = True
-    print(luhn_check)
+    # flag = True
+    # for s in str(credit_numb):
+    #     if flag:
+    #         luhn_check += int(s)
+    #         flag = False
+    #     else:
+    #         luhn_check += 2 * int(s)
+    #         flag = True
+    # print(luhn_check)
+
+    first_chunk = str(credit_numb)[::2]
+    second_chunk = str(credit_numb)[1::2]
+    for s in first_chunk:
+        luhn_check += int(s) * 2
+        print(s, luhn_check)
+
+    for s in second_chunk:
+        luhn_check += int(s)
+
+
     str_luhn = str(luhn_check)
     if str_luhn[-1] == '0':
         return True
