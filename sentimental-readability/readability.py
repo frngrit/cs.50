@@ -12,12 +12,12 @@ all_letters = re.findall("[a-zA-z]", text)
 letters = len(all_letters)
 
 # count for sentences
-all_stoppers = re.findall("[.?!]",text)
+all_stoppers = re.findall("[.?!]", text)
 sentences = len(all_stoppers)
 
 # count for words
 all_words = text.split()
-words = 1 + len(all_words)
+words = len(all_words)
 
 # calculate for index
 index = 0.0588 * letters / words * 100 - 0.296 * sentences / words * 100 - 15.8
