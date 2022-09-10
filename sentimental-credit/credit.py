@@ -41,14 +41,14 @@ def luhn_checking(credit_numb):
             luhn_check += int(s)
             flag = False
         else:
-            if int(s) > 5:
+            if int(s) >= 5:
                 temp = int(s) * 2
                 luhn_check += temp % 10
                 luhn_check += temp // 10
             else:
                 luhn_check += 2 * int(s)
             flag = True
-
+    print(luhn_check)
     if luhn_check%10 == 0:
         return True
     return False
