@@ -28,10 +28,6 @@ def luhn_checking(credit_numb):
             else:
                 luhn_check += 2 * int(s)
             flag = True
-        print(luhn_check)
-
-
-
 
     if luhn_check%10 == 0:
         return True
@@ -40,6 +36,8 @@ def luhn_checking(credit_numb):
 def main():
     credit_numb = get_int()
 
-    print(luhn_checking(credit_numb))
-
+    if not luhn_checking(credit_numb):
+        print('INVALID')
+        return
+    
 main()
