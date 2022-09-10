@@ -28,6 +28,10 @@ def luhn_checking(credit_numb):
     first_chunk = str(credit_numb)[::2]
     second_chunk = str(credit_numb)[1::2]
     for s in first_chunk:
+        if int(s) > 5:
+            temp = int(s) * 2
+            luhn_check += temp % 10
+            luhn_check += temp // 10
         luhn_check += int(s) * 2
         print(s, luhn_check)
 
