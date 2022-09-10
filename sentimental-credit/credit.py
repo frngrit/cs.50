@@ -4,6 +4,26 @@
 # MTC 16-digit, start with 51, 52, 53, 54, 55
 # VIS 13-16 digit start with 4
 
+def check_type(credit_numb):
+    str_credit = str(credit_numb)
+
+    first_two = str_credit[:2]
+    n = len(str_credit)
+    print(n)
+    print(first_two[0])
+    if n == 15 and int(first_two) >= 34 and int(first_two) <= 37:
+        print('AMEX')
+        return
+    if n == 16 and int(first_two) >= 51 and int(first_two) <= 55:
+        print('MASTERCARD')
+        return
+    if n >= 13 and n <= 16 and first_two[0] == 4:
+        print('VISA')
+        return
+    print('INVALID')
+    return
+
+
 def get_int():
     while True:
         try:
@@ -33,11 +53,15 @@ def luhn_checking(credit_numb):
         return True
     return False
 
+
+
 def main():
     credit_numb = get_int()
 
     if not luhn_checking(credit_numb):
         print('INVALID')
         return
-    
+    check_type(credit_numb)
+    return
+
 main()
