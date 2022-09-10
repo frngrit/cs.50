@@ -15,7 +15,7 @@ def get_int():
 # check if credit numb is valid with Luhn's algorithm
 def luhn_checking(credit_numb):
     luhn_check = 0
-    flag = True
+    flag = False
     for s in str(credit_numb):
         if flag:
             luhn_check += int(s)
