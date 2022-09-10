@@ -11,4 +11,5 @@ while True:
     except:
         pass
 
-# check if credit numb is valid
+# check if credit numb is valid with Luhn's algorithm
+
