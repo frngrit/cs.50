@@ -9,15 +9,13 @@ def check_type(credit_numb):
 
     first_two = str_credit[:2]
     n = len(str_credit)
-    print(n)
-    print(first_two[0])
     if n == 15 and int(first_two) >= 34 and int(first_two) <= 37:
         print('AMEX')
         return
     if n == 16 and int(first_two) >= 51 and int(first_two) <= 55:
         print('MASTERCARD')
         return
-    if n >= 13 and n <= 16 and first_two[0] == 4:
+    if n >= 13 and n <= 16 and int(first_two[0]) == 4:
         print('VISA')
         return
     print('INVALID')
