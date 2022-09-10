@@ -22,17 +22,16 @@ def luhn_checking(credit_numb):
             flag = False
         else:
             luhn_check += 2 * int(s)
-
+            flag = True
+    print(luhn_check)
     str_luhn = str(luhn_check)
-    if str_luhn[-1] != '0':
+    if str_luhn[-1] == '0':
         return True
     return False
 
 def main():
     credit_numb = get_int()
 
-    if ~(luhn_checking(credit_numb)):
-        print('INVALID')
-        return
+    print(luhn_checking(credit_numb))
 
 main()
