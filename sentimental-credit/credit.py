@@ -9,6 +9,8 @@ def check_type(credit_numb):
 
     first_two = str_credit[:2]
     n = len(str_credit)
+    print(n)
+    print(first_two)
     if n == 15 and int(first_two) >= 34 and int(first_two) <= 37:
         print('AMEX')
         return
