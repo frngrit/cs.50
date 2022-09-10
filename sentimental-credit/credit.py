@@ -35,8 +35,8 @@ def luhn_checking(credit_numb):
         luhn_check += int(s)
 
 
-    str_luhn = str(luhn_check)
-    if str_luhn[-1] == '0':
+
+    if luhn_check%10 == 0:
         return True
     return False
 
