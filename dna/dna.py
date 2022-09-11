@@ -21,10 +21,14 @@ def main():
     sequences = ''
     with open(f"./{text_file_name}", 'r') as file:
         sequences = file.read()
-    print(sequences)
     # TODO: Find longest match of each STR in DNA sequence
-    
+    longest_str = {}
+    keys = list(databases[0].keys())
+    keys.remove("name")
+    for str in keys:
+        longest_str[str] = longest_match(sequences, str)
     # TODO: Check database for matching profiles
+    
 
     return
 
