@@ -23,7 +23,7 @@ def main():
         sequences = file.read()
     print(sequences)
     # TODO: Find longest match of each STR in DNA sequence
-
+    
     # TODO: Check database for matching profiles
 
     return
