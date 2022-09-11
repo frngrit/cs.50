@@ -9,15 +9,19 @@ def main():
         exit(1)
 
     # TODO: Read database file into a variable
-    db_file = argv[1]
+    db_file_name = argv[1]
     databases = []
-    with open(f"./databases/{db_file}", 'r') as file:
+    with open(f"./databases/{db_file_name}", 'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
             databases.push(row)
 
     # TODO: Read DNA sequence file into a variable
-
+    text_file_name = argv[2]
+    sequences = ''
+    with open(f"./sequences/{text_file_name}", 'r') as file:
+        sequences = file
+    print(sequences)
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
