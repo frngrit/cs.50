@@ -25,10 +25,13 @@ def main():
     longest_str = {}
     keys = list(databases[0].keys())
     keys.remove("name")
-    for str in keys:
-        longest_str[str] = longest_match(sequences, str)
+    for STR in keys:
+        longest_str[STR] = longest_match(sequences, STR)
     # TODO: Check database for matching profiles
-    for name in databases:
+    for person in databases:
+        for STR in keys:
+            if person[STR] != person[STR]:
+                break
         
     return
 
