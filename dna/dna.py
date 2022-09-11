@@ -1,6 +1,7 @@
 import csv
 from sys import argv, exit
 
+
 def main():
 
     # TODO: Check for command-line usage
@@ -40,7 +41,6 @@ def main():
             return
     print("No match")
     return
-
 
 
 def longest_match(sequence, subsequence):
