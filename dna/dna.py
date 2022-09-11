@@ -28,8 +28,8 @@ def main():
     for str in keys:
         longest_str[str] = longest_match(sequences, str)
     # TODO: Check database for matching profiles
-    
-
+    for name in databases:
+        
     return
 
 
