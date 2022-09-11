@@ -27,14 +27,20 @@ def main():
     keys.remove("name")
     for STR in keys:
         longest_str[STR] = longest_match(sequences, STR)
+
     # TODO: Check database for matching profiles
+    n = len(keys)
     for person in databases:
+        i = 0
         for STR in keys:
-            if person[STR] != person[STR]:
-                break
-        print(person["name"])
+            if longest_str[STR] == int(person[STR]):
+                i += 1
+        if i == n:
+            print(person["name"])
+            return
     print("No match")
     return
+
 
 
 def longest_match(sequence, subsequence):
