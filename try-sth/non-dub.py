@@ -1,7 +1,7 @@
 import time
 import random
 
-N = 100000
+N = 1000000
 
 # gen random array
 rand = [random.randint(0,N) for i in range(N)]
