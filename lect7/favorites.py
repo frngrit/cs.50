@@ -4,7 +4,7 @@ import re
 
 titles = {}
 
-title = input("Title: ").strip().upper()
+user_title = input("Title: ").strip().upper()
 
 counter = 0
 with open("favorites.csv", "r") as file:
@@ -16,7 +16,10 @@ with open("favorites.csv", "r") as file:
         # except KeyError:
         #     titles[title] = 1
 
-        if re.search("^(OFFICE|THE.OFFICE)$", title):
+        # if re.search("^(OFFICE|THE.OFFICE)$", title):
+        #     counter += 1
+
+        if user_title == title:
             counter += 1
 
 print(counter)
