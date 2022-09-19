@@ -25,7 +25,7 @@ import random
 a = []
 for i in range(10):
     n = (10 - random.randint(0,10)) * 10
-    n += i
+    n += (10 - random.randint(i,10))
     a.append(n)
 
 print(a)
