@@ -32,5 +32,5 @@ print(a)
 
 def last_digit(numb):
     return numb % 10
-# print(sorted(a, key = last_digit))
+print(sorted(a.copy(), key = last_digit))
 
