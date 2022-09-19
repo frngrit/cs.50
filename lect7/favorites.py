@@ -4,6 +4,8 @@ import re
 
 titles = {}
 
+title = input("Title: ").strip().upper()
+
 counter = 0
 with open("favorites.csv", "r") as file:
     reader = csv.DictReader(file)
