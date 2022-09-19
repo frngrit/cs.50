@@ -18,5 +18,19 @@ def get_value(title):
     return titles[title]
 
 
-for title in sorted(titles, key = get_value, reverse=True):
-    print(f"{title}: {titles[title]}")
+# for title in sorted(titles, key = get_value, reverse=True):
+#     print(f"{title}: {titles[title]}")
+
+import random
+a = []
+for i in range(10):
+    n = (10 - random.randint(0,10)) * 10
+    n += i
+    a.append(n)
+
+print(a)
+
+def last_digit(numb):
+    return numb % 10
+# print(sorted(a, key = last_digit))
+
