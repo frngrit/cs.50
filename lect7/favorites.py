@@ -18,19 +18,10 @@ def get_value(title):
     return titles[title]
 
 
-# for title in sorted(titles, key = get_value, reverse=True):
+# for title in sorted(titles, key = lambda title: titles[title], reverse=True):
 #     print(f"{title}: {titles[title]}")
 
-import random
-a = []
-for i in range(10):
-    n = (10 - random.randint(0,10)) * 10
-    n += (10 - random.randint(i,10))
-    a.append(n)
-
-print(a)
-
-def last_digit(numb):
-    return numb % 10
-print(sorted(a.copy(), key = last_digit))
-
+# from random import randint
+# a = [ i * 10 + (10 - randint(i,10)) for i in range(10)]
+# print(a)
+# print(sorted(a, key = lambda x: x % 10))
