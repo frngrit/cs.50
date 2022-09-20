@@ -6,4 +6,5 @@ db = SQL("sqlite:///favorites.db")
 
 title = input("Title: ").strip()
 
-db.execute("SELECT COUNT(*) FROM ")
+db.execute("SELECT COUNT(*) FROM favorites WHERE title LIKE ?", title)
+
