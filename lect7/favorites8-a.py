@@ -8,6 +8,5 @@ title = input("Title: ").strip()
 
 rows = db.execute("SELECT title FROM favorites WHERE title LIKE ?", title)
 
-
 for row in rows:
     print(row["title"])
