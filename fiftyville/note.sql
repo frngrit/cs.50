@@ -46,3 +46,9 @@ AND minute BETWEEN 15 AND 25;
 -- | 322W7JE       | exit     | 10   | 23     |
 -- | 0NTHK55       | exit     | 10   | 23     |
 -- +---------------+----------+------+--------+
+
+SELECT caller, receiver FROM phone_calls
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration <= 
