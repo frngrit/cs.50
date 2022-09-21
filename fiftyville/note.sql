@@ -23,3 +23,26 @@ AND day = 28;
 | Lily    | Our neighboring courthouse has a very annoying rooster that crows loudly at 6am every day. My sons Robert and Patrick took the rooster to a city far, far away, so it may never bother us again. My sons have successfully arrived in Paris.                                                                        |
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 */
+
+10:15am
+
+SELECT license_plate, activity, hour, minute
+FROM bakery_security_logs
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND hour = 10
+AND minute BETWEEN 15 AND 25;
+
+-- +---------------+----------+------+--------+
+-- | license_plate | activity | hour | minute |
+-- +---------------+----------+------+--------+
+-- | 5P2BI95       | exit     | 10   | 16     |
+-- | 94KL13X       | exit     | 10   | 18     |
+-- | 6P58WS2       | exit     | 10   | 18     |
+-- | 4328GD8       | exit     | 10   | 19     |
+-- | G412CB7       | exit     | 10   | 20     |
+-- | L93JTIZ       | exit     | 10   | 21     |
+-- | 322W7JE       | exit     | 10   | 23     |
+-- | 0NTHK55       | exit     | 10   | 23     |
+-- +---------------+----------+------+--------+
