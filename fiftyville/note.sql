@@ -100,3 +100,26 @@ WHERE license_plate IN(
     AND hour = 10
     AND minute BETWEEN 15 AND 25
 );
+
+-- +--------+
+-- |   id   |
+-- +--------+
+-- | 221103 |
+-- | 243696 |
+-- | 396669 |
+-- | 398010 |
+-- | 467400 |
+-- | 514354 |
+-- | 560886 |
+-- | 686048 |
+-- +--------+
+
+SELECT person_id FROM bank_accounts
+WHERE account_number IN (
+    SELECT account_number FROM atm_transactions
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND atm_location = "Leggett Street"
+    AND transaction_type = "withdraw"
+);
