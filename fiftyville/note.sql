@@ -123,3 +123,16 @@ WHERE account_number IN (
     AND atm_location = "Leggett Street"
     AND transaction_type = "withdraw"
 );
+
+-- +-----------+
+-- | person_id |
+-- +-----------+
+-- | 686048    |
+-- | 514354    |
+-- | 458378    |
+-- | 395717    |
+-- | 396669    |
+-- | 467400    |
+-- | 449774    |
+-- | 438727    |
+-- +-----------+
