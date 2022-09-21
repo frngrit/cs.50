@@ -253,3 +253,7 @@ AND flight_id = flights.id;
 -- | 54 | 8                 | 5                      | 2021 | 7     | 30  | 10   | 19     |
 -- +----+-------------------+------------------------+------+-------+-----+------+--------+
 
+SELECT passport_number FROM passengers
+WHERE id = 36
+AND passport_number in (SELECT passport_number FROM people
+WHERE id = 514354 OR id = 686048);
