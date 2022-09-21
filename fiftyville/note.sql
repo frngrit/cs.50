@@ -229,7 +229,7 @@ AND id IN(
 -- | 686048 |
 -- +--------+
 
-SELECT phone_number FROM people
+SELECT passport_number FROM people
 WHERE id = 514354 OR id = 686048;
 
 -- +-----------------+
@@ -239,8 +239,12 @@ WHERE id = 514354 OR id = 686048;
 -- | 5773159633      |
 -- +-----------------+
 
-SELECT flights.id FROM passengers, flights
+SELECT flights.* FROM passengers, flights
 WHERE origin_airport_id = 8
-AND passengers.passport_number in (SELECT phone_number FROM people
+AND passengers.passport_number in (SELECT passport_number FROM people
 WHERE id = 514354 OR id = 686048)
 AND flight_id = flights.id;
+
+SELECT flight_id FROM passengers
+WHERE passport_number in (SELECT phone_number FROM people
+WHERE id = 514354 OR id = 686048);
