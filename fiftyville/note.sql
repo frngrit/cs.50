@@ -221,3 +221,10 @@ AND id IN(
     AND duration <= 60
     AND people.phone_number = phone_calls.caller
 );
+
+-- +--------+
+-- |   id   |
+-- +--------+
+-- | 514354 |
+-- | 686048 |
+-- +--------+
