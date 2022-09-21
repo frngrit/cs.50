@@ -254,6 +254,20 @@ AND flight_id = flights.id;
 -- +----+-------------------+------------------------+------+-------+-----+------+--------+
 
 SELECT passport_number FROM passengers
-WHERE id = 36
+WHERE flight_id = 36
 AND passport_number in (SELECT passport_number FROM people
 WHERE id = 514354 OR id = 686048);
+
+-- +-----------------+
+-- | passport_number |
+-- +-----------------+
+-- | 5773159633      |
+-- +-----------------+
+
+SELECT * FROM people WHERE passport_number = 5773159633;
+-- +--------+-------+----------------+-----------------+---------------+
+-- |   id   | name  |  phone_number  | passport_number | license_plate |
+-- +--------+-------+----------------+-----------------+---------------+
+-- | 686048 | Bruce | (367) 555-5533 | 5773159633      | 94KL13X       |
+-- +--------+-------+----------------+-----------------+---------------+
+
