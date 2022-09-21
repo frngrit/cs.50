@@ -69,3 +69,8 @@ AND duration <= 60;
 -- +----------------+----------------+
 
 -- Leggett Street, withdrawing
+SELECT account_numb FROM atm_transactions
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND 
