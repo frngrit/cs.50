@@ -1,0 +1,1 @@
+SELECT DISTINCT(name) FROM people, directors, ratings WHERE rating >= 9 AND ratings.movie_id = directors.movie_id AND directors.person_id = people.id;
