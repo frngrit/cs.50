@@ -69,8 +69,23 @@ AND duration <= 60;
 -- +----------------+----------------+
 
 -- Leggett Street, withdrawing
-SELECT account_numb FROM atm_transactions
+SELECT account_number FROM atm_transactions
 WHERE year = 2021
 AND month = 7
 AND day = 28
-AND 
+AND atm_location = "Leggett Street"
+AND transaction_type = "withdraw";
+/*
++----------------+
+| account_number |
++----------------+
+| 28500762       |
+| 28296815       |
+| 76054385       |
+| 49610011       |
+| 16153065       |
+| 25506511       |
+| 81061156       |
+| 26013199       |
++----------------+
+*/
