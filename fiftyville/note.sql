@@ -253,6 +253,14 @@ AND flight_id = flights.id;
 -- | 54 | 8                 | 5                      | 2021 | 7     | 30  | 10   | 19     |
 -- +----+-------------------+------------------------+------+-------+-----+------+--------+
 
+SELECT city FROM airports WHERE id = 4;
+
+-- +---------------+
+-- |     city      |
+-- +---------------+
+-- | New York City |
+-- +---------------+
+
 SELECT passport_number FROM passengers
 WHERE flight_id = 36
 AND passport_number in (SELECT passport_number FROM people
@@ -271,3 +279,19 @@ SELECT * FROM people WHERE passport_number = 5773159633;
 -- | 686048 | Bruce | (367) 555-5533 | 5773159633      | 94KL13X       |
 -- +--------+-------+----------------+-----------------+---------------+
 
+SELECT account_number FROM bank_accounts WHERE person_id = 686048;
+-- +----------------+
+-- | account_number |
+-- +----------------+
+-- | 49610011       |
+-- +----------------+
+
+SELECT * FROM people WHERE phone_number = "(375) 555-8161";
+
+/*
++--------+-------+----------------+-----------------+---------------+
+|   id   | name  |  phone_number  | passport_number | license_plate |
++--------+-------+----------------+-----------------+---------------+
+| 864400 | Robin | (375) 555-8161 |                 | 4V16VO0       |
++--------+-------+----------------+-----------------+---------------+
+*/
