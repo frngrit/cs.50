@@ -238,3 +238,6 @@ WHERE id = 514354 OR id = 686048;
 -- | 3592750733      |
 -- | 5773159633      |
 -- +-----------------+
+
+SELECT year, month,  FROM passengers
+WHERE
