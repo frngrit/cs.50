@@ -245,6 +245,11 @@ AND passengers.passport_number in (SELECT passport_number FROM people
 WHERE id = 514354 OR id = 686048)
 AND flight_id = flights.id;
 
-SELECT flight_id FROM passengers
-WHERE passport_number in (SELECT phone_number FROM people
-WHERE id = 514354 OR id = 686048);
+-- +----+-------------------+------------------------+------+-------+-----+------+--------+
+-- | id | origin_airport_id | destination_airport_id | year | month | day | hour | minute |
+-- +----+-------------------+------------------------+------+-------+-----+------+--------+
+-- | 18 | 8                 | 6                      | 2021 | 7     | 29  | 16   | 0      |
+-- | 36 | 8                 | 4                      | 2021 | 7     | 29  | 8    | 20     |
+-- | 54 | 8                 | 5                      | 2021 | 7     | 30  | 10   | 19     |
+-- +----+-------------------+------------------------+------+-------+-----+------+--------+
+
