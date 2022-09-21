@@ -167,3 +167,57 @@ AND id IN(
 -- | 514354 |
 -- | 686048 |
 -- +--------+
+
+SELECT people.id FROM phone_calls, people
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration <= 60
+AND people.phone_number = phone_calls.caller;
+
+/*
++--------+
+|   id   |
++--------+
+| 398010 |
+| 560886 |
+| 686048 |
+| 561160 |
+| 560886 |
+| 449774 |
+| 514354 |
+| 907148 |
+| 395717 |
+| 438727 |
++--------+
+*/
+
+SELECT id FROM people
+WHERE license_plate IN(
+    SELECT license_plate
+    FROM bakery_security_logs
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND hour = 10
+    AND minute BETWEEN 15 AND 25
+)
+AND id IN(
+    SELECT person_id FROM bank_accounts
+    WHERE account_number IN (
+        SELECT account_number FROM atm_transactions
+        WHERE year = 2021
+        AND month = 7
+        AND day = 28
+        AND atm_location = "Leggett Street"
+        AND transaction_type = "withdraw"
+    )
+)
+AND id IN(
+    SELECT people.id FROM phone_calls, people
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration <= 60
+    AND people.phone_number = phone_calls.caller
+);
