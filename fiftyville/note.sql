@@ -59,27 +59,27 @@ SELECT * FROM atm_transactions WHERE year = 2021 AND month = 8 AND day = 1 AND a
 +------+----------------+------+-------+-----+---------------+------------------+--------+
 |  id  | account_number | year | month | day | atm_location  | transaction_type | amount |
 +------+----------------+------+-------+-----+---------------+------------------+--------+
-| 1072 | 26249951       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 5      |
-| 1088 | 33528144       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 40     |
-| 1101 | 76896546       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 5      |
-| 1123 | 65190958       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 20     |
-| 1126 | 40981669       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 20     |
-| 1134 | 18363023       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 25     |
-| 1150 | 47746428       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 30     |
-| 1151 | 28579039       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 30     |
-| 1152 | 33528144       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 35     |
-| 1163 | 52457779       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 45     |
-| 1171 | 71305903       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
-| 1172 | 55656186       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 90     |
 | 1191 | 15911007       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 60     |
-| 1194 | 70992522       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
+| 1134 | 18363023       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 25     |
+| 1072 | 26249951       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 5      |
+| 1151 | 28579039       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 30     |
+| 1304 | 32747120       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 60     |
+| 1088 | 33528144       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 40     |
+| 1152 | 33528144       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 35     |
+| 1252 | 36438351       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
+| 1126 | 40981669       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 20     |
 | 1203 | 41935128       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 20     |
+| 1150 | 47746428       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 30     |
+| 1163 | 52457779       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 45     |
+| 1172 | 55656186       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 90     |
+| 1295 | 56171033       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 55     |
+| 1123 | 65190958       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 20     |
+| 1266 | 67735369       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 80     |
 | 1212 | 69278040       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 70     |
+| 1194 | 70992522       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
+| 1171 | 71305903       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
+| 1101 | 76896546       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 5      |
+| 1293 | 83997425       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 25     |
 | 1214 | 92206742       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 35     |
 | 1243 | 96352349       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 100    |
-| 1252 | 36438351       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 65     |
-| 1266 | 67735369       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 80     |
-| 1293 | 83997425       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 25     |
-| 1295 | 56171033       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 55     |
-| 1304 | 32747120       | 2021 | 8     | 1   | Carvalho Road | withdraw         | 60     |
 +------+----------------+------+-------+-----+---------------+------------------+--------+
