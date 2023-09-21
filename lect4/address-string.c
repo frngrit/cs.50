@@ -8,7 +8,7 @@ int main(void)
     // char *s = "Hi!";
     char s[] = {'H', 'i', '!'};
 
-    char *addressOfArray = s;
+    char *pointerToArray = s;
     char *addressOfFirstEle = &s[0];
 
     printf("addressOfArray = %p\naddressOfFirstEle = %p\n", addressOfArray, addressOfFirstEle);
