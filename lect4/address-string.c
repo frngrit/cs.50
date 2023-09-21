@@ -1,23 +1,27 @@
 #include <stdio.h>
 // #include <cs50.h>
 
-int main(void)
+int main()
 {
-    // string s = "Hi!";
+    // Pointer to an integer
+    int *p;
 
-    // char *s = "Hi!";
-    char s[] = {'H', 'i', '!'};
+    // Pointer to an array of 5 integers
+    int(*ptr)[5];
+    int arr[5];
 
-    char *pointerToArray = s;
-    char *addressOfFirstEle = &s[0];
+    // Points to 0th element of the arr.
+    p = arr;
 
-    printf("addressOfArray = %p\naddressOfFirstEle = %p\n", addressOfArray, addressOfFirstEle);
+    // Points to the whole array arr.
+    ptr = &arr;
 
-    for (int i = 0; s[i] != '\0'; i++)
-    {
-        char *b = &s[i];
-        printf("from %s -> char: %c, address: %p\n", s, s[i], b);
-    }
+    printf("p = %p, ptr = %p, arr = %p\n", p, ptr, arr);
 
-    // printf("%p\n", p);
+    p++;
+    ptr++;
+
+    printf("p = %p, ptr = %p, arr = %p\n", p, ptr, arr);
+    
+    return 0;
 }
