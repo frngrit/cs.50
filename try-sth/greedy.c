@@ -45,5 +45,5 @@ void greedy_recur(int remain)
         return;
     }
 
-     
+
 }
