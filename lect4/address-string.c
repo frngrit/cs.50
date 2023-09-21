@@ -6,7 +6,7 @@ int main(void)
     // string s = "Hi!";
 
     // char *s = "Hi!";
-    char *s = {'H', 'i', '!'};
+    char s[] = {'H', 'i', '!'};
 
     for (int i = 0; s[i] != '\0'; i++)
     {
