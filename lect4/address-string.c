@@ -19,9 +19,8 @@ int main()
     printf("p = %p, ptr = %p, arr = %p\n", p, ptr, arr);
 
     p++;
-    ptr++;
 
-    printf("p = %p, ptr = %p, arr = %p\n", p, ptr, arr);
-    
+    printf("p = %p, ptr = %p, arr = %p\n", p, ptr[1], &arr[1]);
+
     return 0;
 }
